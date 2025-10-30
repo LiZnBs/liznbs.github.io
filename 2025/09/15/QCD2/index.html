@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="第一部分: 主要工作记录–理论主要目标将CI应用到有限温有限势中 理论部分梳理有限温有限势DSE首先是有限-$(T,\mu)$ 中, 夸克传播子形式:$S^{-1}(\vec{p},\widetilde{\omega} _n)&#x3D;i\vec{\gamma}\cdot \vec{p}A(\vec{p},\widetilde{\omega} _n)+i\gamma _4\widetilde{\">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论文记录-有限温有限化学势QCD-2 理论部分主要工作">
+<meta property="og:url" content="https://blog.liznb.org/2025/09/15/QCD2/index.html">
+<meta property="og:site_name" content="LiZnB&#39;s Blog">
+<meta property="og:description" content="第一部分: 主要工作记录–理论主要目标将CI应用到有限温有限势中 理论部分梳理有限温有限势DSE首先是有限-$(T,\mu)$ 中, 夸克传播子形式:$S^{-1}(\vec{p},\widetilde{\omega} _n)&#x3D;i\vec{\gamma}\cdot \vec{p}A(\vec{p},\widetilde{\omega} _n)+i\gamma _4\widetilde{\">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/Results/H-T.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/Results/P-T.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/Results/H-%CE%BC-0.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/Results/P-%CE%BC-0.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/Results/H-%CE%BC.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/Results/P-%CE%BC.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/Results/B-%CE%BC-C.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/Results/Connect.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/Results/Const0.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/Results/Const.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/Results/P-P.png">
+<meta property="article:published_time" content="2025-09-15T12:33:35.000Z">
+<meta property="article:modified_time" content="2025-09-22T06:25:23.015Z">
+<meta property="article:author" content="LiZnB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.liznb.org/images/QCD/Results/H-T.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>论文记录-有限温有限化学势QCD-2 理论部分主要工作</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+  <!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//blog.liznb.org/matomo/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Categories</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2025/09/16/QCD3/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2025/09/14/202311xixia/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.liznb.org/2025/09/15/QCD2/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.liznb.org/2025/09/15/QCD2/&text=论文记录-有限温有限化学势QCD-2 理论部分主要工作"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.liznb.org/2025/09/15/QCD2/&title=论文记录-有限温有限化学势QCD-2 理论部分主要工作"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.liznb.org/2025/09/15/QCD2/&is_video=false&description=论文记录-有限温有限化学势QCD-2 理论部分主要工作"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=论文记录-有限温有限化学势QCD-2 理论部分主要工作&body=Check out this article: https://blog.liznb.org/2025/09/15/QCD2/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.liznb.org/2025/09/15/QCD2/&title=论文记录-有限温有限化学势QCD-2 理论部分主要工作"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.liznb.org/2025/09/15/QCD2/&title=论文记录-有限温有限化学势QCD-2 理论部分主要工作"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.liznb.org/2025/09/15/QCD2/&title=论文记录-有限温有限化学势QCD-2 理论部分主要工作"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.liznb.org/2025/09/15/QCD2/&title=论文记录-有限温有限化学势QCD-2 理论部分主要工作"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.liznb.org/2025/09/15/QCD2/&name=论文记录-有限温有限化学势QCD-2 理论部分主要工作&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.liznb.org/2025/09/15/QCD2/&t=论文记录-有限温有限化学势QCD-2 理论部分主要工作"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E4%B8%BB%E8%A6%81%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%E2%80%93%E7%90%86%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">第一部分: 主要工作记录–理论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E7%9B%AE%E6%A0%87"><span class="toc-number">1.1.</span> <span class="toc-text">主要目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E9%83%A8%E5%88%86%E6%A2%B3%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">理论部分梳理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E9%99%90%E6%B8%A9%E6%9C%89%E9%99%90%E5%8A%BFDSE"><span class="toc-number">1.2.1.</span> <span class="toc-text">有限温有限势DSE</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E6%84%8F%E4%B9%89"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">物理意义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E4%BA%8EC%E5%87%BD%E6%95%B0%E7%9A%84%E5%A4%84%E7%90%86"><span class="toc-number">1.2.2.</span> <span class="toc-text">对于C函数的处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%B6%E5%8C%96%E5%AD%A6%E5%8A%BF%E6%9C%89%E9%99%90%E6%B8%A9"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">零化学势有限温</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%B6%E6%B8%A9%E6%9C%89%E9%99%90%E5%8C%96%E5%AD%A6%E5%8A%BF"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">零温有限化学势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E9%99%90%E6%B8%A9%E6%9C%89%E9%99%90%E5%8C%96%E5%AD%A6%E5%8A%BF"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">有限温有限化学势</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E4%BA%8EB%E5%87%BD%E6%95%B0%E7%9A%84%E5%A4%84%E7%90%86"><span class="toc-number">1.2.3.</span> <span class="toc-text">对于B函数的处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E8%A7%84%E5%8C%96%E6%96%B9%E6%A1%88"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">正规化方案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%B6%E5%8C%96%E5%AD%A6%E5%8A%BF%E6%9C%89%E9%99%90%E6%B8%A9-1"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">零化学势有限温</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%B6%E6%B8%A9%E6%9C%89%E9%99%90%E5%8C%96%E5%AD%A6%E5%8A%BF-1"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">零温有限化学势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E9%99%90%E6%B8%A9%E6%9C%89%E9%99%90%E5%8C%96%E5%AD%A6%E5%8A%BF-1"><span class="toc-number">1.2.3.4.</span> <span class="toc-text">有限温有限化学势</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94%E7%A1%AC%E6%88%AA%E6%96%AD%E6%AD%A3%E8%A7%84%E5%8C%96"><span class="toc-number">1.2.4.</span> <span class="toc-text">对比硬截断正规化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%B6%E5%8C%96%E5%AD%A6%E5%8A%BF%E6%9C%89%E9%99%90%E6%B8%A9-2"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">零化学势有限温</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%B6%E6%B8%A9%E6%9C%89%E9%99%90%E5%8C%96%E5%AD%A6%E5%8A%BF-2"><span class="toc-number">1.2.4.2.</span> <span class="toc-text">零温有限化学势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8ENJL%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">1.2.4.3.</span> <span class="toc-text">与NJL模型的关系</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.4.3.1.</span> <span class="toc-text">NJL(参考文献)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.4.3.2.</span> <span class="toc-text">CI</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E9%80%89%E6%8B%A9"><span class="toc-number">1.2.5.</span> <span class="toc-text">参数选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C"><span class="toc-number">1.2.6.</span> <span class="toc-text">结果</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%B6%E5%8C%96%E5%AD%A6%E5%8A%BF%E6%9C%89%E9%99%90%E6%B8%A9-3"><span class="toc-number">1.2.6.1.</span> <span class="toc-text">零化学势有限温</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-number">1.2.6.1.1.</span> <span class="toc-text">分析</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%B6%E6%B8%A9%E6%9C%89%E9%99%90%E5%8C%96%E5%AD%A6%E5%8A%BF-3"><span class="toc-number">1.2.6.2.</span> <span class="toc-text">零温有限化学势</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E6%9E%90-1"><span class="toc-number">1.2.6.2.1.</span> <span class="toc-text">分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E8%AE%A8%E8%AE%BA"><span class="toc-number">1.2.7.</span> <span class="toc-text">结果讨论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#C%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-number">1.2.7.1.</span> <span class="toc-text">C的影响</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E9%80%89%E6%8B%A9-1"><span class="toc-number">1.2.7.1.1.</span> <span class="toc-text">参数选择</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C-1"><span class="toc-number">1.2.7.1.2.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E6%9E%90-2"><span class="toc-number">1.2.7.1.3.</span> <span class="toc-text">分析</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%81%94%E7%B3%BB%E4%B8%89%E7%BB%B4%E7%A1%AC%E6%88%AA%E6%96%AD%E5%92%8C%E7%83%AD%E6%A0%B8%E6%AD%A3%E8%A7%84%E5%8C%96"><span class="toc-number">1.2.7.2.</span> <span class="toc-text">联系三维硬截断和热核正规化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E"><span class="toc-number">1.2.7.2.1.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E9%80%89%E6%8B%A9-2"><span class="toc-number">1.2.7.2.2.</span> <span class="toc-text">参数选择</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C-2"><span class="toc-number">1.2.7.2.3.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E6%9E%90-3"><span class="toc-number">1.2.7.2.4.</span> <span class="toc-text">分析</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E5%BD%B1%E5%93%8D"><span class="toc-number">1.2.7.3.</span> <span class="toc-text">参数影响</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.7.3.1.</span> <span class="toc-text">三维硬截断</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link"><span class="toc-number">1.2.7.3.1.1.</span> <span class="toc-text">结果</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.7.3.2.</span> <span class="toc-text">热核正规化</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link"><span class="toc-number">1.2.7.3.2.1.</span> <span class="toc-text">参数选择</span></a></li><li class="toc-item toc-level-6"><a class="toc-link"><span class="toc-number">1.2.7.3.2.2.</span> <span class="toc-text">结果</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        论文记录-有限温有限化学势QCD-2 理论部分主要工作
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">LiZnB</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-09-15T12:33:35.000Z" class="dt-published" itemprop="datePublished">2025-09-15</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        
+            <a href="/categories/01-%E7%89%A9%E7%90%86%E4%BB%A3%E7%A0%81%E8%AE%B0%E5%BD%95/QCD-Phase-Diagram/index.html">01-物理代码记录/QCD-Phase-Diagram</a>
+            
+        
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="第一部分-主要工作记录–理论"><a href="#第一部分-主要工作记录–理论" class="headerlink" title="第一部分: 主要工作记录–理论"></a>第一部分: 主要工作记录–理论</h1><h2 id="主要目标"><a href="#主要目标" class="headerlink" title="主要目标"></a>主要目标</h2><p>将CI应用到有限温有限势中</p>
+<h2 id="理论部分梳理"><a href="#理论部分梳理" class="headerlink" title="理论部分梳理"></a>理论部分梳理</h2><h3 id="有限温有限势DSE"><a href="#有限温有限势DSE" class="headerlink" title="有限温有限势DSE"></a>有限温有限势DSE</h3><p>首先是有限-$(T,\mu)$ 中, 夸克传播子形式:<br>$S^{-1}(\vec{p},\widetilde{\omega} _n)&#x3D;i\vec{\gamma}\cdot \vec{p}A(\vec{p},\widetilde{\omega} _n)+i\gamma _4\widetilde{\omega} _nC(\vec{p},\widetilde{\omega} _n)+B(\vec{p},\widetilde{\omega} _n)$<br>其中, $\widetilde{\omega} _n&#x3D;\omega _n+i\mu&#x3D;(2n+1)\pi T+i\mu$.<br>注意到复标量函数: $F&#x3D;A,B,C$ 满足:<a href="/images/QCD/Robert1999.pdf" target="_blank">参考论文</a><br><span id="eq1"></span><br>$F(\vec{p},\widetilde{\omega} _n)^*&#x3D;F(\vec{p},\widetilde{\omega} _{-n-1})\tag{1}$<br><span style="color: #ff0000ff;">注: 有些论文中还会考虑函数D, 但是在大部分情况下D&#x3D;0, 我们这里不考虑D.</span></p>
+<p>考虑CI相互作用: $<br>g^2D _{\mu\nu}&#x3D;\delta _{\mu\nu}\frac{4\pi\alpha _{IR}}{m _G^2}$; 以及裸顶点近似: $<br>\Gamma _\nu^a(\vec{p},\widetilde{\omega} _n,\vec{q},\widetilde{\omega} _l;T,\mu)&#x3D;\frac{\lambda^a}{2}\gamma _\nu$<br>代入有限-$(T,\mu)$ DSE:<br>$$S^{-1}(\vec{p},\widetilde{\omega} _n)&#x3D;i\vec{\gamma}\cdot \vec{p}+i\gamma _4\widetilde{\omega} _n+m<br>        +\int _{\ l,q}g^2D _{\mu\nu}(\vec{p}-\vec{q},\Omega _{nl};T,\mu)\gamma _\mu\frac{\lambda^a}{2} S(\vec{q},\widetilde{\omega} _l)\Gamma _\nu^a(\vec{p},\widetilde{\omega} _n,\vec{q},\widetilde{\omega} _l;T,\mu)$$<br>其中, $<br>\int _{\ l,q}:&#x3D;T\sum _{l&#x3D;-\infty}^{\infty}\int _{-\infty}^\infty \frac{d^3q}{(2\pi)^3}$</p>
+<p>经过求迹运算, 得到标量函数的方程:</p>
+<p>$A(\vec{p},\widetilde{\omega} _n)&#x3D;1$<br>$\widetilde{\omega} _nC(\vec{p},\widetilde{\omega} _n)&#x3D;\widetilde{\omega} _n+\frac{32\pi}{3}\frac{\alpha _{IR}}{m _G^2}\int _{\ l,q}\frac{\widetilde{\omega} _lC(\vec{q},\widetilde{\omega} _l)}{\vec{q}^2+\widetilde{\omega} _l^2C^2(\vec{q},\widetilde{\omega} _l)+B^2(\vec{q},\widetilde{\omega} _l)}$<br>$B(\vec{p},\widetilde{\omega} _n)&#x3D;m+\frac{64\pi}{3}\frac{\alpha _{IR}}{m _G^2}\int _{\ l,q}\frac{B(\vec{q},\widetilde{\omega} _l)}{\vec{q}^2+\widetilde{\omega} _l^2C^2(\vec{q},\widetilde{\omega} _l)+B^2(\vec{q},\widetilde{\omega} _l)}$</p>
+<p>通过积分的性质(算是CI的性质), 得到以下方程:<br>$B(\vec{p},\widetilde{\omega} _n)\equiv  R _B$<br>$\widetilde{\omega} _n(C(\vec{p},\widetilde{\omega} _n)-1)\equiv  -i R _C$<br>注意由于<a href="#eq1">式(1)</a>, 这里的$R _B$和$R_C$都是实常数.</p>
+<p>那么对标量函数的方程可以转化为两个常数满足的方程:<br><span id="eq2"></span><br>$<br>\begin{align}<br>&amp;R _C &#x3D; \frac{8}{3\pi}\frac{\alpha _{IR}}{m _G^2}\int _{\ l,s} s^{\frac{1}{2}}\frac{ i\widetilde{\omega} _l’}{s+\widetilde{\omega} _l’^2+ R _B^2}\<br>&amp;R _B &#x3D; m+\frac{16}{3\pi}\frac{\alpha _{IR}}{m _G^2}\int _{\ l,s} s^{\frac{1}{2}}\frac{ R _B}{s+\widetilde{\omega} _l’^2+ R _B^2}<br>\end{align}<br>\tag{2}<br>$<br>其中, $\mu’&#x3D;\mu-R _C$, $\widetilde{\omega} _l’&#x3D;\omega _l+i\mu’$, $s&#x3D;\vec{q}^2$ 并且 $\int _{\ l,s}:&#x3D;T\sum _{l&#x3D;-\infty}^{\infty}\int _0^\infty ds$.<br><del>这些奇怪记号就纯粹是为了化简公式, 要不实在公式蛮长的.</del></p>
+<p>上式经过化简还有另外一种写法:<br><span id="eq3"></span><br>$\begin{align}<br>  &amp;R_C&#x3D;\frac{4}{3\pi}\frac{\alpha_{IR}}{m_G^2}\int_{s} s^{\frac{1}{2}}[n_+-n_-]\<br>  &amp;R_B&#x3D;m+\frac{8}{3\pi}\frac{\alpha_{IR}}{m_G^2}\int_{s} \frac{R_Bs^{\frac{1}{2}}}{E_{s,R_B}}[n_++n_-]<br>\end{align}<br>\tag{3}<br>$<br>其中粒子的能量 $E _{s,R _B}&#x3D;\sqrt{s+R _B^2}$, 并且有:</p>
+<p>$$n _+&#x3D;T\sum _{l&#x3D;-\infty}^{\infty}\frac{1}{E _{s,R _B}-i\widetilde{\omega} _l’}&#x3D;T\sum _{l&#x3D;-\infty}^{\infty}\frac{E _{s,R _B}+\mu’}{(E _{s,R _B}+\mu’)^2+\omega _l^2}&#x3D;\frac{1}{2}-\frac{1}{1+e^{\frac{1}{T}(E _{s,R _B}+\mu’)}}&#x3D;\frac{1}{2}-n _F(E _{s,R _B}+\mu’)$$</p>
+<p>$$n _-&#x3D;T\sum _{l&#x3D;-\infty}^{\infty}\frac{1}{E _{s,R _B}+i\widetilde{\omega} _l’}&#x3D;T\sum _{l&#x3D;-\infty}^{\infty}\frac{E _{s,R _B}-\mu’}{(E _{s,R _B}-\mu’)^2+\omega _l^2}&#x3D;\frac{1}{2}-\frac{1}{1+e^{\frac{1}{T}(E _{s,R _B}-\mu’)}}&#x3D;\frac{1}{2}-n _F(E _{s,R _B}-\mu’)$$<br>这里的$n _F\in (0,1)$有物理意义:</p>
+<ul>
+<li>$n _F(E _{s,R _B}+\mu’)&#x3D;\frac{1}{1+e^{\frac{1}{T}(E _{s,R _B}+\mu’)}}$: 能量为$E _{s,R _B}$的准粒子模式在有限温度, 有限化学势下的占据数;</li>
+<li>$n _F(E _{s,R _B}-\mu’)&#x3D;\frac{1}{1+e^{\frac{1}{T}(E _{s,R _B}-\mu’)}}$: 能量为$E _{s,R _B}$的反粒子模式在有限温度, 有限化学势下的占据数.</li>
+</ul>
+<p>这里的$R _B$和$R _C$具有物理意义:</p>
+<ul>
+<li>夸克凝聚密度(标量密度): $\langle\bar{\psi}\psi\rangle<br> &#x3D;- N _C\int _{\ l,q}tr _DS(\vec{q},\widetilde{\omega} _l)<br> &#x3D;- N _C\frac{3}{16\pi}\frac{m _G^2}{\alpha _{IR}}( R _B-m) $</li>
+<li>净粒子数密度(向量密度): $\langle \psi^\dagger \psi\rangle&#x3D;\langle \bar{\psi}\gamma _4\psi\rangle<br> &#x3D;- N _C\int _{\ l,q}tr _D\gamma _4S(\vec{q},\widetilde{\omega} _l)<br> &#x3D;N _C\frac{3}{8\pi}\frac{m _G^2}{\alpha _{IR}} R _C$</li>
+</ul>
+<p><span style="color: #ff0000ff;">注: 刚做课题的时候<del>甚至一段时间</del>, 我们一直认为有限化学势和有限温中的情况一样$C&#x3D;A&#x3D;1$. 直到后来仔细推导了DSE,然后查找了从古到今的很多论文, 在蛛丝马迹中终于确认了$C\neq 1$的事实, 并在后面的研究中逐渐加深了对C函数的理解.</span></p>
+<h4 id="物理意义"><a href="#物理意义" class="headerlink" title="物理意义"></a>物理意义</h4><ul>
+<li><p>Matsubara求和可以分成来自真空零点能&#x2F;Dirac sea(1或0.5)和热&#x2F;介质占据数($n _F$)两部分.</p>
+</li>
+<li><p>质量方程自然包含真空贡献(生成动力质量的主力 —- 自发破缺部分)减去被热&#x2F;密度填充的部分(已被占据态（粒子或反粒子）对凝聚&#x2F;质量的屏蔽).</p>
+</li>
+<li><p>净粒子数密度方程自然包含夸克数密度减去反夸克数密度.</p>
+</li>
+<li><p>从公式中我们可以看到, 化学势中出现了移频 $\mu’&#x3D;\mu-R _C$, 这一项来源于向量自能:<br>费米子逆传播子一般形式: $S^{-1}(\vec{p},\widetilde{\omega} _n)&#x3D;i\vec{\gamma}\cdot \vec{p}+i\gamma _4\omega _n+\gamma _4\mu+\Sigma(\vec{p},\widetilde{\omega} _n)$<br>将自能按照Dirac结构展开包括标量常数部分($R_B$)和与$\gamma _4$相乘的向量常数部分($\gamma _4R _C$),<br>并入传播子,有: $i\gamma _4\omega _n+\gamma _4\mu+\gamma _4R _C&#x3D;i\gamma _4(\omega_l+i(\mu-R_C))&#x3D;i\gamma _4(\omega_l+i\mu’)$ 出现频移.</p>
+</li>
+<li><p>物理直观上说: $R_C$源自相互作用导致的粒子密度&#x2F;流(或Hartree类型的时向自能), 它会”抵消”原始的化学势$\mu$, 可以理解为相互作用产生的有效化学势修正(在NJL模型中, 有时被称为”重正化的化学势”).</p>
+</li>
+<li><p>向量自能$R_C$表现为对化学势的抑制(而不是增强), 数学层面解释:<br>考虑一个NJL类型的向量相互作用通道: $\mathcal{L} _V&#x3D;-G_V(\bar\psi\gamma _\mu\psi)^2$<br>取Hartree平均场近似: $\mathcal{L} _V^{MF}&#x3D;-2G_V\langle \psi^\dagger \psi\rangle \psi^\dagger \psi+ const$<br>因此这个项的系数是负号: $\bar\psi\gamma _4(\mu-2G_Vn)\psi$<br>于是定义有效化学势: $\mu’&#x3D;\mu-2G_Vn$<br>所以减去不是人为规定，而是由相互作用项的负号决定的.</p>
+</li>
+<li><p>向量自能$R_C$表现为对化学势的抑制(而不是增强), 物理直观层面解释:<br>化学势的物理意义: 系统在给定条件下(T, V固定)增加一个粒子所需要的额外能量(<del>凭空”创造”一个粒子的能量, 会涉及静质量,相互作用等</del>是指在热力学平衡条件下, 把系统的粒子数从$N$变成$N+1$所需的额外能量)<br>夸克间的向量相互作用是斥力: 它表示夸克之间的时向流密度$\psi^\dagger \psi$的相互作用. 当密度n增加时, 粒子之间的斥力增强.<br>在平均场下, 这个斥力被等效为”有效化学势减少”, 意思是: 系统为了继续增加密度, 需要更大的外部化学势来克服内部斥力.<br>类比: 外化学势$\mu$可以类比为”泵入粒子的驱动力”; 向量自能$R _C\varpropto n$就是”内部反压力”; 二者差值$\mu’&#x3D;\mu-R _C$才是有效驱动力.</p>
+</li>
+</ul>
+<h3 id="对于C函数的处理"><a href="#对于C函数的处理" class="headerlink" title="对于C函数的处理"></a>对于C函数的处理</h3><p>虽然CI是不可重正模型, 但是对于$R_C$函数, 公式为:<br>$R_C&#x3D;\frac{4}{3\pi}\frac{\alpha_{IR}}{m_G^2}\int_{s} s^{\frac{1}{2}}[n_+-n_-]$<br>并且, 由于$n_+$和$n_-$是相减的关系, 相减之后将真空能减掉了, 因此最后积分得到的结果是有限的, 那么我们就不需要对其进行正规化处理.<br><span style="color: #ff0000ff;">注: 之前没有发现$R_C$是有限的, 仍然对其做正规化之后, 结果很怪; 不做正规化, 结果要好很多. </span></p>
+<h4 id="零化学势有限温"><a href="#零化学势有限温" class="headerlink" title="零化学势有限温"></a>零化学势有限温</h4><p>为了故事讲述完整性, 还是从零化学势有限温中开始讲起.<br>在这里可以确定, $R _C&#x3D;0$, $n _+&#x3D;n _-$是一个解.<br>这时候表示: 温度升高导致体系多出热激发的夸克-反夸克对, 导致净粒子数不会增加.</p>
+<h4 id="零温有限化学势"><a href="#零温有限化学势" class="headerlink" title="零温有限化学势"></a>零温有限化学势</h4><p>零温有限密是另一种相对好处理的情况. 因为这个时候$T\rightarrow 0$, Matsubara频率$\omega_l$变得连续, 也就是$\omega_l\rightarrow p_0$. 并且Matsubara频率求和变成了一个实轴上的积分:<br><span id="eq4"></span><br>$$<br>\lim_{T\rightarrow 0}T\sum_{l&#x3D;-\infty}^{\infty}f(\omega_l)&#x3D;\frac{1}{2\pi}\int_{-\infty}^{\infty}dp_0 f(p_0)<br>\tag{4}$$</p>
+<p>这样,对于<a href="#eq3">式(3)</a>的$R _C$方程, 改写为:<br>$$<br>R _C&#x3D;\frac{4}{3\pi}\frac{\alpha _{IR}}{m _G^2}\int _{0}^{\max\{0,\mu’^2-R _B^2\} }s^{\frac{1}{2}}ds$$<br>积分之后, 得到:<br>当$\mu’&lt;R _B$时, $R _C&#x3D;0$<br>当$\mu’&gt;R _B$时, $R _C&#x3D;    \frac{8}{9\pi}\frac{\alpha _{IR}}{m _G^2}(\mu’^2-R _B^2)^{\frac{3}{2}}$</p>
+<p>那么计算得到净夸克密度:<br>当$\mu’&lt;R _B$时, $\langle q^\dagger q\rangle&#x3D;0$<br>当$\mu’&gt;R _B$时, $\langle q^\dagger q\rangle&#x3D;N_C\frac{(\mu’^2-R_B^2)^{\frac{3}{2}}}{3\pi^2}$</p>
+<p>这个结果十分符合自由费米子理论预测,<a href="/images/QCD/nargue.pdf" target="_blank">参考文献</a>.<br><span style="color: #ff0000ff;">注: 只有一点不同, 我这里是$\mu’$. 如前所说, 来源于自能修正. </span></p>
+<h4 id="有限温有限化学势"><a href="#有限温有限化学势" class="headerlink" title="有限温有限化学势"></a>有限温有限化学势</h4><p>同样可以彻底积掉积分, 思路为: 先将$n _F$级数展开, 然后对级数积掉积分.<br>最后得到结果:<br>$$R _C&#x3D;\frac{16}{3\pi}\frac{\alpha _{IR}}{m _G^2}R _B^2T\sum _{k&#x3D;1}^{+\infty}(-1)^{k+1}\frac{\sinh(\frac{k\mu’}{T})}{k}K _2(\frac{kR _B}{T})$$<br>对应净夸克密度:<br>$$\langle \psi^\dagger \psi\rangle<br>        &#x3D;N _CR _B^2\frac{2T}{\pi^2}\sum _{k&#x3D;1}^{+\infty}(-1)^{k+1}\frac{\sinh(\frac{k\mu’}{T})}{k}K _2(\frac{kR _B}{T})$$<br>其中$K _2$是第二类修正贝塞尔函数. 没有办法进一步进行化简了, 但是级数是收敛的.</p>
+<h3 id="对于B函数的处理"><a href="#对于B函数的处理" class="headerlink" title="对于B函数的处理"></a>对于B函数的处理</h3><p>$R_B$中存在真空自能贡献, 因此积分发散, 必须要做相应的正规化才能得到最后的结果. 定义合适的正规化的过程也是定义模型的过程.</p>
+<h4 id="正规化方案"><a href="#正规化方案" class="headerlink" title="正规化方案"></a>正规化方案</h4><p>这是一大重头戏: 因为CI也是不可重正化模型, 因此结果很可能依赖于各种各样的正规化方案. 实际上, 大部分的时间都花在了尝试正规化方案上.</p>
+<p>其中做过的几乎所有尝试, 由于过于冗长, 故单独开一章post, 放于<a href="/2025/09/16/QCD3/">附录A</a>.<br>感兴趣品尝科研的蜿蜒曲折, 欢迎阅读.</p>
+<p>最后, 选择一种正规化方案如下:<br><span id="eq5"></span><br>$$\frac{1}{\mathcal{T}}\rightarrow\frac{1}{\mathcal{T}}\times e^{-Sign(\Re _\mathcal{T})x\mathcal{T}}|^{\tau _{uv}^2} _{x&#x3D;\tau _{ir}^2}<br>\tag{5}$$<br>其中$\Re _\mathcal{T}$代表$\mathcal{T}$的实部.</p>
+<h4 id="零化学势有限温-1"><a href="#零化学势有限温-1" class="headerlink" title="零化学势有限温"></a>零化学势有限温</h4><p>为了故事讲述完整性, 还是从零化学势有限温中开始讲起.<br>这种正规化方案可以回退有限温的情况, 并且结果和之前的工作是一致的.</p>
+<p>这时, $\mathcal{T}&#x3D;s+\omega _l^2+ R _B^2&gt;0$, 当然$\Re _\mathcal{T}&gt;0$.</p>
+<p>化简之后$R _B$的方程为:<br>$$<br>R _B&#x3D;m+\frac{8}{3\sqrt{\pi}}\frac{\alpha _{IR}}{m _G^2}T\int _{\tau _{uv}^2}^{\tau _{ir}^2} \frac{R _Be^{-\tau R _B^2}}{\tau^{\frac{3}{2}}}\theta _2(e^{-4\pi^2T^2\tau}) d\tau<br>$$<br>其中$\theta _2$是第二类Jacobi theta函数.</p>
+<p><span style="color: #ff0000ff;">注: 这里和之前的结果完全一致.</span></p>
+<h4 id="零温有限化学势-1"><a href="#零温有限化学势-1" class="headerlink" title="零温有限化学势"></a>零温有限化学势</h4><p>同样由于<a href="#eq4">式(4)</a>, Matsubara求和变成了实轴上的积分.</p>
+<p>这样可以写出$R _B$的方程:<br>$$R _B&#x3D;m+\frac{8}{3\pi^2}\frac{\alpha _{IR}}{m _G^2}\int _0^\infty ds\int _{-\infty}^\infty dp _0\frac{ R _Bs^{\frac{1}{2}}}{s+p _0’^2+ R _B^2} e^{-Sign(s+R _B^2+p _0^2-\mu’^2)x[s+p _0’^2+ R _B^2]}|^{\tau _{uv}^2} _{x&#x3D;\tau _{ir}^2}$$<br>其中$p _0’ &#x3D; p _0 + i\mu’$.</p>
+<h4 id="有限温有限化学势-1"><a href="#有限温有限化学势-1" class="headerlink" title="有限温有限化学势"></a>有限温有限化学势</h4><p>有限温有限化学势是最复杂的, 而且由于零温有限化学势计算结果不佳, 实际上没有必要再算有限温有限化学势情况. 但是同样为了故事完整性, 这里列一下公式:<br>$$<br>R _B&#x3D;m+\frac{16}{3\pi}\frac{\alpha _{IR}}{m _G^2}\int _{\ l,s}s^{\frac{1}{2}}\frac{ R _B}{s+\widetilde{\omega} _l’^2+ R _B^2} \times e^{-Sign(s+R _B^2+\omega _l^2-\mu’^2)x[s+\widetilde{\omega} _l’^2+ R _B^2]}|^{\tau _{uv}^2} _{x&#x3D;\tau _{ir}^2}<br>$$</p>
+<p>如果要计算的话, 代码实现相对复杂. 因为这里有级数求和, 需要人为一级一级求下去, 并在合适的地方做截断. <del>不过我也写过, 并且比较成功. 附在后面代码部分吧.</del></p>
+<h3 id="对比硬截断正规化"><a href="#对比硬截断正规化" class="headerlink" title="对比硬截断正规化"></a>对比硬截断正规化</h3><p>为了丰富文章内容, 我们还比对了硬截断的结果.<del>实际上是计算结果不好, 便于后面对结果的讨论.</del></p>
+<p>硬截断这里一般指三维硬截断, 也就是对空间动量积分做硬截断, 但是频率求和不做截断.(当然也有四维硬截断, 但结果不好.)</p>
+<h4 id="零化学势有限温-2"><a href="#零化学势有限温-2" class="headerlink" title="零化学势有限温"></a>零化学势有限温</h4><p>$R _B$的方程为:<br>$$<br>R _B&#x3D;m+\frac{8}{3\pi}\frac{\alpha _{IR}}{m _G^2}\int _{0}^{\Lambda _{3D}^2} \frac{R _Bs^{\frac{1}{2}}}{E _{s,R _B}}\tanh(\frac{E _{s,R _B}}{2T})ds<br>$$</p>
+<h4 id="零温有限化学势-2"><a href="#零温有限化学势-2" class="headerlink" title="零温有限化学势"></a>零温有限化学势</h4><p>$R _B$的方程为:<br>$$<br>R _B&#x3D;m+\frac{8}{3\pi}\frac{\alpha _{IR}}{m _G^2}\int _{\max{0,\mu’^2-R _B^2}}^{\Lambda _{3D}^2}\frac{R _Bs^{\frac{1}{2}}}{\sqrt{s+R _B^2}}ds<br>$$</p>
+<h4 id="与NJL模型的关系"><a href="#与NJL模型的关系" class="headerlink" title="与NJL模型的关系"></a>与NJL模型的关系</h4><p>由于物理图像接近NJL模型, 因此CI的三维硬截断公式与NJL的三维硬截断公式几乎一样. 比对如下:</p>
+<div style="display: flex; gap: 24px;">
+  <div style="flex: 1;">
+    <!-- 左栏内容 -->
+    <h5>NJL(<a href="https://arxiv.org/pdf/1508.00651" target="_blank" style="text-decoration: underline;">参考文献</a>)</h5>
+    <p>
+      主要公式:<br>
+      $$M=m-2G\sigma _1$$
+      $$\mu _r=\mu-\frac{g}{N _C}\sigma _2$$
+      其中<br>
+      $$\sigma _1=-M\frac{N _CN _f}{\pi^2}\int _{0}^{\Lambda}\frac{p^2}{E}[1-m-n]dp$$
+      $$\sigma _2=\frac{N _CN _f}{\pi^2}\int _{0}^{\Lambda}p^2[n-m]dp$$
+      $$n=\frac{1}{1+e^{\frac{E-\mu _r}{T}}}$$
+      $$m=\frac{1}{1+e^{\frac{E+\mu _r}{T}}}$$
+      $$G=\frac{4N _C+1}{4N _C}g$$
+      化简后<br>
+      $$M=m+G\frac{N _CN _f}{\pi^2}M\int _{0}^{\Lambda ^2}\frac{s^{\frac{1}{2}}}{E}[1-n-m]ds$$
+      $$\mu _r=\mu-g\frac{N _f}{2\pi^2}\int _{0}^{\Lambda ^2}s^{\frac{1}{2}}[n-m]ds$$
+    </p>
+  </div>
+  <div style="flex: 1;">
+    <!-- 右栏内容 -->
+    <h5>CI</h5>
+    <p>
+      主要公式(按照NJL格式写):<br>
+      $$R _B=m+\frac{8}{3\pi}\frac{\alpha _{IR}}{m _G^2}R _B\int _{0}^{\Lambda _{3D}^2} \frac{s^{\frac{1}{2}}}{E}[1-m-n]ds$$
+      $$R _C=\frac{4}{3\pi}\frac{\alpha_{IR}}{m _G^2}\int_{0}^{\Lambda _{3D}^2} s^{\frac{1}{2}}[n-m]ds$$
+      $$\mu'=\mu-R _C$$
+      化简后<br>
+      $$R _B=m+\frac{8}{3\pi}\frac{\alpha _{IR}}{m _G^2}\int _{0}^{\Lambda _{3D}^2} \frac{R _Bs^{\frac{1}{2}}}{E}[1-n_+-n_-]ds$$
+      $$\mu'=\mu-\frac{4}{3\pi}\frac{\alpha_{IR}}{m _G^2}\int_{0}^{\Lambda _{3D}^2} s^{\frac{1}{2}}[n-m]ds$$
+    </p>
+  </div>
+</div>
+我们可以看到NJL和CI是很相像的, 但如果NJL和CI完全保持相同, 就需要有如下两个参数的对应关系:
+$$G=\frac{8\pi}{3N _CN _f}\frac{\alpha _{IR}}{m _G^2}$$
+$$g=\frac{8\pi}{3N _f}\frac{\alpha _{IR}}{m _G^2}$$
+
+<p>取$N _C&#x3D;3$, $N _f&#x3D;2$, 则<br>$$G&#x3D;\frac{4\pi}{9}\frac{\alpha _{IR}}{m _G^2}$$<br>$$g&#x3D;\frac{4\pi}{3}\frac{\alpha _{IR}}{m _G^2}$$<br>也就是$G&#x3D;\frac{1}{N _C}g$, 但是在NJL中, $G&#x3D;\frac{4N _C+1}{4N _C}g$, 显然参数对不上.<br>因此这也是CI唯一与NJL模型对不上的地方.</p>
+<p>为了尽量往NJL模型上靠, 我们选择的CI参数按照$G&#x3D;\frac{4\pi}{9}\frac{\alpha _{IR}}{m _G^2}$, 并按$g\approx 5\ GeV^{-2}$取定.<br>紫外截断较参考论文中偏大, 也是因为两种模型不完全一样, CI中$R _C$的抑制影响明显偏大所致.</p>
+<h3 id="参数选择"><a href="#参数选择" class="headerlink" title="参数选择"></a>参数选择</h3><table>
+<tr>
+    <th style="text-align:center;">模型参数</th>
+    <th style="text-align:center;">三维硬截断</th>
+    <th style="text-align:center;">热核正规化 </th>
+</tr>
+<tr>
+    <td style="text-align:center;"> m (GeV)</td>
+    <td style="text-align:center;">0.005</td>
+    <td style="text-align:center;">0.007</td>
+</tr>
+<tr>
+    <td style="text-align:center;">$\alpha _{IR}$</td>
+    <td style="text-align:center;">$0.802\pi$</td>
+    <td style="text-align:center;">$0.73\pi$</td>
+</tr>
+<tr>
+    <td style="text-align:center;">$m _G$ (GeV)</td>
+    <td style="text-align:center;">0.8</td>
+    <td style="text-align:center;">0.8</td>
+</tr>
+<tr>
+    <td style="text-align:center;">$\Lambda _{uv}$/$\Lambda _{3D}$ (GeV)</td>
+    <td style="text-align:center;">0.65</td>
+    <td style="text-align:center;">0.905</td>
+</tr>
+<tr>
+    <td style="text-align:center;">$\Lambda _{ir}$ (GeV)</td>
+    <td style="text-align:center;">-</td>
+    <td style="text-align:center;">0.24</td>
+</tr>
+</table>
+
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><h4 id="零化学势有限温-3"><a href="#零化学势有限温-3" class="headerlink" title="零化学势有限温"></a>零化学势有限温</h4><div style="display: flex; justify-content: center; align-items: flex-start; gap: 24px;">
+  <div style="flex: 1; text-align: center;">
+    <img src="/images/QCD/Results/H-T.png" alt="H-T" style="width:100%;display:block;margin:0 auto;"/>
+    <p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;">三维硬截断</p>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <img src="/images/QCD/Results/P-T.png" alt="P-T" style="width:100%;display:block;margin:0 auto;"/>
+    <p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;">热核正规化</p>
+  </div>
+</div>
+
+<h5 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h5><ul>
+<li>在手征极限 $m&#x3D;0$ GeV 的情况下, 总是存在一个手征对称恢复的解, 即 $R _B&#x3D;0$, 通常称为Wigner解. 另一种解是手征对称破缺的Nambu解, 即 $R _B\neq 0$. 在 Nambu 解与Wigner解的多解区域中, 使热力学势密度最小的解是更稳定的.</li>
+<li>手征极限下, 低温时Nambu解更稳定, 并在高温下通过二级相变转变为Wigner解.</li>
+<li>当超出手征极限$m\neq 0$时, 仅存在Nambu解, 相变变为crossover, 这一点和流行的理解相同.</li>
+<li>此外, 两种正则化方案给出的结果非常相似.</li>
+<li>零温下三维硬截断结果略微偏大, 这是由于参数选择略微偏大所致.</li>
+</ul>
+<h4 id="零温有限化学势-3"><a href="#零温有限化学势-3" class="headerlink" title="零温有限化学势"></a>零温有限化学势</h4><div id="results"></div>
+<div style="display: flex; justify-content: center; align-items: flex-start; gap: 24px;">
+  <div style="flex: 1; text-align: center;">
+    <img src="/images/QCD/Results/H-μ-0.png" alt="H-μ-0" style="width:100%;display:block;margin:0 auto;"/>
+    <p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;">三维硬截断; $m=0$ GeV</p>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <img src="/images/QCD/Results/P-μ-0.png" alt="P-μ-0" style="width:100%;display:block;margin:0 auto;"/>
+    <p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;">热核正规化; $m=0$ GeV</p>
+  </div>
+</div>
+<br>
+<div style="display: flex; justify-content: center; align-items: flex-start; gap: 24px;">
+  <div style="flex: 1; text-align: center;">
+    <img src="/images/QCD/Results/H-μ.png" alt="H-μ" style="width:100%;display:block;margin:0 auto;"/>
+    <p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;">三维硬截断; $m=0.005$ GeV</p>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <img src="/images/QCD/Results/P-μ.png" alt="P-μ" style="width:100%;display:block;margin:0 auto;"/>
+    <p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;">热核正规化; $m=0.007$ GeV</p>
+  </div>
+</div>
+
+<h5 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h5><ul>
+<li>在手征极限 $m&#x3D;0$ GeV的情况下, 同样总是存在一个手征对称恢复的解, 即$R _B&#x3D;0$, 通常称为Wigner解. 另一种解是手征对称破缺的Nambu解, 即$R _B\neq 0$. 在Nambu解与Wigner解的多解区域中, 使热力学势密度最小的解是更稳定的.</li>
+<li>对于三维硬截断, 无论是否超越手征极限, 总存在一级相变(断点). 实际上, 两个断点之间还可以再求出一个解, 但是该解热力学势密度最大, 因此是不稳定的, 不予显示. <del>也写过代码专门求这个解, 放在代码部分介绍.</del></li>
+<li>三维硬截断的结果相对更符合流行的理解, 也就是存在一级相变, 可以找到CEP点.</li>
+<li>对于热核正规化方案, 我们可以看到其模式与有限温的情况几乎相同, 相变为同样为crossover. 也就是说, 在该方案下, 化学势$\mu$的效应与温度$T$的效应非常相似. </li>
+<li>那么如果不存在一级相变, 也就不存在CEP点, 所以也没有必要再计算有限温有限化学势的结果了.</li>
+<li>在低$\mu$时, $R _C&#x3D;0$是一个很好的近似, 这也是文献中常用的处理. 而当$\mu$较大时, $R _C$的效应不可忽略. 而CI中$R _C$的效应明显, 这也间接导致了crossover的发生.</li>
+<li>化学势的影响只有超过某个值后才显现出来.</li>
+<li>相比温度, 在有限化学势中, 不同正则化方案手征相变的影响相对敏感. </li>
+<li><del>本身我们也希望热核正规化也出现一级相变, 那本项目就可以顺利结束. 可惜在做了很多尝试之后结果依然是crossover, 就只能这么说了. 但是确实流行的理解不代表正确的理解. 只是目前QCD本身也不是很流行了.</del></li>
+</ul>
+<h3 id="结果讨论"><a href="#结果讨论" class="headerlink" title="结果讨论"></a>结果讨论</h3><p><del>这一部分是实在算不出来一级相变后, 考虑到还要发文章, 因此强行进行了一些讨论去解释为什么结果和主流计算不符及一些小发现, 站在理论的角度可能意义不大.</del></p>
+<h4 id="C的影响"><a href="#C的影响" class="headerlink" title="C的影响"></a>C的影响</h4><p>为了展示$R _C$的影响, 将$R _C$强行设为0(C&#x3D;1), 也就是忽略向量自能的影响, 重新计算三维硬截断时零温有限化学势的结果.</p>
+<h5 id="参数选择-1"><a href="#参数选择-1" class="headerlink" title="参数选择"></a>参数选择</h5><table>
+<tr>
+    <th style="text-align:center;">参数</th>
+    <th style="text-align:center;">三维硬截断</th>
+</tr>
+<tr>
+    <td style="text-align:center;"> m (GeV)</td>
+    <td style="text-align:center;">0.005</td>
+</tr>
+<tr>
+    <td style="text-align:center;">$\alpha _{IR}$</td>
+    <td style="text-align:center;">$0.73\pi$</td>
+</tr>
+<tr>
+    <td style="text-align:center;">$m _G$ (GeV)</td>
+    <td style="text-align:center;">0.8</td>
+</tr>
+<tr>
+    <td style="text-align:center;">$\Lambda _{3D}$ (GeV)</td>
+    <td style="text-align:center;">0.65</td>
+</tr>
+</table>
+
+<h5 id="结果-1"><a href="#结果-1" class="headerlink" title="结果"></a>结果</h5><p>经过运算得到结果:</p>
+<img src="/images/QCD/Results/B-μ-C.png" alt="C-influence" style="width:80%;display:block;margin:0 auto;"/>
+<p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;">$R _C$效应对比图</p>
+
+<h5 id="分析-2"><a href="#分析-2" class="headerlink" title="分析"></a>分析</h5><ul>
+<li>在这组参数下, 如果考虑$R _C$的效应, 则不存在一级相变; 如果忽略$R _C$的效应, 反而出现一级相变.</li>
+<li>这说明$R _C$的效应是抑制一级相变的发生.</li>
+<li>按照之前的解释, 没有$R _C$的情况下, 当化学势超过某一个值, 系统突然找到一个”代价”更低的解(这个解粒子数也更多), 于是出现突变.</li>
+<li>有了$R _C$的效应, 随着粒子数增加, $R _C$也增加, 等效于增加一股”排斥压强”, 抵消了化学势带来的驱动力, 原本的突变就被削弱, 相变变得缓和甚至消失.</li>
+</ul>
+<h4 id="联系三维硬截断和热核正规化"><a href="#联系三维硬截断和热核正规化" class="headerlink" title="联系三维硬截断和热核正规化"></a>联系三维硬截断和热核正规化</h4><p>搞这个式子是为了解释为什么热核正规化没有出现一级相变.<br><del>但是其实我觉得是没必要的, 因为两种正规化方法就定义了两种模型, 有不同的物理含义. 那么他们结果不一致也很正常. 揉到一起就相当于把两种理论揉到一起, 两种物理图像揉到一起, 怪怪的. 而且解释的也比较随意, 说服性不强.</del></p>
+<p>用一个式子将两种正规化方法联系起来:</p>
+<p>$$R _B&#x3D;m+\frac{8}{3\pi^2}\frac{\alpha _{ir}}{m _G^2}\int _{0}^{\Lambda _{H}^2} ds\int _{-\infty}^{\infty} dp _0\frac{ R _Bs^{\frac{1}{2}}}{s+p _0’^2+ R _B^2} e^{-Sign(s+R _B^2+p _0^2-\mu’^2)x[s+p _0’^2+ R _B^2]}|^{\tau _{uv}^2} _{x},$$</p>
+<h5 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h5><ul>
+<li>其中$e^{-x\mathcal{T}}|^{\tau _{uv}^2} _{x}&#x3D;e^{-\tau _{uv}^2\mathcal{T}}$. $\tau _{ir}$由于太大了, 对结果完全没有任何影响, 故直接扔掉.</li>
+<li>注意式子中和热核正规化的另一个<del>几乎可以说唯一</del>区别是动量积分给了一个上限.</li>
+<li>那么可以考虑如果$\Lambda _{uv}$取热核正规化值, $\Lambda _{H}$取正无穷, 那么结果会退回热核正规化的结果.</li>
+<li>如果$\Lambda _{H}$取三维硬截断值, $\Lambda _{uv}$取无穷大, 那么结果会退回三维硬截断的结果.</li>
+<li>这样就可以将两种正规化方法联系起来, 给出下面的图.</li>
+</ul>
+<h5 id="参数选择-2"><a href="#参数选择-2" class="headerlink" title="参数选择"></a>参数选择</h5><table>
+<tr>
+    <th style="text-align:center;">情况组</th>
+    <th style="text-align:center;">$\Lambda _{uv}$ (GeV)</th>
+    <th style="text-align:center;">$\Lambda _{H}$ (GeV)</th>
+</tr>
+<tr>
+    <td style="text-align:center;"> A</td>
+    <td style="text-align:center;">0.905</td>
+    <td style="text-align:center;">10</td>
+</tr>
+<tr>
+    <td style="text-align:center;">B</td>
+    <td style="text-align:center;">1.5</td>
+    <td style="text-align:center;">0.786</td>
+</tr>
+<tr>
+    <td style="text-align:center;">C</td>
+    <td style="text-align:center;">3</td>
+    <td style="text-align:center;">0.67</td>
+</tr>
+<tr>
+    <td style="text-align:center;">D</td>
+    <td style="text-align:center;">5</td>
+    <td style="text-align:center;">0.64</td>
+</tr>
+<tr>
+    <td style="text-align:center;">E</td>
+    <td style="text-align:center;">10</td>
+    <td style="text-align:center;">0.62</td>
+</tr>
+<tr>
+    <td style="text-align:center;">F</td>
+    <td style="text-align:center;">100</td>
+    <td style="text-align:center;">0.605</td>
+</tr>
+</table>
+
+<h5 id="结果-2"><a href="#结果-2" class="headerlink" title="结果"></a>结果</h5><br>
+<img src="/images/QCD/Results/Connect.png" alt="Connect" style="width:80%;display:block;margin:0 auto;"/>
+<p style="font-size: 12px; color: #888; font-style: italic; margin: 20px 0 20px 0; text-align: center;">联系两种情况图</p>
+
+<h5 id="分析-3"><a href="#分析-3" class="headerlink" title="分析"></a>分析</h5><ul>
+<li>我给的说法是: 调节$\Lambda _{uv}$, $\Lambda _{H}$的数值使零温零化学势的点数值不变.</li>
+<li>我们可以看到确实从crossover越来越过渡到一级相变.</li>
+<li>这给了一种说法: 热核正规化实际在动量空间中的截断是一种指数截断(较平缓), 三维硬截断在动量空间中的截断是阶梯函数形式(斜率无限大). 因此截断的衰减形式会影响相变的形式: 越尖锐的截断越容易出现一级相变.</li>
+</ul>
+<p><span style="color: #ff0000ff;">注: 这里所说的平缓和尖锐指的是随动量增大, 贡献衰减的”阶数”. <del>我没有仔细研究过数学中是如何严格描述的,</del> 类似于$\mathcal{O}(1)$, $\mathcal{O}(x^n)$这种. 我这里指的是改变$e^{x^n}$里面的n. 单纯改变$\Lambda _{uv}$也会影响截断衰减的速率, 但是如后面所示, 对相变没有影响.</span></p>
+<h4 id="参数影响"><a href="#参数影响" class="headerlink" title="参数影响"></a>参数影响</h4><p>最后讨论了两种不同正规化方案下参数的影响.对比如下:</p>
+<div style="display: flex; gap: 24px;">
+  <div style="flex: 1;">
+    <!-- 左栏内容 -->
+    <h5>三维硬截断</h5>
+    <p>
+      *  调节$\Lambda _{3D}$, $\alpha _{IR}$, 相变会发生变化.<br>
+      *  (无论是否考虑$R _C$的效应)相变都会依赖于$\frac{\alpha _{IR}\Lambda _{3D}}{m _G^2}$. 这个量是一个量纲为[1]的参数, 暂不知道其物理意义.<br>
+      *  我们经过大量计算发现, 当$m=0.007$ GeV时, 只要$\frac{\alpha _{IR}\Lambda _{3D}}{m _G^2}$超过约1.6, 则会出现一级相变; 若低于1.6, 则会出现crossover.(考虑$R _C$的影响, 不考虑的话数值会相应降低)<br>
+      *  当然我们是在流质量m非常小的情况下计算的, 所以暂时估测该量可能依赖于m或者是常数.<br>
+      *  曾经做过一些尝试, 希望能解析的求出来这个量与什么相关, 但是只求到一半. 这里不详细讲求法了, 因为很有可能是错误想法, 操作也不高明, 大概就是求导. <a href="/images/QCD/3D-analyse.pdf" target="_blank" style="text-decoration: underline;">解析推导PDF</a> 及 <a href="/images/QCD/3D-analyse.tex" target="_blank" style="text-decoration: underline;">PDF对应TEX源码</a>
+      <h6>结果</h6>
+<img src="/images/QCD/Results/Const0.png" alt="Connect" style="width:100%;display:block;margin:0 auto;"/>
+<p style="font-size: 12px; color: #888; font-style: italic; margin: 20px 0 20px 0; text-align: center;">$R _C=0$</p>
+<img src="/images/QCD/Results/Const.png" alt="Connect" style="width:100%;display:block;margin:0 auto;"/>
+<p style="font-size: 12px; color: #888; font-style: italic; margin: 20px 0 20px 0; text-align: center;">$R _C\neq 0$; 绿框代表实际参数一般选取范围</p>
+<span style="color: #ff0000ff;">注: 这两张图注意纵坐标没有除$m _G^2$</span>
+    </p>
+  </div>
+  <div style="flex: 1;">
+    <!-- 右栏内容 -->
+    <h5>热核正规化</h5>
+    <p>
+      *  无论调节什么参数都调不出一级相变.计算如下:<br>
+<h6>参数选择</h6>
+<table>
+<tr>
+    <th style="text-align:center;">情况组</th>
+    <th style="text-align:center;">$\Lambda _{uv}$ (GeV)</th>
+    <th style="text-align:center;">$\alpha _{IR}$ </th>
+        <th style="text-align:center;">$m$ (GeV)</th>
+</tr>
+<tr>
+    <td style="text-align:center;"> A</td>
+    <td style="text-align:center;">0.905</td>
+    <td style="text-align:center;">$0.93\pi$</td>
+        <td style="text-align:center;">0.007</td>
+</tr>
+<tr>
+    <td style="text-align:center;"> B</td>
+    <td style="text-align:center;">0.905</td>
+    <td style="text-align:center;">$1.15\pi$</td>
+        <td style="text-align:center;">0.007</td>
+</tr>
+<tr>
+    <td style="text-align:center;"> C</td>
+    <td style="text-align:center;">1</td>
+    <td style="text-align:center;">$0.93\pi$</td>
+        <td style="text-align:center;">0.007</td>
+</tr>
+<tr>
+    <td style="text-align:center;"> D</td>
+    <td style="text-align:center;">0.905</td>
+    <td style="text-align:center;">$0.93\pi$</td>
+        <td style="text-align:center;">0.02</td>
+</tr>
+</table>
+<h6>结果</h6>
+<img src="/images/QCD/Results/P-P.png" alt="Connect" style="width:80%;display:block;margin:0 auto;"/>
+<p style="font-size: 12px; color: #888; font-style: italic; margin: 20px 0 20px 0; text-align: center;">变动所有参数结果对比</p>
+<span style="color: #ff0000ff;">注: 所以最神奇的是改变$\Lambda _{uv}$(控制截断衰减速率)竟然对结果也没影响; 如果有疑问看起来$\Lambda _{uv}$的值0.9和1没差太多, 是因为图里只画了1, 再大就超出图范围了, 我这里横坐标只显示到0.6 GeV. 同理, 取小也不行, 都尝试过. 定量数值对紫外截断比较敏感, 所以动大了意义就不大了.</span>
+    </p>
+  </div>
+</div>
+
+<p>以上就是理论部分一直到最后的主线内容.</p>
+
+  </div>
+  <!-- 许可协议标签，浅绿色背景，文章后另起一行 -->
+  <div class="post-copyright" style="background: #e6f9e6; color: #228B22; padding: 18px 28px; border-radius: 20px; margin-top: 32px;">
+    <p style="margin:0;">本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" style="color:#228B22;text-decoration:underline;">CC BY-NC-SA 4.0</a> 许可协议发布.<br>
+    作者: LiZnB, 文章链接: <a href="https://blog.liznb.org/2025/09/15/QCD2/" style="color:#228B22;text-decoration:underline;">
+      https://blog.liznb.org/2025/09/15/QCD2/
+    </a></p>
+    <p style="margin:0;">如果本文给你带来了帮助或让你觉得有趣, 可以考虑<a href="https://blog.liznb.org/about/#donate" target="_blank" style="color:#228B22;text-decoration:underline;">赞助我</a>¬_¬</p>
+  </div>
+</article>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a href="/categories/">Categories</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E4%B8%BB%E8%A6%81%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%E2%80%93%E7%90%86%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">第一部分: 主要工作记录–理论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E7%9B%AE%E6%A0%87"><span class="toc-number">1.1.</span> <span class="toc-text">主要目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E9%83%A8%E5%88%86%E6%A2%B3%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">理论部分梳理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E9%99%90%E6%B8%A9%E6%9C%89%E9%99%90%E5%8A%BFDSE"><span class="toc-number">1.2.1.</span> <span class="toc-text">有限温有限势DSE</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E6%84%8F%E4%B9%89"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">物理意义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E4%BA%8EC%E5%87%BD%E6%95%B0%E7%9A%84%E5%A4%84%E7%90%86"><span class="toc-number">1.2.2.</span> <span class="toc-text">对于C函数的处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%B6%E5%8C%96%E5%AD%A6%E5%8A%BF%E6%9C%89%E9%99%90%E6%B8%A9"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">零化学势有限温</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%B6%E6%B8%A9%E6%9C%89%E9%99%90%E5%8C%96%E5%AD%A6%E5%8A%BF"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">零温有限化学势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E9%99%90%E6%B8%A9%E6%9C%89%E9%99%90%E5%8C%96%E5%AD%A6%E5%8A%BF"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">有限温有限化学势</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E4%BA%8EB%E5%87%BD%E6%95%B0%E7%9A%84%E5%A4%84%E7%90%86"><span class="toc-number">1.2.3.</span> <span class="toc-text">对于B函数的处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E8%A7%84%E5%8C%96%E6%96%B9%E6%A1%88"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">正规化方案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%B6%E5%8C%96%E5%AD%A6%E5%8A%BF%E6%9C%89%E9%99%90%E6%B8%A9-1"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">零化学势有限温</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%B6%E6%B8%A9%E6%9C%89%E9%99%90%E5%8C%96%E5%AD%A6%E5%8A%BF-1"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">零温有限化学势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E9%99%90%E6%B8%A9%E6%9C%89%E9%99%90%E5%8C%96%E5%AD%A6%E5%8A%BF-1"><span class="toc-number">1.2.3.4.</span> <span class="toc-text">有限温有限化学势</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94%E7%A1%AC%E6%88%AA%E6%96%AD%E6%AD%A3%E8%A7%84%E5%8C%96"><span class="toc-number">1.2.4.</span> <span class="toc-text">对比硬截断正规化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%B6%E5%8C%96%E5%AD%A6%E5%8A%BF%E6%9C%89%E9%99%90%E6%B8%A9-2"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">零化学势有限温</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%B6%E6%B8%A9%E6%9C%89%E9%99%90%E5%8C%96%E5%AD%A6%E5%8A%BF-2"><span class="toc-number">1.2.4.2.</span> <span class="toc-text">零温有限化学势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8ENJL%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">1.2.4.3.</span> <span class="toc-text">与NJL模型的关系</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.4.3.1.</span> <span class="toc-text">NJL(参考文献)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.4.3.2.</span> <span class="toc-text">CI</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E9%80%89%E6%8B%A9"><span class="toc-number">1.2.5.</span> <span class="toc-text">参数选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C"><span class="toc-number">1.2.6.</span> <span class="toc-text">结果</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%B6%E5%8C%96%E5%AD%A6%E5%8A%BF%E6%9C%89%E9%99%90%E6%B8%A9-3"><span class="toc-number">1.2.6.1.</span> <span class="toc-text">零化学势有限温</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-number">1.2.6.1.1.</span> <span class="toc-text">分析</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%B6%E6%B8%A9%E6%9C%89%E9%99%90%E5%8C%96%E5%AD%A6%E5%8A%BF-3"><span class="toc-number">1.2.6.2.</span> <span class="toc-text">零温有限化学势</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E6%9E%90-1"><span class="toc-number">1.2.6.2.1.</span> <span class="toc-text">分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E8%AE%A8%E8%AE%BA"><span class="toc-number">1.2.7.</span> <span class="toc-text">结果讨论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#C%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-number">1.2.7.1.</span> <span class="toc-text">C的影响</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E9%80%89%E6%8B%A9-1"><span class="toc-number">1.2.7.1.1.</span> <span class="toc-text">参数选择</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C-1"><span class="toc-number">1.2.7.1.2.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E6%9E%90-2"><span class="toc-number">1.2.7.1.3.</span> <span class="toc-text">分析</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%81%94%E7%B3%BB%E4%B8%89%E7%BB%B4%E7%A1%AC%E6%88%AA%E6%96%AD%E5%92%8C%E7%83%AD%E6%A0%B8%E6%AD%A3%E8%A7%84%E5%8C%96"><span class="toc-number">1.2.7.2.</span> <span class="toc-text">联系三维硬截断和热核正规化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E"><span class="toc-number">1.2.7.2.1.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E9%80%89%E6%8B%A9-2"><span class="toc-number">1.2.7.2.2.</span> <span class="toc-text">参数选择</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C-2"><span class="toc-number">1.2.7.2.3.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E6%9E%90-3"><span class="toc-number">1.2.7.2.4.</span> <span class="toc-text">分析</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E5%BD%B1%E5%93%8D"><span class="toc-number">1.2.7.3.</span> <span class="toc-text">参数影响</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.7.3.1.</span> <span class="toc-text">三维硬截断</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link"><span class="toc-number">1.2.7.3.1.1.</span> <span class="toc-text">结果</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.7.3.2.</span> <span class="toc-text">热核正规化</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link"><span class="toc-number">1.2.7.3.2.1.</span> <span class="toc-text">参数选择</span></a></li><li class="toc-item toc-level-6"><a class="toc-link"><span class="toc-number">1.2.7.3.2.2.</span> <span class="toc-text">结果</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.liznb.org/2025/09/15/QCD2/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.liznb.org/2025/09/15/QCD2/&text=论文记录-有限温有限化学势QCD-2 理论部分主要工作"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.liznb.org/2025/09/15/QCD2/&title=论文记录-有限温有限化学势QCD-2 理论部分主要工作"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.liznb.org/2025/09/15/QCD2/&is_video=false&description=论文记录-有限温有限化学势QCD-2 理论部分主要工作"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=论文记录-有限温有限化学势QCD-2 理论部分主要工作&body=Check out this article: https://blog.liznb.org/2025/09/15/QCD2/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.liznb.org/2025/09/15/QCD2/&title=论文记录-有限温有限化学势QCD-2 理论部分主要工作"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.liznb.org/2025/09/15/QCD2/&title=论文记录-有限温有限化学势QCD-2 理论部分主要工作"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.liznb.org/2025/09/15/QCD2/&title=论文记录-有限温有限化学势QCD-2 理论部分主要工作"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.liznb.org/2025/09/15/QCD2/&title=论文记录-有限温有限化学势QCD-2 理论部分主要工作"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.liznb.org/2025/09/15/QCD2/&name=论文记录-有限温有限化学势QCD-2 理论部分主要工作&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.liznb.org/2025/09/15/QCD2/&t=论文记录-有限温有限化学势QCD-2 理论部分主要工作"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2025
+    LiZnB
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Categories</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

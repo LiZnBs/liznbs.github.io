@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="第五部分:GMOR关系验证理论部分梳理理论部分参照衰变常数论文式(31), 只有一个公式十分简单, 这也是整个项目的最后验证. 代码逻辑梳理流水线作业当然是可以选择的一种方式, 因为需要频繁改变参数重新运算, 于是直接利用Windows的bat文件控制文件流复制及工作文件夹移动. 参数输入菜单模块如下 12cd %~dp0wolframscript -file .\Input.wls 而菜单的内容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="QC Model 学习-7 GMOR关系">
+<meta property="og:url" content="https://blog.liznb.org/2025/10/10/QC-Model7/index.html">
+<meta property="og:site_name" content="LiZnB&#39;s Blog">
+<meta property="og:description" content="第五部分:GMOR关系验证理论部分梳理理论部分参照衰变常数论文式(31), 只有一个公式十分简单, 这也是整个项目的最后验证. 代码逻辑梳理流水线作业当然是可以选择的一种方式, 因为需要频繁改变参数重新运算, 于是直接利用Windows的bat文件控制文件流复制及工作文件夹移动. 参数输入菜单模块如下 12cd %~dp0wolframscript -file .\Input.wls 而菜单的内容">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-10-09T17:57:14.000Z">
+<meta property="article:modified_time" content="2025-10-09T18:21:56.604Z">
+<meta property="article:author" content="LiZnB">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>QC Model 学习-7 GMOR关系</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+  <!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//blog.liznb.org/matomo/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Categories</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2025/10/10/English2/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2025/10/07/English0/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.liznb.org/2025/10/10/QC-Model7/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.liznb.org/2025/10/10/QC-Model7/&text=QC Model 学习-7 GMOR关系"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.liznb.org/2025/10/10/QC-Model7/&title=QC Model 学习-7 GMOR关系"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.liznb.org/2025/10/10/QC-Model7/&is_video=false&description=QC Model 学习-7 GMOR关系"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=QC Model 学习-7 GMOR关系&body=Check out this article: https://blog.liznb.org/2025/10/10/QC-Model7/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.liznb.org/2025/10/10/QC-Model7/&title=QC Model 学习-7 GMOR关系"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.liznb.org/2025/10/10/QC-Model7/&title=QC Model 学习-7 GMOR关系"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.liznb.org/2025/10/10/QC-Model7/&title=QC Model 学习-7 GMOR关系"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.liznb.org/2025/10/10/QC-Model7/&title=QC Model 学习-7 GMOR关系"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.liznb.org/2025/10/10/QC-Model7/&name=QC Model 学习-7 GMOR关系&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.liznb.org/2025/10/10/QC-Model7/&t=QC Model 学习-7 GMOR关系"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86-GMOR%E5%85%B3%E7%B3%BB%E9%AA%8C%E8%AF%81"><span class="toc-number">1.</span> <span class="toc-text">第五部分:GMOR关系验证</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E9%83%A8%E5%88%86%E6%A2%B3%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">理论部分梳理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%80%BB%E8%BE%91%E6%A2%B3%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">代码逻辑梳理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%BE%93%E5%85%A5%E8%8F%9C%E5%8D%95"><span class="toc-number">1.2.1.</span> <span class="toc-text">参数输入菜单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6DSE-BSE%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="toc-number">1.2.2.</span> <span class="toc-text">控制DSE-BSE工作流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E9%87%8D%E6%96%B0%E8%BF%90%E8%A1%8C%E5%A4%8DDSE"><span class="toc-number">1.2.3.</span> <span class="toc-text">判断是否重新运行复DSE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%BF%9D%E5%AD%98%E7%BB%93%E6%9E%9C"><span class="toc-number">1.2.4.</span> <span class="toc-text">判断是否保存结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E9%80%89%E5%8F%96"><span class="toc-number">1.2.5.</span> <span class="toc-text">参数选取</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E6%B1%87%E6%8A%A5PDF"><span class="toc-number">1.3.</span> <span class="toc-text">最终汇报PDF</span></a></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        QC Model 学习-7 GMOR关系
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">LiZnB</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-10-09T17:57:14.000Z" class="dt-published" itemprop="datePublished">2025-10-10</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        
+            <a href="/categories/01-%E7%89%A9%E7%90%86%E4%BB%A3%E7%A0%81%E8%AE%B0%E5%BD%95/QC-Model/index.html">01-物理代码记录/QC-Model</a>
+            
+        
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="第五部分-GMOR关系验证"><a href="#第五部分-GMOR关系验证" class="headerlink" title="第五部分:GMOR关系验证"></a>第五部分:GMOR关系验证</h1><h2 id="理论部分梳理"><a href="#理论部分梳理" class="headerlink" title="理论部分梳理"></a>理论部分梳理</h2><p>理论部分参照<a href="/images/QC-Model/decay-constant.pdf" target="_blank">衰变常数论文</a>式(31), 只有一个公式十分简单, 这也是整个项目的最后验证.</p>
+<h2 id="代码逻辑梳理"><a href="#代码逻辑梳理" class="headerlink" title="代码逻辑梳理"></a>代码逻辑梳理</h2><p>流水线作业当然是可以选择的一种方式, 因为需要频繁改变参数重新运算, 于是直接利用Windows的bat文件控制文件流复制及工作文件夹移动.</p>
+<h3 id="参数输入菜单"><a href="#参数输入菜单" class="headerlink" title="参数输入菜单"></a>参数输入菜单</h3><p>模块如下</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> %~dp0</span><br><span class="line">wolframscript -file .\Input.wls</span><br></pre></td></tr></table></figure>
+<p>而菜单的内容放在wls文件中, 也就是一些Which命令构成菜单, 比较易懂这里不详细展示.</p>
+<h3 id="控制DSE-BSE工作流"><a href="#控制DSE-BSE工作流" class="headerlink" title="控制DSE-BSE工作流"></a>控制DSE-BSE工作流</h3><p>模块如下</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> .\Real-DSE</span><br><span class="line"><span class="comment">REM compile wolfram files: Real-DSE</span></span><br><span class="line">wolframscript -file .\Main.wls</span><br><span class="line"><span class="built_in">move</span> /Y .\Result\Real-dse_A-B_p2_All-results.wls ..\Complex-DSE\Parameters\Real-dse_A-B_p2_All-results.wls</span><br><span class="line"><span class="built_in">move</span> /Y .\Result\Real-dse_Z2-Z4.wls ..\Complex-DSE\Parameters\Real-dse_Z2-Z4.wls</span><br><span class="line"><span class="built_in">copy</span> /Y .\Result\Z2.txt ..\BSE\DSE_Results\Z2.txt</span><br><span class="line"><span class="built_in">cd</span> ..\Complex-DSE</span><br><span class="line"><span class="comment">REM compile wolfram files: Complex-DSE</span></span><br><span class="line">wolframscript -file .\Main.wls</span><br><span class="line"><span class="built_in">move</span> /Y .\Result\Complex-dse_A.txt ..\BSE\DSE_Results\Complex-dse_A.txt</span><br><span class="line"><span class="built_in">move</span> /Y .\Result\Complex-dse_B.txt ..\BSE\DSE_Results\Complex-dse_B.txt</span><br><span class="line"><span class="built_in">cd</span> ..\BSE</span><br><span class="line"><span class="comment">REM compile fortran files: BSE</span></span><br><span class="line">.\Main</span><br></pre></td></tr></table></figure>
+
+<h3 id="判断是否重新运行复DSE"><a href="#判断是否重新运行复DSE" class="headerlink" title="判断是否重新运行复DSE"></a>判断是否重新运行复DSE</h3><p>模块如下</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">goto</span> main</span><br><span class="line"><span class="comment">REM excecuting normailzation</span></span><br><span class="line">:normroutine</span><br><span class="line"><span class="comment">    REM for excecuting normalization</span></span><br><span class="line">    <span class="built_in">cd</span> .\normalization</span><br><span class="line">    <span class="built_in">copy</span> /Y ..\BSE\DSE_Results\Complex-dse_A.txt .\DSE-BSE_results\Complex-dse_A1.txt</span><br><span class="line">    <span class="built_in">copy</span> /Y ..\BSE\DSE_Results\Complex-dse_B.txt .\DSE-BSE_results\Complex-dse_B1.txt</span><br><span class="line">    <span class="built_in">copy</span> /Y ..\BSE\Complex-f.txt .\DSE-BSE_results\Complex-f.txt</span><br><span class="line"><span class="comment">    REM excecuting adjacent M complex-DSE</span></span><br><span class="line">    <span class="built_in">cd</span> ..\Complex-DSE</span><br><span class="line">    wolframscript -file .\decay-constant-api.wls</span><br><span class="line">    wolframscript -file .\Main.wls</span><br><span class="line">    <span class="built_in">move</span> /Y .\Result\Complex-dse_A.txt ..\normalization\DSE-BSE_results\Complex-dse_A2.txt</span><br><span class="line">    <span class="built_in">move</span> /Y .\Result\Complex-dse_B.txt ..\normalization\DSE-BSE_results\Complex-dse_B2.txt</span><br><span class="line"><span class="comment">    REM continue excecuting normalization</span></span><br><span class="line">    <span class="built_in">cd</span> ..\normalization</span><br><span class="line">    .\bin\main.exe</span><br><span class="line">    <span class="built_in">copy</span> /Y .\results\normalized-f.txt ..\lapton-decay-constant\DSE-BSE_results\normalized-f.txt</span><br><span class="line">    <span class="built_in">copy</span> /Y .\results\normalized-f.txt ..\rp_vacuum-quark-condensate\DSE-BSE_results\normalized-f.txt</span><br><span class="line">    <span class="built_in">set</span> flag=<span class="number">1</span></span><br><span class="line"><span class="keyword">goto</span> :eof</span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">REM main</span></span><br><span class="line">:main</span><br><span class="line">...</span><br><span class="line"><span class="comment">REM flag use to check whether have calculated normalization or not </span></span><br><span class="line"><span class="built_in">cd</span> %~dp0</span><br><span class="line"><span class="built_in">set</span> flag=<span class="number">0</span> </span><br><span class="line">:input1</span><br><span class="line"><span class="built_in">set</span> /p userinput1=Whether <span class="keyword">do</span> you want to calculate the lapton decay constant? (y/n):</span><br><span class="line"><span class="keyword">if</span> &quot;<span class="variable">%userinput1%</span>&quot;==&quot;y&quot; (</span><br><span class="line">    <span class="keyword">call</span> :normroutine</span><br><span class="line"><span class="comment">    REM continue excecuting decay constant</span></span><br><span class="line">    ...</span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line">    <span class="keyword">if</span> &quot;<span class="variable">%userinput1%</span>&quot;==&quot;n&quot; (</span><br><span class="line"><span class="comment">        REM do nothing</span></span><br><span class="line">    ) <span class="keyword">else</span> (</span><br><span class="line">    <span class="built_in">echo</span> Invalid input</span><br><span class="line">    <span class="keyword">goto</span> input1</span><br><span class="line">    )</span><br><span class="line">)</span><br><span class="line"><span class="built_in">cd</span> %~dp0</span><br><span class="line">:input2</span><br><span class="line"><span class="built_in">set</span> /p userinput2=Whether <span class="keyword">do</span> you want to calculate the rp (vacuum-quark-condensate)? (y/n):</span><br><span class="line"><span class="keyword">if</span> &quot;<span class="variable">%userinput2%</span>&quot;==&quot;y&quot; (</span><br><span class="line">    <span class="keyword">if</span> <span class="variable">%flag%</span>==<span class="number">0</span> (</span><br><span class="line">        <span class="keyword">call</span> :normroutine</span><br><span class="line">    )</span><br><span class="line"><span class="comment">    REM excecuting rp</span></span><br><span class="line">    ...</span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line">    <span class="keyword">if</span> &quot;<span class="variable">%userinput2%</span>&quot;==&quot;n&quot; (</span><br><span class="line"><span class="comment">        REM do nothing</span></span><br><span class="line">    ) <span class="keyword">else</span> (</span><br><span class="line">    <span class="built_in">echo</span> Invalid input</span><br><span class="line">    <span class="keyword">goto</span> input2</span><br><span class="line">    )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id="判断是否保存结果"><a href="#判断是否保存结果" class="headerlink" title="判断是否保存结果"></a>判断是否保存结果</h3><p>模块如下</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">:input3</span><br><span class="line"><span class="comment">REM exit</span></span><br><span class="line"><span class="built_in">cd</span> %~dp0</span><br><span class="line"><span class="built_in">set</span> /p userinput3=Ready to <span class="keyword">exit</span>, whether <span class="keyword">do</span> you want to save the files? (y/n):</span><br><span class="line"><span class="keyword">if</span> &quot;<span class="variable">%userinput3%</span>&quot;==&quot;y&quot; (</span><br><span class="line"><span class="comment">    REM move the files</span></span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line">    <span class="keyword">if</span> &quot;<span class="variable">%userinput3%</span>&quot;==&quot;n&quot; (</span><br><span class="line">        <span class="built_in">del</span> /Q /F .\Real-DSE\Result\*</span><br><span class="line">        <span class="built_in">del</span> /Q /F .\Complex-DSE\Result\*</span><br><span class="line">        <span class="built_in">del</span> /Q /F .\Complex-DSE\Parameters\*</span><br><span class="line">        <span class="built_in">del</span> /Q /F .\BSE\DSE_Results\*</span><br><span class="line">        <span class="built_in">del</span> /Q .\BSE\Complex-f.txt</span><br><span class="line">        <span class="built_in">del</span> /Q /F .\normalization\DSE-BSE_results\*</span><br><span class="line">        <span class="built_in">del</span> /Q /F .\normalization\results\*</span><br><span class="line">        <span class="built_in">del</span> /Q /F .\lapton-decay-constant\DSE-BSE_results\*</span><br><span class="line">        <span class="built_in">del</span> /Q /F .\rp_vacuum-quark-condensate\DSE-BSE_results\*</span><br><span class="line">        <span class="built_in">del</span> /Q /F .\parameters\*</span><br><span class="line">    ) <span class="keyword">else</span> (</span><br><span class="line">    <span class="built_in">echo</span> Invalid input</span><br><span class="line">    <span class="keyword">goto</span> input3</span><br><span class="line">    )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id="参数选取"><a href="#参数选取" class="headerlink" title="参数选取"></a>参数选取</h3><p>这里参数问题不大, 只供参考</p>
+<table>
+  <tr>
+    <th style="text-align:center;">流质量m</th>
+  </tr>
+  <tr>
+    <td style="text-align:center;">0.002</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">0.0034</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">0.004</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">0.005</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">0.006</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">0.007</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">0.008</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">0.01</td>
+  </tr>
+</table>
+
+<h2 id="最终汇报PDF"><a href="#最终汇报PDF" class="headerlink" title="最终汇报PDF"></a>最终汇报PDF</h2><p>我最终跟老罗汇报详见<a href="/images/QC-Model/QC-Module.pdf" target="_blank">PDF</a>, 有这些信息就差不多可以要课题了. 祝各位顺利!</p>
+
+  </div>
+  <!-- 许可协议标签，浅绿色背景，文章后另起一行 -->
+  <div class="post-copyright" style="background: #e6f9e6; color: #228B22; padding: 18px 28px; border-radius: 20px; margin-top: 32px;">
+    <p style="margin:0;">本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" style="color:#228B22;text-decoration:underline;">CC BY-NC-SA 4.0</a> 许可协议发布.<br>
+    作者: LiZnB, 文章链接: <a href="https://blog.liznb.org/2025/10/10/QC-Model7/" style="color:#228B22;text-decoration:underline;">
+      https://blog.liznb.org/2025/10/10/QC-Model7/
+    </a></p>
+    <p style="margin:0;">如果本文给你带来了帮助或让你觉得有趣, 可以考虑<a href="https://blog.liznb.org/about/#donate" target="_blank" style="color:#228B22;text-decoration:underline;">赞助我</a>¬_¬</p>
+  </div>
+</article>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a href="/categories/">Categories</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86-GMOR%E5%85%B3%E7%B3%BB%E9%AA%8C%E8%AF%81"><span class="toc-number">1.</span> <span class="toc-text">第五部分:GMOR关系验证</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E9%83%A8%E5%88%86%E6%A2%B3%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">理论部分梳理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%80%BB%E8%BE%91%E6%A2%B3%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">代码逻辑梳理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%BE%93%E5%85%A5%E8%8F%9C%E5%8D%95"><span class="toc-number">1.2.1.</span> <span class="toc-text">参数输入菜单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6DSE-BSE%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="toc-number">1.2.2.</span> <span class="toc-text">控制DSE-BSE工作流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E9%87%8D%E6%96%B0%E8%BF%90%E8%A1%8C%E5%A4%8DDSE"><span class="toc-number">1.2.3.</span> <span class="toc-text">判断是否重新运行复DSE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%BF%9D%E5%AD%98%E7%BB%93%E6%9E%9C"><span class="toc-number">1.2.4.</span> <span class="toc-text">判断是否保存结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E9%80%89%E5%8F%96"><span class="toc-number">1.2.5.</span> <span class="toc-text">参数选取</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E6%B1%87%E6%8A%A5PDF"><span class="toc-number">1.3.</span> <span class="toc-text">最终汇报PDF</span></a></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.liznb.org/2025/10/10/QC-Model7/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.liznb.org/2025/10/10/QC-Model7/&text=QC Model 学习-7 GMOR关系"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.liznb.org/2025/10/10/QC-Model7/&title=QC Model 学习-7 GMOR关系"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.liznb.org/2025/10/10/QC-Model7/&is_video=false&description=QC Model 学习-7 GMOR关系"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=QC Model 学习-7 GMOR关系&body=Check out this article: https://blog.liznb.org/2025/10/10/QC-Model7/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.liznb.org/2025/10/10/QC-Model7/&title=QC Model 学习-7 GMOR关系"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.liznb.org/2025/10/10/QC-Model7/&title=QC Model 学习-7 GMOR关系"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.liznb.org/2025/10/10/QC-Model7/&title=QC Model 学习-7 GMOR关系"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.liznb.org/2025/10/10/QC-Model7/&title=QC Model 学习-7 GMOR关系"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.liznb.org/2025/10/10/QC-Model7/&name=QC Model 学习-7 GMOR关系&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.liznb.org/2025/10/10/QC-Model7/&t=QC Model 学习-7 GMOR关系"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2025
+    LiZnB
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Categories</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

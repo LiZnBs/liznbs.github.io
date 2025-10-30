@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="第四部分:BS振幅归一化理论部分梳理如果不进行后面可观测量例如轻子衰变常数以及真空夸克凝聚的计算, 那么就不需要进行这一步归一化, 只求到上一步BSE本征值即可. 但是如果不求可观测量, 将大大降低模型说服力. 在求可观测量之前, 需要做一步对BSE本征矢进行归一化. 理论部分相对简单, 参照姚照千毕业论文式(2-30)及式(2-31), 其中涉及到一阶导数的计算参照李柏林毕业论文公式(2-47)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="QC Model 学习-5 归一化">
+<meta property="og:url" content="https://blog.liznb.org/2025/09/03/QC-Model5/index.html">
+<meta property="og:site_name" content="LiZnB&#39;s Blog">
+<meta property="og:description" content="第四部分:BS振幅归一化理论部分梳理如果不进行后面可观测量例如轻子衰变常数以及真空夸克凝聚的计算, 那么就不需要进行这一步归一化, 只求到上一步BSE本征值即可. 但是如果不求可观测量, 将大大降低模型说服力. 在求可观测量之前, 需要做一步对BSE本征矢进行归一化. 理论部分相对简单, 参照姚照千毕业论文式(2-30)及式(2-31), 其中涉及到一阶导数的计算参照李柏林毕业论文公式(2-47)">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-09-03T11:57:14.000Z">
+<meta property="article:modified_time" content="2025-10-09T17:55:38.584Z">
+<meta property="article:author" content="LiZnB">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>QC Model 学习-5 归一化</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+  <!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//blog.liznb.org/matomo/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Categories</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2025/09/03/QC-Model6/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2025/09/01/202504spain1/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.liznb.org/2025/09/03/QC-Model5/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.liznb.org/2025/09/03/QC-Model5/&text=QC Model 学习-5 归一化"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.liznb.org/2025/09/03/QC-Model5/&title=QC Model 学习-5 归一化"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.liznb.org/2025/09/03/QC-Model5/&is_video=false&description=QC Model 学习-5 归一化"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=QC Model 学习-5 归一化&body=Check out this article: https://blog.liznb.org/2025/09/03/QC-Model5/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.liznb.org/2025/09/03/QC-Model5/&title=QC Model 学习-5 归一化"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.liznb.org/2025/09/03/QC-Model5/&title=QC Model 学习-5 归一化"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.liznb.org/2025/09/03/QC-Model5/&title=QC Model 学习-5 归一化"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.liznb.org/2025/09/03/QC-Model5/&title=QC Model 学习-5 归一化"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.liznb.org/2025/09/03/QC-Model5/&name=QC Model 学习-5 归一化&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.liznb.org/2025/09/03/QC-Model5/&t=QC Model 学习-5 归一化"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-BS%E6%8C%AF%E5%B9%85%E5%BD%92%E4%B8%80%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text">第四部分:BS振幅归一化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E9%83%A8%E5%88%86%E6%A2%B3%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">理论部分梳理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%80%BB%E8%BE%91%E6%A2%B3%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">代码逻辑梳理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.1.</span> <span class="toc-text">编译命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8DDSE%E9%87%8D%E8%BF%90%E8%A1%8C"><span class="toc-number">1.2.2.</span> <span class="toc-text">复DSE重运行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%B9%E8%AE%A1%E7%AE%97"><span class="toc-number">1.2.3.</span> <span class="toc-text">迹计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E9%80%89%E5%8F%96"><span class="toc-number">1.2.4.</span> <span class="toc-text">参数选取</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E6%A3%80%E9%AA%8C"><span class="toc-number">1.3.</span> <span class="toc-text">结果检验</span></a></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        QC Model 学习-5 归一化
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">LiZnB</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-09-03T11:57:14.000Z" class="dt-published" itemprop="datePublished">2025-09-03</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        
+            <a href="/categories/01-%E7%89%A9%E7%90%86%E4%BB%A3%E7%A0%81%E8%AE%B0%E5%BD%95/QC-Model/index.html">01-物理代码记录/QC-Model</a>
+            
+        
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="第四部分-BS振幅归一化"><a href="#第四部分-BS振幅归一化" class="headerlink" title="第四部分:BS振幅归一化"></a>第四部分:BS振幅归一化</h1><h2 id="理论部分梳理"><a href="#理论部分梳理" class="headerlink" title="理论部分梳理"></a>理论部分梳理</h2><p>如果不进行后面可观测量例如轻子衰变常数以及真空夸克凝聚的计算, 那么就不需要进行这一步归一化, 只求到上一步BSE本征值即可. 但是如果不求可观测量, 将大大降低模型说服力. 在求可观测量之前, 需要做一步对BSE本征矢进行归一化.</p>
+<p>理论部分相对简单, 参照<a href="/images/QC-Model/Yao.pdf" target="_blank">姚照千毕业论文</a>式(2-30)及式(2-31), 其中涉及到一阶导数的计算参照<a href="/images/QC-Model/BolinLi.pdf" target="_blank">李柏林毕业论文</a>公式(2-47), 其实就是化微分为差分.</p>
+<h2 id="代码逻辑梳理"><a href="#代码逻辑梳理" class="headerlink" title="代码逻辑梳理"></a>代码逻辑梳理</h2><p>这一部分也同样使用Fortran编写, 并且此时对Fortran语言编写代码已经相对熟练, 所以代码结构相对清晰.</p>
+<h3 id="编译命令"><a href="#编译命令" class="headerlink" title="编译命令"></a>编译命令</h3><p>由于代码结构整理已经相对清晰, 所以为了保证完美的结构, 这里使用Windows的bat文件进行编译和运行.<br><span style="color: #ff0000ff;">注: Linux不同模块之间存在依赖关系, 因此需要从最底层模块开始编译, 存在编译顺序不可打乱.</span></p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">cd</span> %~dp0</span><br><span class="line"><span class="comment">REM set the directories</span></span><br><span class="line"><span class="built_in">set</span> SOURCE_DIR=.\source</span><br><span class="line"><span class="built_in">set</span> BIN_DIR=.\bin</span><br><span class="line"><span class="built_in">set</span> MOD_DIR=.\mod</span><br><span class="line"><span class="built_in">set</span> OBJ_DIR=.\obj</span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">REM Create bin directory if not exist</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">exist</span> bin <span class="built_in">mkdir</span> bin </span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">exist</span> mod <span class="built_in">mkdir</span> mod</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">exist</span> obj <span class="built_in">mkdir</span> obj</span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">REM compile fortran files</span></span><br><span class="line">gfortran -fopenmp -J <span class="variable">%MOD_DIR%</span> -c <span class="variable">%SOURCE_DIR%</span>\parameters.f95 -o <span class="variable">%OBJ_DIR%</span>\parameters.o</span><br><span class="line">gfortran -fopenmp -J <span class="variable">%MOD_DIR%</span> -c <span class="variable">%SOURCE_DIR%</span>\functions.f95 -o <span class="variable">%OBJ_DIR%</span>\functions.o</span><br><span class="line">gfortran -fopenmp -J <span class="variable">%MOD_DIR%</span> -c <span class="variable">%SOURCE_DIR%</span>\main.f95 -o <span class="variable">%OBJ_DIR%</span>\main.o</span><br><span class="line"><span class="comment">REM link the object files</span></span><br><span class="line">gfortran -fopenmp -o <span class="variable">%BIN_DIR%</span>\main <span class="variable">%OBJ_DIR%</span>\parameters.o <span class="variable">%OBJ_DIR%</span>\functions.o <span class="variable">%OBJ_DIR%</span>\main.o</span><br><span class="line"><span class="comment">REM execute the program if the compilation was successful</span></span><br><span class="line"><span class="keyword">if</span> <span class="variable">%ERRORLEVEL%</span> <span class="keyword">EQU</span> <span class="number">0</span> .\bin\main</span><br></pre></td></tr></table></figure>
+<p>只需要命令行运行此文件即可.<br>对应Linux系统的bash脚本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># 可选：通过第一个参数设置 OpenMP 线程数（例如 ./build.sh 4）</span></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$&#123;1:-&#125;</span> != <span class="string">&quot;&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">export</span> OMP_NUM_THREADS=<span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;OMP_NUM_THREADS set to <span class="variable">$OMP_NUM_THREADS</span>&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># locate script dir (so script can be run from anywhere)</span></span><br><span class="line">SCRIPT_DIR=<span class="string">&quot;<span class="subst">$(cd <span class="string">&quot;<span class="subst">$(dirname <span class="string">&quot;<span class="variable">$&#123;BASH_SOURCE[0]&#125;</span>&quot;</span>)</span>&quot;</span> &amp;&amp; pwd)</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># directories (relative to script dir)</span></span><br><span class="line">SOURCE_DIR=<span class="string">&quot;<span class="variable">$SCRIPT_DIR</span>/source&quot;</span></span><br><span class="line">BIN_DIR=<span class="string">&quot;<span class="variable">$SCRIPT_DIR</span>/bin&quot;</span></span><br><span class="line">MOD_DIR=<span class="string">&quot;<span class="variable">$SCRIPT_DIR</span>/mod&quot;</span></span><br><span class="line">OBJ_DIR=<span class="string">&quot;<span class="variable">$SCRIPT_DIR</span>/obj&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># create directories if not exist</span></span><br><span class="line"><span class="built_in">mkdir</span> -p <span class="string">&quot;<span class="variable">$BIN_DIR</span>&quot;</span> <span class="string">&quot;<span class="variable">$MOD_DIR</span>&quot;</span> <span class="string">&quot;<span class="variable">$OBJ_DIR</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># compile objects</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Compiling Fortran sources...&quot;</span></span><br><span class="line">gfortran -fopenmp -J <span class="string">&quot;<span class="variable">$MOD_DIR</span>&quot;</span> -c <span class="string">&quot;<span class="variable">$SOURCE_DIR</span>/parameters.f95&quot;</span> -o <span class="string">&quot;<span class="variable">$OBJ_DIR</span>/parameters.o&quot;</span></span><br><span class="line">gfortran -fopenmp -J <span class="string">&quot;<span class="variable">$MOD_DIR</span>&quot;</span> -c <span class="string">&quot;<span class="variable">$SOURCE_DIR</span>/functions.f95&quot;</span> -o <span class="string">&quot;<span class="variable">$OBJ_DIR</span>/functions.o&quot;</span></span><br><span class="line">gfortran -fopenmp -J <span class="string">&quot;<span class="variable">$MOD_DIR</span>&quot;</span> -c <span class="string">&quot;<span class="variable">$SOURCE_DIR</span>/main.f95&quot;</span> -o <span class="string">&quot;<span class="variable">$OBJ_DIR</span>/main.o&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># link</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Linking...&quot;</span></span><br><span class="line">gfortran -fopenmp -o <span class="string">&quot;<span class="variable">$BIN_DIR</span>/main&quot;</span> \</span><br><span class="line">  <span class="string">&quot;<span class="variable">$OBJ_DIR</span>/parameters.o&quot;</span> <span class="string">&quot;<span class="variable">$OBJ_DIR</span>/functions.o&quot;</span> <span class="string">&quot;<span class="variable">$OBJ_DIR</span>/main.o&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># run if binary exists and is executable</span></span><br><span class="line"><span class="keyword">if</span> [[ -x <span class="string">&quot;<span class="variable">$BIN_DIR</span>/main&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;Execution starting...&quot;</span></span><br><span class="line">  <span class="string">&quot;<span class="variable">$BIN_DIR</span>/main&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<p>这里的bash脚本运行时必须赋予可运行权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x compile.sh</span><br></pre></td></tr></table></figure>
+<p>可以通过环境变量指定线程数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># OpenMP默认线程数</span></span><br><span class="line">./compile.sh</span><br><span class="line"><span class="comment"># 指定4线程</span></span><br><span class="line">./compile.sh 4</span><br></pre></td></tr></table></figure>
+
+<h3 id="复DSE重运行"><a href="#复DSE重运行" class="headerlink" title="复DSE重运行"></a>复DSE重运行</h3><p>由于需要计算M增量之后的BSE， 因此需要改变参数从复DSE中算起, 为了方便, 我使用Windows系统下的bat脚本控制.</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> .\normalization</span><br><span class="line">    <span class="built_in">copy</span> /Y ..\BSE\DSE_Results\Complex-dse_A.txt .\DSE-BSE_results\Complex-dse_A1.txt</span><br><span class="line">    <span class="built_in">copy</span> /Y ..\BSE\DSE_Results\Complex-dse_B.txt .\DSE-BSE_results\Complex-dse_B1.txt</span><br><span class="line">    <span class="built_in">copy</span> /Y ..\BSE\Complex-f.txt .\DSE-BSE_results\Complex-f.txt</span><br><span class="line"><span class="comment">    REM excecuting adjacent M complex-DSE</span></span><br><span class="line">    <span class="built_in">cd</span> ..\Complex-DSE</span><br><span class="line">    wolframscript -file .\decay-constant-api.wls</span><br><span class="line">    wolframscript -file .\Main.wls</span><br><span class="line">    <span class="built_in">move</span> /Y .\Result\Complex-dse_A.txt ..\normalization\DSE-BSE_results\Complex-dse_A2.txt</span><br><span class="line">    <span class="built_in">move</span> /Y .\Result\Complex-dse_B.txt ..\normalization\DSE-BSE_results\Complex-dse_B2.txt</span><br><span class="line"><span class="comment">    REM continue excecuting normalization</span></span><br><span class="line">    <span class="built_in">cd</span> ..\normalization</span><br><span class="line">    .\bin\main.exe</span><br></pre></td></tr></table></figure>
+<p>放在整个流程的菜单中, 当然在初期计算中也可以手动改变参数,移动文件.</p>
+<h3 id="迹计算"><a href="#迹计算" class="headerlink" title="迹计算"></a>迹计算</h3><p>和BSE部分一样, 需要通过FeynCalc化简一坨迹, 这一部分也是检验之前是否掌握Notebook代码的部分, 故细节讲解掠过.(见Notebook里的part1)</p>
+<h3 id="参数选取"><a href="#参数选取" class="headerlink" title="参数选取"></a>参数选取</h3><p>参数选取同前, 差分增量够小即可, 这里给出参考:</p>
+<table>
+  <tr>
+    <th style="text-align:center;">计算参数</th>
+    <th style="text-align:center;"> </th>
+  </tr>
+  <tr>
+    <td style="text-align:center;">差分增量: $\Delta M$</td>
+    <td style="text-align:center;">$0.0001 M$</td>
+  </tr>
+</table>
+
+
+<h2 id="结果检验"><a href="#结果检验" class="headerlink" title="结果检验"></a>结果检验</h2><p>输出归一化后的BSE振幅, 第一项应该大约在</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(8.4488925324923496,8.4488925324923176)</span><br></pre></td></tr></table></figure>
+  </div>
+  <!-- 许可协议标签，浅绿色背景，文章后另起一行 -->
+  <div class="post-copyright" style="background: #e6f9e6; color: #228B22; padding: 18px 28px; border-radius: 20px; margin-top: 32px;">
+    <p style="margin:0;">本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" style="color:#228B22;text-decoration:underline;">CC BY-NC-SA 4.0</a> 许可协议发布.<br>
+    作者: LiZnB, 文章链接: <a href="https://blog.liznb.org/2025/09/03/QC-Model5/" style="color:#228B22;text-decoration:underline;">
+      https://blog.liznb.org/2025/09/03/QC-Model5/
+    </a></p>
+    <p style="margin:0;">如果本文给你带来了帮助或让你觉得有趣, 可以考虑<a href="https://blog.liznb.org/about/#donate" target="_blank" style="color:#228B22;text-decoration:underline;">赞助我</a>¬_¬</p>
+  </div>
+</article>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a href="/categories/">Categories</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-BS%E6%8C%AF%E5%B9%85%E5%BD%92%E4%B8%80%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text">第四部分:BS振幅归一化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E9%83%A8%E5%88%86%E6%A2%B3%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">理论部分梳理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%80%BB%E8%BE%91%E6%A2%B3%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">代码逻辑梳理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.1.</span> <span class="toc-text">编译命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8DDSE%E9%87%8D%E8%BF%90%E8%A1%8C"><span class="toc-number">1.2.2.</span> <span class="toc-text">复DSE重运行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%B9%E8%AE%A1%E7%AE%97"><span class="toc-number">1.2.3.</span> <span class="toc-text">迹计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E9%80%89%E5%8F%96"><span class="toc-number">1.2.4.</span> <span class="toc-text">参数选取</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E6%A3%80%E9%AA%8C"><span class="toc-number">1.3.</span> <span class="toc-text">结果检验</span></a></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.liznb.org/2025/09/03/QC-Model5/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.liznb.org/2025/09/03/QC-Model5/&text=QC Model 学习-5 归一化"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.liznb.org/2025/09/03/QC-Model5/&title=QC Model 学习-5 归一化"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.liznb.org/2025/09/03/QC-Model5/&is_video=false&description=QC Model 学习-5 归一化"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=QC Model 学习-5 归一化&body=Check out this article: https://blog.liznb.org/2025/09/03/QC-Model5/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.liznb.org/2025/09/03/QC-Model5/&title=QC Model 学习-5 归一化"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.liznb.org/2025/09/03/QC-Model5/&title=QC Model 学习-5 归一化"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.liznb.org/2025/09/03/QC-Model5/&title=QC Model 学习-5 归一化"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.liznb.org/2025/09/03/QC-Model5/&title=QC Model 学习-5 归一化"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.liznb.org/2025/09/03/QC-Model5/&name=QC Model 学习-5 归一化&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.liznb.org/2025/09/03/QC-Model5/&t=QC Model 学习-5 归一化"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2025
+    LiZnB
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Categories</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

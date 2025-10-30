@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+% Useful packages
+\usepackage{color}%\textcolor;\color
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{pdfpages}
+\usepackage{float}%图片包
+%create figure in latex
+\usepackage{tikz}
+%\usepackage{cite}
+\usepackage[backend=bibtex]{biblatex}
+%more math symbols
+\usepackage{amssymb}
+%Information to be included in the title page:
+\title{Finite temperature and chemical potential}
+\author{Xin-Peng Li}
+%Start of the document
+\begin{document}
+\maketitle
+Some old method to heat kernel like regularization!
+The content of the details in residue theory is shown below.
+The details of are shown below.
+\begin{equation}\label{equation1s}
+    \begin{split}
+%a+Ib
+    %a>0,b>=0
+        Im\left[s_1\right]&=\left[\left(\mu^2-M^2-\omega_l^2\right)^2+\left(2\omega_l\mu\right)^2\right]^{\frac{1}{4}}\sin\left(\frac{1}{2}\arctan\left(\frac{2\omega_l\mu}{\mu^2-M^2-\omega_l^2}\right)\right)
+        \\&\stackrel{|\sin\frac{\alpha}{2}|=\sqrt{\frac{1-\cos\alpha}{2}}}{=}\left[\left(\mu^2-M^2-\omega_l^2\right)^2+\left(2\omega_l\mu\right)^2\right]^{\frac{1}{4}}\frac{1}{\sqrt{2}}\sqrt{1-\cos\left(\arctan\left(\frac{2\omega_l\mu}{\mu^2-M^2-\omega_l^2}\right)\right)}
+        \\&\stackrel{\cos\left(\arctan x\right)=\frac{1}{\sqrt{1+x^2}}}{=}
+        \left[\left(\mu^2-M^2-\omega_l^2\right)^2+\left(2\omega_l\mu\right)^2\right]^{\frac{1}{4}}\frac{1}{\sqrt{2}}
+        \sqrt{1-\frac{1}{\sqrt{1+\left(\frac{2\omega_l\mu}{\mu^2-M^2-\omega_l^2}\right)^2}}}
+        \\&=\frac{1}{\sqrt{2}}\left\{\left[\left(\mu^2-M^2-\omega_l^2\right)^2+\left(2\omega_l\mu\right)^2\right]^{\frac{1}{2}}-\left(\mu^2-M^2-\omega_l^2\right)\right\}^{\frac{1}{2}},\ When\ \mu^2-M^2-\omega_l^2>0\&\mu\omega_l\geq 0,\\
+%a=0,b>0
+        Im\left[s_1\right]&=\left[\left(\mu^2-M^2-\omega_l^2\right)^2+\left(2\omega_l\mu\right)^2\right]^{\frac{1}{4}}\sin\left(\frac{\pi}{4}\right)
+        \\&=\sqrt{\omega_l\mu},\ When\ \mu^2-M^2-\omega_l^2=0\&\mu\omega_l> 0,\\
+%a<0
+        Im\left[s_1\right]&=\left[\left(\mu^2-M^2-\omega_l^2\right)^2+\left(2\omega_l\mu\right)^2\right]^{\frac{1}{4}}\sin\left(\frac{\pi}{2}+\frac{1}{2}\arctan\left(\frac{2\omega_l\mu}{\mu^2-M^2-\omega_l^2}\right)\right)\\
+        &=\left[\left(\mu^2-M^2-\omega_l^2\right)^2+\left(2\omega_l\mu\right)^2\right]^{\frac{1}{4}}\cos\left(\frac{1}{2}\arctan\left(\frac{2\omega_l\mu}{\mu^2-M^2-\omega_l^2}\right)\right)
+        \\&\stackrel{|\cos\frac{\alpha}{2}|=\sqrt{\frac{1+\cos\alpha}{2}}}{=}\left[\left(\mu^2-M^2-\omega_l^2\right)^2+\left(2\omega_l\mu\right)^2\right]^{\frac{1}{4}}\frac{1}{\sqrt{2}}\sqrt{1+\cos\left(\arctan\left(\frac{2\omega_l\mu}{\mu^2-M^2-\omega_l^2}\right)\right)}
+        \\&\stackrel{\cos\left(\arctan x\right)=\frac{1}{\sqrt{1+x^2}}}{=}
+        \left[\left(\mu^2-M^2-\omega_l^2\right)^2+\left(2\omega_l\mu\right)^2\right]^{\frac{1}{4}}\frac{1}{\sqrt{2}}
+        \sqrt{1+\frac{1}{\sqrt{1+\left(\frac{2\omega_l\mu}{\mu^2-M^2-\omega_l^2}\right)^2}}}
+        \\&=\frac{1}{\sqrt{2}}\left\{\left[\left(\mu^2-M^2-\omega_l^2\right)^2+\left(2\omega_l\mu\right)^2\right]^{\frac{1}{2}}-\left(\mu^2-M^2-\omega_l^2\right)\right\}^{\frac{1}{2}},\ When\ \mu^2-M^2-\omega_l^2<0,\\
+%a=0,b<=0
+        Im\left[s_1\right]&=\left[\left(\mu^2-M^2-\omega_l^2\right)^2+\left(2\omega_l\mu\right)^2\right]^{\frac{1}{4}}\sin\left(\frac{3\pi}{4}\right)
+        \\&=\sqrt{\omega_l\mu},\ When\ \mu^2-M^2-\omega_l^2=0\&\mu\omega_l\leq 0,\\
+%a>0,b<0
+        Im\left[s_1\right]&=\left[\left(\mu^2-M^2-\omega_l^2\right)^2+\left(2\omega_l\mu\right)^2\right]^{\frac{1}{4}}\sin\left(\pi+\frac{1}{2}\arctan\left(\frac{2\omega_l\mu}{\mu^2-M^2-\omega_l^2}\right)\right)\\
+        &=-\left[\left(\mu^2-M^2-\omega_l^2\right)^2+\left(2\omega_l\mu\right)^2\right]^{\frac{1}{4}}\sin\left(\frac{1}{2}\arctan\left(\frac{2\omega_l\mu}{\mu^2-M^2-\omega_l^2}\right)\right)
+        \\&\stackrel{|\sin\frac{\alpha}{2}|=\sqrt{\frac{1-\cos\alpha}{2}}}{=}\left[\left(\mu^2-M^2-\omega_l^2\right)^2+\left(2\omega_l\mu\right)^2\right]^{\frac{1}{4}}\frac{1}{\sqrt{2}}\sqrt{1-\cos\left(\arctan\left(\frac{2\omega_l\mu}{\mu^2-M^2-\omega_l^2}\right)\right)}
+        \\&\stackrel{\cos\left(\arctan x\right)=\frac{1}{\sqrt{1+x^2}}}{=}
+        \left[\left(\mu^2-M^2-\omega_l^2\right)^2+\left(2\omega_l\mu\right)^2\right]^{\frac{1}{4}}\frac{1}{\sqrt{2}}
+        \sqrt{1-\frac{1}{\sqrt{1+\left(\frac{2\omega_l\mu}{\mu^2-M^2-\omega_l^2}\right)^2}}}
+        \\&=\frac{1}{\sqrt{2}}\left\{\left[\left(\mu^2-M^2-\omega_l^2\right)^2+\left(2\omega_l\mu\right)^2\right]^{\frac{1}{2}}-\left(\mu^2-M^2-\omega_l^2\right)\right\}^{\frac{1}{2}},\ When\ \mu^2-M^2-\omega_l^2>0\&\mu\omega_l\leq 0,
+    \end{split}
+\end{equation}
+The details of are shown below.
+\begin{equation}\label{equation2s}
+    \begin{split}
+        &T\sum_{l=-\infty}^{\infty}f\left(p_0=\widetilde{\omega_l}=\omega_l+i\mu\right)\\
+        &\stackrel{the\  residue\  theorem}{\underset{p_0=\omega_l+i\mu,\beta=\frac{1}{T}}{=}}\frac{T}{2\pi i}\oint_{\mathcal{L}} dp_0 f\left(p_0\right)\times \frac{\beta}{2}\frac{e^{\frac{i\beta}{2}\left(p_0-i\mu\right)}-e^{-\frac{i\beta}{2}\left(p_0-i\mu\right)}}{e^{\frac{i\beta}{2}\left(p_0-i\mu\right)}+e^{-\frac{i\beta}{2}\left(p_0-i\mu\right)}}\\
+        &=\frac{1}{2\pi i}\frac{1}{2}\int_{-\infty+i\left(\mu-\epsilon\right)}^{+\infty+i\left(\mu-\epsilon\right)} dp_0 f\left(p_0\right)\times \frac{e^{\frac{i\beta}{2}\left(p_0-i\mu\right)}-e^{-\frac{i\beta}{2}\left(p_0-i\mu\right)}}{e^{\frac{i\beta}{2}\left(p_0-i\mu\right)}+e^{-\frac{i\beta}{2}\left(p_0-i\mu\right)}}\\
+        &+\frac{1}{2\pi i}
+        \frac{1}{2}\int_{+\infty+i\left(\mu+\epsilon\right)}^{-\infty+i\left(\mu+\epsilon\right)} dp_0 f\left(p_0\right)\times \frac{e^{\frac{i\beta}{2}\left(p_0-i\mu\right)}-e^{-\frac{i\beta}{2}\left(p_0-i\mu\right)}}{e^{\frac{i\beta}{2}\left(p_0-i\mu\right)}+e^{-\frac{i\beta}{2}\left(p_0-i\mu\right)}}\\
+        &=\frac{1}{2\pi i}\int_{-\infty+i\left(\mu-\epsilon\right)}^{+\infty+i\left(\mu-\epsilon\right)} dp_0 f\left(p_0\right)\times 
+        [\frac{1}{2}-\frac{1}{e^{i\beta\left(p_0-i\mu\right)}+1}]\\
+        &-\frac{1}{2\pi i}\int_{+\infty+i\left(\mu+\epsilon\right)}^{-\infty+i\left(\mu+\epsilon\right)} dp_0 f\left(p_0\right)\times 
+        [\frac{1}{2}-\frac{1}{e^{-i\beta\left(p_0-i\mu\right)}+1}]\\
+        &=-\frac{1}{2\pi i}\int_{-\infty+i\left(\mu+\epsilon\right)}^{+\infty+i\left(\mu+\epsilon\right)}dp_0 f\left(p_0\right)\frac{1}{e^{-i\beta\left(p_0-i\mu\right)}+1}
+        -\frac{1}{2\pi i}\int_{-\infty+i\left(\mu-\epsilon\right)}^{+\infty+i\left(\mu-\epsilon\right)}dp_0 f\left(p_0\right)\frac{1}{e^{i\beta\left(p_0-i\mu\right)}+1}\\
+        &+\frac{1}{2\pi i}\int_{-\infty+i\left(\mu-\epsilon\right)}^{+\infty+i\left(\mu-\epsilon\right)}dp_0 f\left(p_0\right)\frac{1}{2}+\frac{1}{2\pi i}\int_{-\infty+i\left(\mu+\epsilon\right)}^{+\infty+i\left(\mu+\epsilon\right)}dp_0 f\left(p_0\right)\frac{1}{2}\\
+        &=-\frac{1}{2\pi i}\int_{-\infty+i\left(\mu+\epsilon\right)}^{+\infty+i\left(\mu+\epsilon\right)}dp_0 f\left(p_0\right)\frac{1}{e^{-i\beta\left(p_0-i\mu\right)}+1}
+        -\frac{1}{2\pi i}\int_{-\infty+i\left(\mu-\epsilon\right)}^{+\infty+i\left(\mu-\epsilon\right)}dp_0 f\left(p_0\right)\frac{1}{e^{i\beta\left(p_0-i\mu\right)}+1}\\
+        &+\frac{1}{2\pi i}\int_{-\infty+i\mu}^{+\infty+i\mu}dp_0 f\left(p_0\right)\\
+        =&-\frac{1}{2\pi i}\int_{-\infty+i\left(\mu+\epsilon\right)}^{+\infty+i\left(\mu+\epsilon\right)}dp_0 f\left(p_0\right)\frac{1}{e^{-i\beta\left(p_0-i\mu\right)}+1}\\
+        &-\frac{1}{2\pi i}\int_{-\infty+i\left(\mu-\epsilon\right)}^{+\infty+i\left(\mu-\epsilon\right)}dp_0 f\left(p_0\right)\frac{1}{e^{i\beta\left(p_0-i\mu\right)}+1}\\
+        &+\frac{1}{2\pi i}\oint_{ R_C} dp_0 f\left(p_0\right)
+        +\frac{1}{2\pi i}\int_{-\infty}^{+\infty}  dp_0 f\left(p_0\right)
+    \end{split}
+\end{equation}
+The details here is over !
+\end{document}
+

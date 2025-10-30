@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="第零部分: 介绍课题来源这篇文章起初是导师交给我用以练手入门的课题, 是从师姐手中接过来的项目. 导师之前和一些合作人在有限温有限化学势领域发表一些论文, 这个项目也是想解决一些遗留的问题. 其实中间一度因为很多问题,也走了很多弯路, 甚至导师也不是很有信心做下去了, 但是导师最后还是帮助收了个尾, 发一篇文章出来. 开创性的内容不多, 也没有真正解决其中的问题, 只算一个对现有一些方法的梳理和总">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论文记录-有限温有限化学势QCD-1 介绍">
+<meta property="og:url" content="https://blog.liznb.org/2025/09/03/QCD1/index.html">
+<meta property="og:site_name" content="LiZnB&#39;s Blog">
+<meta property="og:description" content="第零部分: 介绍课题来源这篇文章起初是导师交给我用以练手入门的课题, 是从师姐手中接过来的项目. 导师之前和一些合作人在有限温有限化学势领域发表一些论文, 这个项目也是想解决一些遗留的问题. 其实中间一度因为很多问题,也走了很多弯路, 甚至导师也不是很有信心做下去了, 但是导师最后还是帮助收了个尾, 发一篇文章出来. 开创性的内容不多, 也没有真正解决其中的问题, 只算一个对现有一些方法的梳理和总">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/QCD%E7%9B%B8%E5%9B%BE.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/effect-model.jpg">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/relation.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/kunlunwang1.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/kunlunwang2.png">
+<meta property="article:published_time" content="2025-09-03T12:06:35.000Z">
+<meta property="article:modified_time" content="2025-10-14T14:57:39.257Z">
+<meta property="article:author" content="LiZnB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.liznb.org/images/QCD/QCD%E7%9B%B8%E5%9B%BE.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>论文记录-有限温有限化学势QCD-1 介绍</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+  <!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//blog.liznb.org/matomo/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Categories</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2025/09/07/202506shanxi1/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2025/09/03/QC-Model6/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.liznb.org/2025/09/03/QCD1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.liznb.org/2025/09/03/QCD1/&text=论文记录-有限温有限化学势QCD-1 介绍"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.liznb.org/2025/09/03/QCD1/&title=论文记录-有限温有限化学势QCD-1 介绍"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.liznb.org/2025/09/03/QCD1/&is_video=false&description=论文记录-有限温有限化学势QCD-1 介绍"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=论文记录-有限温有限化学势QCD-1 介绍&body=Check out this article: https://blog.liznb.org/2025/09/03/QCD1/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.liznb.org/2025/09/03/QCD1/&title=论文记录-有限温有限化学势QCD-1 介绍"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.liznb.org/2025/09/03/QCD1/&title=论文记录-有限温有限化学势QCD-1 介绍"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.liznb.org/2025/09/03/QCD1/&title=论文记录-有限温有限化学势QCD-1 介绍"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.liznb.org/2025/09/03/QCD1/&title=论文记录-有限温有限化学势QCD-1 介绍"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.liznb.org/2025/09/03/QCD1/&name=论文记录-有限温有限化学势QCD-1 介绍&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.liznb.org/2025/09/03/QCD1/&t=论文记录-有限温有限化学势QCD-1 介绍"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E9%9B%B6%E9%83%A8%E5%88%86-%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">第零部分: 介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E9%A2%98%E6%9D%A5%E6%BA%90"><span class="toc-number">1.1.</span> <span class="toc-text">课题来源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E5%85%B3%E8%B5%84%E6%96%99%E4%BF%9D%E5%AD%98"><span class="toc-number">1.2.</span> <span class="toc-text">有关资料保存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF-%E6%88%91%E4%B9%8B%E5%89%8D%E5%B7%B2%E7%BB%8F%E6%9C%89%E7%9A%84%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.3.</span> <span class="toc-text">背景(我之前已经有的工作)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#QCD%E7%9B%B8%E5%9B%BE"><span class="toc-number">1.3.1.</span> <span class="toc-text">QCD相图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NJL%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.3.2.</span> <span class="toc-text">NJL模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">核心思想</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E6%95%88%E5%9C%BA%E8%AE%BA"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">有效场论</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">应用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Contact%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.3.3.</span> <span class="toc-text">Contact模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E8%A7%84%E5%8C%96%E6%96%B9%E6%A1%88"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">正规化方案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">缺点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CI%E5%9C%A8%E6%9C%89%E9%99%90%E6%B8%A9%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.3.4.</span> <span class="toc-text">CI在有限温中的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E7%90%86%E8%AE%BA%E6%A1%86%E6%9E%B6"><span class="toc-number">1.3.4.1.</span> <span class="toc-text">核心理论框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E5%8F%8A%E5%88%86%E6%9E%90"><span class="toc-number">1.3.4.2.</span> <span class="toc-text">结果及分析</span></a></li></ol></li></ol></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        论文记录-有限温有限化学势QCD-1 介绍
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">LiZnB</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-09-03T12:06:35.000Z" class="dt-published" itemprop="datePublished">2025-09-03</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        
+            <a href="/categories/01-%E7%89%A9%E7%90%86%E4%BB%A3%E7%A0%81%E8%AE%B0%E5%BD%95/QCD-Phase-Diagram/index.html">01-物理代码记录/QCD-Phase-Diagram</a>
+            
+        
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="第零部分-介绍"><a href="#第零部分-介绍" class="headerlink" title="第零部分: 介绍"></a>第零部分: 介绍</h1><h2 id="课题来源"><a href="#课题来源" class="headerlink" title="课题来源"></a>课题来源</h2><p>这篇文章起初是导师交给我用以练手入门的课题, 是从师姐手中接过来的项目. 导师之前和一些合作人在有限温有限化学势领域发表一些论文, 这个项目也是想解决一些遗留的问题. 其实中间一度因为很多问题,也走了很多弯路, 甚至导师也不是很有信心做下去了, 但是导师最后还是帮助收了个尾, 发一篇文章出来. 开创性的内容不多, 也没有真正解决其中的问题, 只算一个对现有一些方法的梳理和总结.</p>
+<h2 id="有关资料保存"><a href="#有关资料保存" class="headerlink" title="有关资料保存"></a>有关资料保存</h2><p><a href="/images/QCD/2509.pptx" target="_blank">汇报PPT</a></p>
+<p><a href="/images/QCD/MDPI_template-1.zip" target="_blank">论文初稿(未经导师修改版)</a></p>
+<p><a href="/images/QCD/MDPI_template-2.zip" target="_blank">论文初稿(导师修改后-投稿前版)</a></p>
+<h2 id="背景-我之前已经有的工作"><a href="#背景-我之前已经有的工作" class="headerlink" title="背景(我之前已经有的工作)"></a>背景(我之前已经有的工作)</h2><h3 id="QCD相图"><a href="#QCD相图" class="headerlink" title="QCD相图"></a>QCD相图</h3><p>下面是一张比较流行的QCD相图:<br><img src="/images/QCD/QCD相图.png" alt="QCD相图" style="width:80%;display:block;margin:0 auto;"/></p>
+<p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;"><a href="https://iopscience.iop.org/article/10.1088/1402-4896/acbca7/pdf" target="_blank">原始文献链接</a></p>
+
+<p>可以看到在零温零化学势区域呈现强子气体; 在高温高化学势区域呈现夸克胶子等离子体.<br>如果沿着温度轴(零化学势), 相变呈现crossover(一种平滑的相变, 自由能及其各阶导数都是连续的).<br>如果沿着化学势轴(零温), 相变呈现first-order phase transition(一级相变, 自由能关于某一热力学变量的一阶导数出现不连续).<br>那么在crossover与first-order phase transition一定存在一个临界点(CEP: Critical Ending Point).<br>但是这种图并没有给出一些定量的信息, 例如一定存在CEP以及给出CEP的位置.</p>
+<p>我们一般比较相信实验以及从第一性原理出发的格点计算.<br>格点:<br>零化学势区域的相变是一种crossover. <a href="https://arxiv.org/pdf/2002.02821" target="_blank">参考文献</a><br>在有限化学势区域, 格点会遇到著名的sign problem, 导致计算结果不可信. <a href="https://arxiv.org/pdf/1603.06458" target="_blank">参考文献</a></p>
+<p>实验上:<br>在低化学势高温区域, 实验数据支持crossover, 与格点QCD结果一致. <a href="https://s3.cern.ch/inspire-prod-files-3/3746b4e890326a0b1e6755359bd87ffe" target="_blank">参考文献</a><br>在中等化学势区域, 实验数据显示存在一些非单调行为, 可能与临界端点或相变特征相关, 但尚不确定.<a href="https://link.aps.org/accepted/10.1103/PhysRevLett.126.092301" target="_blank">参考文献</a><br>在高化学势低温区域, 实验有限(因为在这个区域需要非常低能量重离子碰撞, 或者未来的实验设施)才能探测, 并且实验只能提供约束, 而无法直接测定相变性质. <a href="https://www.astro.umd.edu/~mcmiller/reprints/kumar24.pdf" target="_blank">参考文献</a></p>
+<p>大多计算, 尤其是有效模型计算给出在大化学势区域中的相变是一级相变.  <a href="https://arxiv.org/pdf/2109.09935" target="_blank">参考文献</a></p>
+<p>但是有效模型给出的CEP点的位置复杂混乱, 无法给出有效信息, 参照下图:</p>
+<img src="/images/QCD/effect-model.jpg" alt="有效模型QCD相图" style="width:60%;display:block;margin:0 auto;"/>
+<p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;"><a href="https://arxiv.org/pdf/hep-lat/0701002" target="_blank">原始文献链接</a></p>
+
+<p>我们知道利用对称性可以约束物理性质, 所以我们希望利用保护O(4)对称性的模型进行一些限制.</p>
+<h3 id="NJL模型"><a href="#NJL模型" class="headerlink" title="NJL模型"></a>NJL模型</h3><p>Nambu–Jona-Lasinio模型最早由Y.Nambu和G.Jona-Lasinio于1961年提出, 是一个低能有效场论, 用来描述强相互作用体系中手征对称性自发破缺的机制.</p>
+<h4 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h4><p>NJL模型并不包含胶子自由度, 而是通过引入四费米相互作用项来模拟夸克之间的强作用. 它类比于BCS超导理论, 将手征对称性破缺解释为类似于“费米子对凝聚”的机制.<br>基本Lagrangian形式(两味):</p>
+<p>$\mathcal{L}_{NJL}&#x3D;\bar\psi(i\gamma^\mu\partial _\mu-m_0)\psi+G[(\bar\psi\psi)^2+(\bar\psi i\gamma_5\vec{\tau}\psi)^2]$</p>
+<p>其中: $\psi$表示夸克场, $m_0$是裸质量; $G$是四费米相互作用常数.</p>
+<h4 id="有效场论"><a href="#有效场论" class="headerlink" title="有效场论"></a>有效场论</h4><p>NJL为不可重正化模型, 需要引入动量截断, 为低能有效理论. 但它在低能QCD、相图研究、以及手征动力学的有效建模上较为成功.</p>
+<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><p>QCD相图; 介子谱与弱衰变常数; 强磁场下的手征磁效应等</p>
+<p><a href="/images/QCD/RevModPhys.64.649.pdf" target="_blank">参考文献</a></p>
+<h3 id="Contact模型"><a href="#Contact模型" class="headerlink" title="Contact模型"></a>Contact模型</h3><p>在研究QCD的低能有效理论时, 常见的框架是Dyson–Schwinger方程(DSEs)与Bethe–Salpeter方程(BSEs). 但由于完整的QCD相互作用核非常复杂, 往往需要做近似.</p>
+<p>Contact interaction(CI)就是一种极端的简化近似：<br>它用一个局域的, 无动量依赖的有效相互作用来代替真实的QCD胶子传播子和夸克–胶子顶角.<br>本质上, 相当于在夸克之间引入类似NJL四费米相互作用, 但在DSE–BSE 框架下进行自洽求解.</p>
+<h4 id="正规化方案"><a href="#正规化方案" class="headerlink" title="正规化方案"></a>正规化方案</h4><p>热核正规化, 来源于NJL中的Proper time正规化. Proper time正规化是一种相对于硬截断更保护对称性的截断, 核心公式为:<br>$$\frac{1}{\mathcal{T}}<br>        &#x3D;\int _{0}^{+\infty}dx  e^{-x \mathcal{T}} \rightarrow\int _{\tau _{uv}^2}^{+\infty}dx  e^{-x \mathcal{T}}<br>        &#x3D;\frac{1}{\mathcal{T}}\times e^{-\tau _{uv}^2\mathcal{T}}\ ,if \ \mathcal{T}&gt;0<br>$$<br>其中, $\tau _{uv}&#x3D;\frac{1}{\Lambda _{uv}}$是紫外截断参数.<br>而热核正规化与之相比多了一个红外截断参数$\tau _{ir}&#x3D;\frac{1}{\Lambda _{ir}}$, 其作用是描述夸克禁闭.核心公式为:<br>$$<br>\frac{1}{\mathcal{T}}<br>        &#x3D;\int _{0}^{+\infty}dx  e^{-x \mathcal{T}} \rightarrow\int _{\tau _{uv}^2}^{\tau _{ir}^2}dx  e^{-x \mathcal{T}}<br>        &#x3D;\frac{1}{\mathcal{T}}\times e^{-x\mathcal{T}}|^{\tau _{uv}^2} _{x&#x3D;\tau _{ir}^2}\ ,if \ \mathcal{T}&gt;0<br>$$<br>其中, $e^{-x\mathcal{T}}|^{\tau _{uv}^2} _{x&#x3D;\tau _{ir}^2}&#x3D;e^{-\tau _{uv}^2\mathcal{T}}-e^{-\tau _{ir}^2\mathcal{T}}$, 并且$\tau _{uv}&#x3D;\frac{1}{\Lambda _{uv}},\tau _{ir}&#x3D;\frac{1}{\Lambda _{ir}}$.</p>
+<p>在物理上, 红外截断参数保护了禁闭,有以下两种理由:</p>
+<ul>
+<li>从量纲上来说, $\mathcal{T}$的量纲为$[动量]^2$, 为了保护e指数上量纲为$[1]$, 那么$\tau$就有量纲为$[尺度]$. 我们给尺度添加一个上限, 就是不考虑超过某个尺度之外的贡献. 实际上, 这个尺度被选择为原子尺度, 也就是原子尺度外的贡献不考虑, 即原子外无自由夸克, 即禁闭.</li>
+<li>如果存在自由夸克, 那么夸克<b>闵氏</b>传播子中一定存在极点:<br>$$\lim _{q^2\rightarrow -\frac{B^2}{A^2}}\frac{1}{i\gamma \cdot qA+B}&#x3D;\lim _{q^2\rightarrow -\frac{B^2}{A^2}}\frac{-i\gamma\cdot qA+B}{q^2A^2+B^2}\rightarrow \infty$$<br>其中A,B代表函数$A(q^2)$,$B(q^2)$.<br>那么由于禁闭, 我们观测不到自由夸克, 也就是需要消除<b>闵氏</b>传播子中的极点,做完正规化之后:<br>$$\lim _{q^2\rightarrow -\frac{B^2}{A^2}}(-i\gamma\cdot qA+B)\frac{e^{-\tau _{uv}^2(q^2A^2+B^2)}-e^{-\tau _{ir}^2(q^2A^2+B^2)}}{q^2A^2+B^2}$$<br>其中奇异的部分是分式,等价于:<br>$$\lim _{x\rightarrow 0}\frac{e^{-\tau _{uv}^2x}-e^{-\tau _{ir}^2x}}{x}&#x3D;\lim _{x\rightarrow 0}(\tau _{ir}^2e^{-\tau _{ir}^2x}-\tau _{uv}^2e^{-\tau _{uv}^2x})&#x3D;\tau _{ir}^2-\tau _{uv}^2$$<br>我们看到确实是消除了极点.</li>
+</ul>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><p>数学上简洁, 方程可以解析或半解析求解;<br>能够保持Ward–Takahashi恒等式(保证规范对称性与手征对称性关系);<br>对低能强子性质(介子质量、衰变常数等)给出合理描述;<br>引入热核正规化, 解释夸克禁闭.</p>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><p>需要引入截断参数来避免积分发散;<br>误差约10%.</p>
+<p><a href="/images/QCD/CI.pdf" target="_blank">参考文献</a></p>
+<p>所以由于物理上NJL和CI都是考虑的四费米子顶点, 忽略胶子自由度, 所以推导得到的公式几乎一模一样. 最大的区别有两点: 一是源头不一样, NJL通过构建拉氏量得到, NJL通过DSE进行一系列近似简化得到; 二是CI在NJL的PT正规化基础上考虑了禁闭效应. 通过引入红外截断参数$\tau_{i r}$消除极点, 从而保证了禁闭.</p>
+<h3 id="CI在有限温中的应用"><a href="#CI在有限温中的应用" class="headerlink" title="CI在有限温中的应用"></a>CI在有限温中的应用</h3><p>将CI运用到有限温中的工作最初由王昆仑老师完成, 具体讨论内容可学习<a href="/images/QCD/wang.pdf" target="_blank">参考文献</a>.</p>
+<h4 id="核心理论框架"><a href="#核心理论框架" class="headerlink" title="核心理论框架"></a>核心理论框架</h4><p>先在零温零密中得到CI的夸克质量公式(DSE):</p>
+<p>$S^{-1}(p)&#x3D;i\gamma\cdot p+m+\frac{16\pi}{3}\frac{\alpha _{IR}}{m_G^2}\int\frac{d^4q}{(2\pi)^4}\gamma _\mu S(q)\gamma _\mu$,<br>其中, 夸克传播子形式: $S(p)&#x3D;\frac{1}{i\gamma\cdot pA(p^2)+B(p^2)}$.</p>
+<p>将零温零密中的四动量转移到有限温有限化学势框架 $p&#x3D;(p1,p2,p3,p4)\rightarrow (p1,p2,p3,\widetilde{\omega}_n)$,<br>其中 $\widetilde{\omega}_n&#x3D;\omega_n+i\mu&#x3D;(2n+1)\pi T+i\mu$.</p>
+<p><span style="color: #ff0000ff;">注: 这里在理论上可能遇到一些问题.<br></span></p>
+<img src="/images/QCD/relation.png" alt="QFT之间的关系" style="width:60%;display:block;margin:0 auto;"/>
+
+<span style="color: #ff0000ff;">
+上图描述了几种场论之间的联系:<br><br>
+A. Minkowski QFT:<br>
+*  用Wightman函数描述 ---- 场算符在真空态上的时间序无关的多点关联函数<br>
+*  优点: 物理图像清晰 ---- 因果性, 传播子对应物理过程等<br>
+*  缺点: 严格计算困难 ---- 路径积分的权重为 $e^{iS}$, 震荡迅速/收敛性差<br><br>
+B. Euclidean QFT:<br>
+*  用Schwinger函数描述 ---- 场算符在欧式时空下的真空关联函数<br>
+*  优点: 可以严格计算 ---- 路径积分的权重从 $e^{iS}$ 变成 $e^{-S_E}$, 积分收敛性好, 可以格点计算<br>
+​*  缺点: 物理图像不如闵氏直观<br><br>
+C. Minkowski Finite Temperature QFT:<br>
+*  有两种形式: 实时形式和虚时形式<br>
+*  实时形式: 直接在闵氏时空中处理, 将时间路径延拓成双时间轮廓+一条虚时段, 适合非平衡态问题<br>
+*  虚时形式: 将时间延拓到虚轴, 时间变成周期的, 适合平衡态问题<br>
+*  虚时形式和实时形式在平衡态下等价<br>
+<b>注意: 虽然很多场论书将虚时有限温量子场论直接称为欧氏场论, 那是因为路径积分权重形式类似. 但是我们说"闵式"还是"欧式"场论, 指的是时空度规是闵式度规还是欧式度规.</b><br><br>
+D. Euclidean Finite Temperature QFT:<br>
+*  不知道欧式场是否严格存在有限温的推广, 但是按照导师的理解, 我们的方法属于是欧式场论.<br>
+*  个人理解, 在计算中已经取时间t为0, 因此既可以说欧式又可以说闵式, 只有做非平衡态等问题才好讨论时间问题.<br><br>
+联系 a:<br>
+*  对于标量场理论, 严格证明了Wightman函数和Schwinger函数之间可通过解析延拓联系.<br>
+*  Schwinger函数如果满足一系列公理(OS公理), 就可以通过Osterwalder–Schrader公理重建一个满足Wightman公理的闵氏场论, 两者在“关联函数/散射振幅等物理可观测量”上相当.<br>
+*  OS公理中主要包括: 欧氏不变性, 对称性, 反射正性, 群集性质, 以及正则性/温和性条件等.<br>
+*  更一般的场论中(例如带自旋的场、费米子场、规范场论等), 推广是可行的, 但需要额外检查或假设. 在这些场论中OS公理也有对应的推广形式.<br>
+*  <a href="/images/QCD/Oster1.pdf" target="_blank" style="color: #ff0000ff;text-decoration: underline; text-decoration-color: #ff0000ff;">OS 定理论文</a> <a href="/images/QCD/Oster2.pdf" target="_blank" style="color: #ff0000ff;text-decoration: underline; text-decoration-color: #ff0000ff;">欧式闵氏关系论文</a>
+
+<p>联系 b:<br></p>
+<ul>
+<li>从闵氏QFT到闵氏有限温QFT, 第一个核心变化是: 真空态$|0\rangle$替换成热密度矩阵$\rho &#x3D;\frac{e^{-\beta H}}{Z}$, 其中$Z&#x3D;tr(e^{-\beta H})$是配分函数. 这样定义出有限温关联函数$\langle T\psi(x _1)…\psi(x _n)\rangle _\beta &#x3D;\frac{tr(e^{-\beta H}T{\psi(x _1)…\psi(x _n)})}{Z}$<br></li>
+<li>这时格林函数必须满足KMS条件: $\langle \psi(t-i\beta,\vec{x})\bar\psi(t’,\vec{x’})\rangle _\beta &#x3D;-\langle \bar\psi(t’,\vec{x’})\psi(t,\vec{x})\rangle _\beta$<br></li>
+<li><a href="/images/QCD/kms.pdf" target="_blank" style="color: #ff0000ff;text-decoration: underline; text-decoration-color: #ff0000ff;">KMS条件论文</a></li>
+</ul>
+<p>联系 c:<br></p>
+<ul>
+<li>我们发现, 虚时有限温路径积分权重为 $e^{-S_E}$, 这与欧式QFT路径积分权重形式相同.<br></li>
+<li>如果我们在虚时有限温量子场论中将时间t抹除, 那么此理论与欧式QFT形式完全相似, 形式上可以称此场论为欧氏场论.<br></li>
+</ul>
+<p>联系 d,e:<br></p>
+<ul>
+<li>这两条路我都不知道是否存在严格联系.<br></span></li>
+</ul>
+<p>零化学势的时候取 $\mu&#x3D;0$, 得到CI的有限温DSE:<br>$S^{-1}(\vec{p},\omega _n)&#x3D;i\vec{\gamma}\cdot \vec{p}+i\gamma _4\omega _n+m+\frac{16\pi}{3}\frac{\alpha _{IR}}{m_G^2}\int _{l,dq}\gamma _\mu S(\vec{q},\omega _l)\gamma _\mu$,<br>其中, $\int _{l,dq}&#x3D;T\sum _{l&#x3D;-\infty}^{\infty}\int\frac{d^3\vec{q}}{(2\pi)^3}$.</p>
+<p>夸克传播子形式为: $        S^{-1}(\vec{p},\widetilde{\omega} _n)&#x3D;i\vec{\gamma}\cdot \vec{p}A(\vec{p},\widetilde{\omega} _n)+i\gamma _4\widetilde{\omega} _nC(\vec{p},\widetilde{\omega} _n)+B(\vec{p},\widetilde{\omega} _n) $<br>其中,$A(\vec{p},\widetilde{\omega} _n)&#x3D;C(\vec{p},\widetilde{\omega} _n)&#x3D;1$, $B(\vec{p},\widetilde{\omega} _n)&#x3D;M$.</p>
+<h4 id="结果及分析"><a href="#结果及分析" class="headerlink" title="结果及分析"></a>结果及分析</h4><p>经过计算,得到夸克质量M随温度T变化图像:</p>
+<div style="display: flex; justify-content: center; align-items: flex-start; gap: 24px;">
+  <div style="flex: 1; text-align: center;">
+    <img src="/images/QCD/kunlunwang1.png" alt="kunlun wang1" style="width:100%;display:block;margin:0 auto;"/>
+    <p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;">m=0 GeV</p>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <img src="/images/QCD/kunlunwang2.png" alt="kunlun wang2" style="width:100%;display:block;margin:0 auto;"/>
+    <p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;">m=0.007 GeV</p>
+  </div>
+</div>
+
+<p>这里多算了负数部分的解, 用来描述相变点位置, 并赋予其一些物理意义.<br><span style="color: #ff0000ff;">注: 有关负数质量,不同老师理解解读不同.</span></p>
+<p>从左图可以看到, 手征极限 $m&#x3D;0$ GeV的时候, 相变为二级相变.<br>在低T时, 存在两个相: Nambu相, Wigner相, 分别代表对称性破缺和恢复的相; 其中可以通过热力学势定位Nambu相(热力学势更低的相)作为物理上的解.<br>在高T时, 只存在Wigner相.</p>
+<p>从右图看到, 超越手征极限 $m&#x3D;0.007$ GeV时, 相变从Nambu相平滑地过渡到Wigner相, 称之为crossover.</p>
+
+  </div>
+  <!-- 许可协议标签，浅绿色背景，文章后另起一行 -->
+  <div class="post-copyright" style="background: #e6f9e6; color: #228B22; padding: 18px 28px; border-radius: 20px; margin-top: 32px;">
+    <p style="margin:0;">本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" style="color:#228B22;text-decoration:underline;">CC BY-NC-SA 4.0</a> 许可协议发布.<br>
+    作者: LiZnB, 文章链接: <a href="https://blog.liznb.org/2025/09/03/QCD1/" style="color:#228B22;text-decoration:underline;">
+      https://blog.liznb.org/2025/09/03/QCD1/
+    </a></p>
+    <p style="margin:0;">如果本文给你带来了帮助或让你觉得有趣, 可以考虑<a href="https://blog.liznb.org/about/#donate" target="_blank" style="color:#228B22;text-decoration:underline;">赞助我</a>¬_¬</p>
+  </div>
+</article>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a href="/categories/">Categories</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E9%9B%B6%E9%83%A8%E5%88%86-%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">第零部分: 介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E9%A2%98%E6%9D%A5%E6%BA%90"><span class="toc-number">1.1.</span> <span class="toc-text">课题来源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E5%85%B3%E8%B5%84%E6%96%99%E4%BF%9D%E5%AD%98"><span class="toc-number">1.2.</span> <span class="toc-text">有关资料保存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF-%E6%88%91%E4%B9%8B%E5%89%8D%E5%B7%B2%E7%BB%8F%E6%9C%89%E7%9A%84%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.3.</span> <span class="toc-text">背景(我之前已经有的工作)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#QCD%E7%9B%B8%E5%9B%BE"><span class="toc-number">1.3.1.</span> <span class="toc-text">QCD相图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NJL%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.3.2.</span> <span class="toc-text">NJL模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">核心思想</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E6%95%88%E5%9C%BA%E8%AE%BA"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">有效场论</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">应用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Contact%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.3.3.</span> <span class="toc-text">Contact模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E8%A7%84%E5%8C%96%E6%96%B9%E6%A1%88"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">正规化方案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">缺点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CI%E5%9C%A8%E6%9C%89%E9%99%90%E6%B8%A9%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.3.4.</span> <span class="toc-text">CI在有限温中的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E7%90%86%E8%AE%BA%E6%A1%86%E6%9E%B6"><span class="toc-number">1.3.4.1.</span> <span class="toc-text">核心理论框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E5%8F%8A%E5%88%86%E6%9E%90"><span class="toc-number">1.3.4.2.</span> <span class="toc-text">结果及分析</span></a></li></ol></li></ol></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.liznb.org/2025/09/03/QCD1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.liznb.org/2025/09/03/QCD1/&text=论文记录-有限温有限化学势QCD-1 介绍"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.liznb.org/2025/09/03/QCD1/&title=论文记录-有限温有限化学势QCD-1 介绍"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.liznb.org/2025/09/03/QCD1/&is_video=false&description=论文记录-有限温有限化学势QCD-1 介绍"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=论文记录-有限温有限化学势QCD-1 介绍&body=Check out this article: https://blog.liznb.org/2025/09/03/QCD1/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.liznb.org/2025/09/03/QCD1/&title=论文记录-有限温有限化学势QCD-1 介绍"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.liznb.org/2025/09/03/QCD1/&title=论文记录-有限温有限化学势QCD-1 介绍"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.liznb.org/2025/09/03/QCD1/&title=论文记录-有限温有限化学势QCD-1 介绍"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.liznb.org/2025/09/03/QCD1/&title=论文记录-有限温有限化学势QCD-1 介绍"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.liznb.org/2025/09/03/QCD1/&name=论文记录-有限温有限化学势QCD-1 介绍&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.liznb.org/2025/09/03/QCD1/&t=论文记录-有限温有限化学势QCD-1 介绍"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2025
+    LiZnB
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Categories</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

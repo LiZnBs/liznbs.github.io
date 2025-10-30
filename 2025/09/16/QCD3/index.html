@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="附录A 各种尝试过的正规化方案简介虽然CI已经把正规化方案规定为热核正规化, 但是仍然有很多可以操作的空间. 前前后后尝试过的正规化方案可能有十余种, 最后结果大多不太好. 这里详细回顾一下做过的尝试. 注: 这里的结果图相对论文中的图很粗糙, 平时数据没必要做得很精美, 请原谅.  0. 已有的热核正规化公式首先回忆一下标准的热核正规化核心公式:$$\frac{1}{\mathcal{T}}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案">
+<meta property="og:url" content="https://blog.liznb.org/2025/09/16/QCD3/index.html">
+<meta property="og:site_name" content="LiZnB&#39;s Blog">
+<meta property="og:description" content="附录A 各种尝试过的正规化方案简介虽然CI已经把正规化方案规定为热核正规化, 但是仍然有很多可以操作的空间. 前前后后尝试过的正规化方案可能有十余种, 最后结果大多不太好. 这里详细回顾一下做过的尝试. 注: 这里的结果图相对论文中的图很粗糙, 平时数据没必要做得很精美, 请原谅.  0. 已有的热核正规化公式首先回忆一下标准的热核正规化核心公式:$$\frac{1}{\mathcal{T}}">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/other-results/3.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/other-results/1.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/other-results/M-T.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/other-results/M-%CE%BC.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/other-results/7.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/other-results/Sechx.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/other-results/NJL-4D-alpha.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/other-results/NJL-4D-lambda.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/other-results/All_Result_T_l.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/other-results/All_Result_T_b.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/other-results/All_Result_mu_l.png">
+<meta property="og:image" content="https://blog.liznb.org/images/QCD/other-results/All_Result_mu_b.png">
+<meta property="article:published_time" content="2025-09-16T07:54:18.000Z">
+<meta property="article:modified_time" content="2025-09-22T09:34:00.110Z">
+<meta property="article:author" content="LiZnB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.liznb.org/images/QCD/other-results/3.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+  <!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//blog.liznb.org/matomo/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Categories</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2025/09/16/QCD4/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2025/09/15/QCD2/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.liznb.org/2025/09/16/QCD3/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.liznb.org/2025/09/16/QCD3/&text=论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.liznb.org/2025/09/16/QCD3/&title=论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.liznb.org/2025/09/16/QCD3/&is_video=false&description=论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案&body=Check out this article: https://blog.liznb.org/2025/09/16/QCD3/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.liznb.org/2025/09/16/QCD3/&title=论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.liznb.org/2025/09/16/QCD3/&title=论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.liznb.org/2025/09/16/QCD3/&title=论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.liznb.org/2025/09/16/QCD3/&title=论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.liznb.org/2025/09/16/QCD3/&name=论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.liznb.org/2025/09/16/QCD3/&t=论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%99%84%E5%BD%95A-%E5%90%84%E7%A7%8D%E5%B0%9D%E8%AF%95%E8%BF%87%E7%9A%84%E6%AD%A3%E8%A7%84%E5%8C%96%E6%96%B9%E6%A1%88"><span class="toc-number">1.</span> <span class="toc-text">附录A 各种尝试过的正规化方案</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-%E5%B7%B2%E6%9C%89%E7%9A%84%E7%83%AD%E6%A0%B8%E6%AD%A3%E8%A7%84%E5%8C%96%E5%85%AC%E5%BC%8F"><span class="toc-number">1.1.1.</span> <span class="toc-text">0. 已有的热核正规化公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9C%80%E5%88%9D%E6%96%B9%E6%A1%88"><span class="toc-number">1.1.2.</span> <span class="toc-text">1. 最初方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%85%AC%E5%BC%8F"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">核心公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%88%E7%90%86%E4%B9%8B%E5%A4%84"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">不合理之处</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%A5%87%E6%80%AA%E7%9A%84%E4%BF%AE%E6%AD%A3%E6%96%B9%E6%A1%88"><span class="toc-number">1.1.3.</span> <span class="toc-text">2. 奇怪的修正方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%85%AC%E5%BC%8F-1"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">核心公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%88%E7%90%86%E4%B9%8B%E5%A4%84-1"><span class="toc-number">1.1.3.3.</span> <span class="toc-text">不合理之处</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%8F%96%E4%B9%8B%E5%A4%84"><span class="toc-number">1.1.3.4.</span> <span class="toc-text">可取之处</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%9C%80%E5%90%8E%E7%94%A8%E7%9A%84%E6%96%B9%E6%A1%88"><span class="toc-number">1.1.4.</span> <span class="toc-text">3. 最后用的方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%85%AC%E5%BC%8F-2"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">核心公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C-1"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%88%E7%90%86%E4%B9%8B%E5%A4%84-2"><span class="toc-number">1.1.4.3.</span> <span class="toc-text">不合理之处</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%8F%96%E4%B9%8B%E5%A4%84-1"><span class="toc-number">1.1.4.4.</span> <span class="toc-text">可取之处</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%BB%9D%E5%AF%B9%E5%80%BC%E6%96%B9%E6%A1%88"><span class="toc-number">1.1.5.</span> <span class="toc-text">4. 绝对值方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%85%AC%E5%BC%8F-3"><span class="toc-number">1.1.5.1.</span> <span class="toc-text">核心公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C-2"><span class="toc-number">1.1.5.2.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%88%E7%90%86%E4%B9%8B%E5%A4%84-3"><span class="toc-number">1.1.5.3.</span> <span class="toc-text">不合理之处</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%8F%96%E4%B9%8B%E5%A4%84-2"><span class="toc-number">1.1.5.4.</span> <span class="toc-text">可取之处</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%A8%A1%E6%96%B9%E6%96%B9%E6%A1%88"><span class="toc-number">1.1.6.</span> <span class="toc-text">5. 模方方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%84%E6%96%99%E4%BF%9D%E5%AD%98"><span class="toc-number">1.1.6.1.</span> <span class="toc-text">资料保存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%85%AC%E5%BC%8F-4"><span class="toc-number">1.1.6.2.</span> <span class="toc-text">核心公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E9%80%89%E5%8F%96"><span class="toc-number">1.1.6.3.</span> <span class="toc-text">参数选取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C-3"><span class="toc-number">1.1.6.4.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%88%E7%90%86%E4%B9%8B%E5%A4%84-4"><span class="toc-number">1.1.6.5.</span> <span class="toc-text">不合理之处</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%8F%96%E4%B9%8B%E5%A4%84-3"><span class="toc-number">1.1.6.6.</span> <span class="toc-text">可取之处</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%AE%9E%E9%83%A8%E6%96%B9%E6%A1%88"><span class="toc-number">1.1.7.</span> <span class="toc-text">6. 实部方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%85%AC%E5%BC%8F-5"><span class="toc-number">1.1.7.1.</span> <span class="toc-text">核心公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C-4"><span class="toc-number">1.1.7.2.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%88%E7%90%86%E4%B9%8B%E5%A4%84-5"><span class="toc-number">1.1.7.3.</span> <span class="toc-text">不合理之处</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%8F%96%E4%B9%8B%E5%A4%84-4"><span class="toc-number">1.1.7.4.</span> <span class="toc-text">可取之处</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%B9%E8%BF%9B%E6%96%B9%E6%A1%88"><span class="toc-number">1.1.7.5.</span> <span class="toc-text">改进方案</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E6%96%B0%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E5%B0%9D%E8%AF%95"><span class="toc-number">1.1.8.</span> <span class="toc-text">7. 新定义函数尝试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%85%AC%E5%BC%8F-6"><span class="toc-number">1.1.8.1.</span> <span class="toc-text">核心公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C-5"><span class="toc-number">1.1.8.2.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%88%E7%90%86%E4%B9%8B%E5%A4%84-6"><span class="toc-number">1.1.8.3.</span> <span class="toc-text">不合理之处</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%8F%96%E4%B9%8B%E5%A4%84-5"><span class="toc-number">1.1.8.4.</span> <span class="toc-text">可取之处</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%9B%9B%E7%BB%B4%E7%A1%AC%E6%88%AA%E6%96%AD"><span class="toc-number">1.1.9.</span> <span class="toc-text">8. 四维硬截断</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%85%AC%E5%BC%8F-7"><span class="toc-number">1.1.9.1.</span> <span class="toc-text">核心公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C-6"><span class="toc-number">1.1.9.2.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%88%E7%90%86%E4%B9%8B%E5%A4%84-7"><span class="toc-number">1.1.9.3.</span> <span class="toc-text">不合理之处</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E5%8F%82%E6%95%B0%E4%BF%AE%E6%AD%A3%E6%B3%95"><span class="toc-number">1.1.10.</span> <span class="toc-text">9. 参数修正法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%85%AC%E5%BC%8F-8"><span class="toc-number">1.1.10.1.</span> <span class="toc-text">核心公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C-7"><span class="toc-number">1.1.10.2.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%88%E7%90%86%E4%B9%8B%E5%A4%84-8"><span class="toc-number">1.1.10.3.</span> <span class="toc-text">不合理之处</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.1.11.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E6%9C%80%E5%88%9D%E7%9A%84%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA%E8%AE%A1%E7%AE%97"><span class="toc-number">1.1.12.</span> <span class="toc-text">10. 最初的分类讨论计算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%84%E6%96%99%E4%BF%9D%E5%AD%98-1"><span class="toc-number">1.1.12.1.</span> <span class="toc-text">资料保存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%88%E7%90%86%E4%B9%8B%E5%A4%84-9"><span class="toc-number">1.1.12.2.</span> <span class="toc-text">不合理之处</span></a></li></ol></li></ol></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">LiZnB</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-09-16T07:54:18.000Z" class="dt-published" itemprop="datePublished">2025-09-16</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        
+            <a href="/categories/01-%E7%89%A9%E7%90%86%E4%BB%A3%E7%A0%81%E8%AE%B0%E5%BD%95/QCD-Phase-Diagram/index.html">01-物理代码记录/QCD-Phase-Diagram</a>
+            
+        
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="附录A-各种尝试过的正规化方案"><a href="#附录A-各种尝试过的正规化方案" class="headerlink" title="附录A 各种尝试过的正规化方案"></a>附录A 各种尝试过的正规化方案</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>虽然CI已经把正规化方案规定为热核正规化, 但是仍然有很多可以操作的空间. 前前后后尝试过的正规化方案可能有十余种, 最后结果大多不太好. 这里详细回顾一下做过的尝试.</p>
+<p><span style="color: #ff0000ff;">注: 这里的结果图相对论文中的图很粗糙, 平时数据没必要做得很精美, 请原谅. </span></p>
+<h3 id="0-已有的热核正规化公式"><a href="#0-已有的热核正规化公式" class="headerlink" title="0. 已有的热核正规化公式"></a>0. 已有的热核正规化公式</h3><p>首先回忆一下标准的热核正规化核心公式:<br>$$<br>\frac{1}{\mathcal{T}}<br>        &#x3D;\int _{0}^{+\infty}dx  e^{-x \mathcal{T}} \rightarrow\int _{\tau _{uv}^2}^{\tau _{ir}^2}dx  e^{-x \mathcal{T}}<br>        &#x3D;\frac{1}{\mathcal{T}}\times e^{-x\mathcal{T}}|^{\tau _{uv}^2} _{x&#x3D;\tau _{ir}^2}\ ,if \ \mathcal{T}&gt;0<br>$$<br>其中, $e^{-x\mathcal{T}}|^{\tau _{uv}^2} _{x&#x3D;\tau _{ir}^2}&#x3D;e^{-\tau _{uv}^2\mathcal{T}}-e^{-\tau _{ir}^2\mathcal{T}}$, 并且$\tau _{uv}&#x3D;\frac{1}{\Lambda _{uv}},\tau _{ir}&#x3D;\frac{1}{\Lambda _{ir}}$.<br>但是, 这里有一个明显的限制条件, 即$\mathcal{T}&gt;0$. 在有限化学势中, 就遇到了这样的问题, 因为在这里<br>$\mathcal{T}&#x3D;s+\widetilde{\omega} _l’^2+ R _B^2&#x3D;s+\omega _l^2+ R _B^2-\mu’^2+2i\omega _l\mu’$<br>$\mathcal{T}$不仅是一个复数, 并且它的实部可能小于0, 因此需要对上式进行解析延拓, 以适应现在的局面.</p>
+<h3 id="1-最初方案"><a href="#1-最初方案" class="headerlink" title="1. 最初方案"></a>1. 最初方案</h3><p>实际上最初没有发现热核正规化方案的数学问题, 所以用的方案如下:</p>
+<h4 id="核心公式"><a href="#核心公式" class="headerlink" title="核心公式"></a>核心公式</h4><p>$$\frac{1}{\mathcal{T}}&#x3D;\frac{1}{\mathcal{T}}\times\int_{0}^{+\infty}dx’ e^{-x’}\stackrel{x’&#x3D;x \mathcal{T}}{&#x3D;}<br>        \int_{0}^{+\infty}dx e^{-x \mathcal{T}} \rightarrow\int_{\tau_{uv}^2}^{\tau_{ir}^2}dx e^{-x \mathcal{T}}$$</p>
+<h4 id="不合理之处"><a href="#不合理之处" class="headerlink" title="不合理之处"></a>不合理之处</h4><ul>
+<li>一个很简单的例子: 如果实数 $\mathcal{T}&lt;0$, 上式左边是一个负数; 而右侧是很多恒正的e指数的积分, 永远为正.</li>
+<li>事实上, 只要$Re(\mathcal{T})&lt;0$, 上式就会遇到这种情况.</li>
+<li>原因是要满足$x’&#x3D;x \mathcal{T}$, 这里$x’\in (0,+\infty)$有$\mathcal{T}&lt;0$, 就要保证$x&lt;0$.</li>
+</ul>
+<h3 id="2-奇怪的修正方案"><a href="#2-奇怪的修正方案" class="headerlink" title="2. 奇怪的修正方案"></a>2. 奇怪的修正方案</h3><h4 id="核心公式-1"><a href="#核心公式-1" class="headerlink" title="核心公式"></a>核心公式</h4><p>简单修正一下, 如果$Re(\mathcal{T})&lt;0$, 给出:</p>
+<p>$$\frac{1}{\mathcal{T}}\rightarrow -\int_{\tau_{uv}^2}^{\tau_{ir}^2}dx e^{-x \mathcal{T}}$$</p>
+<h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><img src="/images/QCD/other-results/3.png" alt="3.png" style="width:60%;display:block;margin:0 auto;"/>
+    <p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;">$T=0.0005$ and $\mu$ from 0 to 0.5 GeV</p>
+
+<h4 id="不合理之处-1"><a href="#不合理之处-1" class="headerlink" title="不合理之处"></a>不合理之处</h4><ul>
+<li>这当然还是错的, 只解决了表面的正负号, e指数上的数学完全没有处理.</li>
+<li>没有解决数学本质问题.</li>
+</ul>
+<h4 id="可取之处"><a href="#可取之处" class="headerlink" title="可取之处"></a>可取之处</h4><ul>
+<li>注意到小于0的部分, 由于指数上反而为正了, 贡献非常大(都不能称为截断了), 所以结果负的部分偏大, 压低总贡献会更好的导致一级相变.<del>这种方法甚至会真的可能导致一级相变, 但是数学错了, 逻辑也讲不通.</del></li>
+</ul>
+<h3 id="3-最后用的方案"><a href="#3-最后用的方案" class="headerlink" title="3. 最后用的方案"></a>3. 最后用的方案</h3><h4 id="核心公式-2"><a href="#核心公式-2" class="headerlink" title="核心公式"></a>核心公式</h4><p>如果 $Re(\mathcal{T})&gt;0$, 有<br>$$\frac{1}{\mathcal{T}}&#x3D;\frac{1}{\mathcal{T}}\times\int _{0}^{+\infty}dx’ e^{-x’}\stackrel{x’&#x3D;x \mathcal{T}}{&#x3D;}<br>        \int _{0}^{+\infty}dx e^{-x \mathcal{T}} \rightarrow\int _{\tau _{uv}^2}^{\tau _{ir}^2}dx e^{-x \mathcal{T}}&#x3D;\frac{1}{\mathcal{T}}\times e^{-x\mathcal{T}}|^{\tau  _{uv}^2}  _{x&#x3D;\tau  _{ir}^2}$$<br>如果 $Re(\mathcal{T})&lt;0$, 有<br>$$\frac{1}{\mathcal{T}}&#x3D;\frac{1}{\mathcal{T}}\times\int _{0}^{+\infty}dx’ e^{-x’}\stackrel{x’&#x3D;-x \mathcal{T}}{&#x3D;}<br>        -\int _{0}^{+\infty}dx e^{x \mathcal{T}} \rightarrow-\int _{\tau _{uv}^2}^{\tau _{ir}^2}dx e^{x \mathcal{T}}&#x3D;\frac{1}{\mathcal{T}}\times e^{x\mathcal{T}}|^{\tau  _{uv}^2}  _{x&#x3D;\tau  _{ir}^2}$$    </p>
+<p>于是可以合并成一个式子:</p>
+<p>$$\frac{1}{\mathcal{T}}\rightarrow\frac{1}{\mathcal{T}}\times e^{-Sign(\Re _\mathcal{T})x\mathcal{T}}|^{\tau _{uv}^2} _{x&#x3D;\tau _{ir}^2}<br>$$</p>
+<h4 id="结果-1"><a href="#结果-1" class="headerlink" title="结果"></a>结果</h4><p>见<a href="/2025/09/15/QCD2/#results">正文结果</a></p>
+<h4 id="不合理之处-2"><a href="#不合理之处-2" class="headerlink" title="不合理之处"></a>不合理之处</h4><ul>
+<li>看起来这个方案相对正确, 但是数学上仍然是错的. 因为是事实要保证$x’&#x3D;Sign(\Re _\mathcal{T})x\mathcal{T}$是一个实数, 但是实际上$Sign(\Re _\mathcal{T})x$是实数, 而$\mathcal{T}$是复数, 所以$x’$仍然不是实数.</li>
+</ul>
+<h4 id="可取之处-1"><a href="#可取之处-1" class="headerlink" title="可取之处"></a>可取之处</h4><ul>
+<li>最后还是取这个方案, 主要因为这个方案算出的结果, 零温时在低化学势部分结果不变(至少不会增加). 这在物理上是更合理的, 其他有几种方案无法在低化学势部分保持零温结果不变.</li>
+</ul>
+<h3 id="4-绝对值方案"><a href="#4-绝对值方案" class="headerlink" title="4. 绝对值方案"></a>4. 绝对值方案</h3><h4 id="核心公式-3"><a href="#核心公式-3" class="headerlink" title="核心公式"></a>核心公式</h4><p>$$<br>\frac{1}{\mathcal{T}}&#x3D;\frac{\mathcal{T}^ *}{|\mathcal{T}|^2}&#x3D;\frac{\mathcal{T}^*}{|\mathcal{T}|}\times \int _{0}^{+\infty}dx e^{-x |\mathcal{T}|}&#x3D;\int _{0}^{+\infty}dx \frac{\mathcal{T}^*}{|\mathcal{T}|} e^{-x |\mathcal{T}|}<br>        \rightarrow \int _{\tau _{uv}^2}^{\tau _{ir}^2}dx\frac{\mathcal{T}^*}{|\mathcal{T}|} e^{-x|\mathcal{T}|}<br>        &#x3D;\frac{1}{\mathcal{T}}\times e^{-x|\mathcal{T}|}|^{\tau _{uv}^2} _{\tau _{ir}^2}<br>$$</p>
+<h4 id="结果-2"><a href="#结果-2" class="headerlink" title="结果"></a>结果</h4><img src="/images/QCD/other-results/1.png" alt="1.png" style="width:60%;display:block;margin:0 auto;"/>
+    <p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;">$T=0.0005$ and $\mu$ from 0 to 0.8 GeV</p>
+
+<h4 id="不合理之处-3"><a href="#不合理之处-3" class="headerlink" title="不合理之处"></a>不合理之处</h4><ul>
+<li>结果是crossover, 并且质量会上翘.</li>
+</ul>
+<h4 id="可取之处-2"><a href="#可取之处-2" class="headerlink" title="可取之处"></a>可取之处</h4><ul>
+<li>数学上解决了$x’$必须是实数的问题.</li>
+</ul>
+<h3 id="5-模方方案"><a href="#5-模方方案" class="headerlink" title="5. 模方方案"></a>5. 模方方案</h3><h4 id="资料保存"><a href="#资料保存" class="headerlink" title="资料保存"></a>资料保存</h4><p><a href="/images/QCD/other-results/try1.tex" target="_blank">TEX代码</a></p>
+<p><a href="/images/QCD/other-results/try1.pdf" target="_blank">PDF文件</a></p>
+<h4 id="核心公式-4"><a href="#核心公式-4" class="headerlink" title="核心公式"></a>核心公式</h4><p>$$<br>\frac{1}{\mathcal{T}}&#x3D;\frac{\mathcal{T}^ *}{|\mathcal{T}|^2}&#x3D;\mathcal{T}^*\times \int _{0}^{+\infty}dx e^{-x |\mathcal{T}|^2}&#x3D;\int _{0}^{+\infty}dx \mathcal{T}^* e^{-x |\mathcal{T}|^2}<br>        \rightarrow \int _{\tau _{uv}^4}^{\tau _{ir}^4}dxA^*e^{-x|\mathcal{T}|^2}<br>$$</p>
+<h4 id="参数选取"><a href="#参数选取" class="headerlink" title="参数选取"></a>参数选取</h4><p>由于量纲发生变化, 需要重新调整参数保持零温零化学势结果不变.</p>
+<p>通过计算, 选择紫外参数$\Lambda _{uv}&#x3D;0.988$ GeV.</p>
+<h4 id="结果-3"><a href="#结果-3" class="headerlink" title="结果"></a>结果</h4><p>零温零化学势结果计算如下:</p>
+<table>
+        <tr>
+                <th>$m _u$ (GeV)</th>
+                <th>$M _0$ (GeV)</th>
+                <th>$M _u$ (GeV)</th>
+        </tr>
+        <tr>
+                <td>0.007</td>
+                <td>0.356</td>
+                <td>0.364</td>
+        </tr>
+</table>
+
+<p>有限温及有限化学势结果:</p>
+<div style="display: flex; justify-content: center; align-items: flex-start; gap: 24px;">
+  <div style="flex: 1; text-align: center;">
+    <img src="/images/QCD/other-results/M-T.png" alt="M-T.png" style="width:60%;display:block;margin:0 auto;"/>
+    <p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;">$\mu=0$ GeV</p>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <img src="/images/QCD/other-results/M-μ.png" alt="M-μ.png" style="width:60%;display:block;margin:0 auto;"/>
+    <p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;">$T=0.0005$ GeV; $\mu$ from 0 GeV to 0.5 GeV</p>
+  </div>
+</div>
+
+<h4 id="不合理之处-4"><a href="#不合理之处-4" class="headerlink" title="不合理之处"></a>不合理之处</h4><ul>
+<li>明显改变了模型参数的物理意义, 由于零温退回不到原来已有的模型, 需要重新构建新参数模型.</li>
+<li>质量上翘.</li>
+</ul>
+<h4 id="可取之处-3"><a href="#可取之处-3" class="headerlink" title="可取之处"></a>可取之处</h4><ul>
+<li>没有明显的数学问题, 为数不多的一级相变结果. 所以我说大概是e指数上动量截断的阶数决定相变.</li>
+</ul>
+<h3 id="6-实部方案"><a href="#6-实部方案" class="headerlink" title="6. 实部方案"></a>6. 实部方案</h3><p>我们已经通过对称性证明$R _B$和$R _C$都是实数, 但是为了确保严谨, 我们需要验证确实虚部之和为0.<br>原式为:<br>$$R _C&#x3D;\frac{8}{3\pi}\frac{\alpha _{IR}}{m _G^2}T\sum _{l}\int _{s} s^{\frac{1}{2}}\frac{ i(\widetilde{\omega} _l-iR _C)}{s+(\widetilde{\omega} _l-i R _C)^2+ R _B^2}$$<br>及<br>$$R _B&#x3D;m+\frac{16}{3\pi}\frac{\alpha  _{IR}}{m  _G^2}T\sum _{l}\int _{s} s^{\frac{1}{2}}\frac{ R  _B}{s+(\widetilde{\omega}  _l-i R  _C)^2+ R  _B^2} $$</p>
+<p>虚部验证:</p>
+<p>$$\sum _{l}\int _{s} s^{\frac{1}{2}}\Im[\frac{ i(\widetilde{\omega} _l-iR _C)}{s+(\widetilde{\omega} _l-i R _C)^2+ R _B^2}]<br>$$<br>$$&#x3D;\sum _{l}\int _{s} s^{\frac{1}{2}}\Im[\frac{-(\mu-R _C)[s-\omega _l^2-(\mu-R _C)^2+ R _B^2]+i\omega _l[s+\omega _l^2+(\mu-R _C)^2+ R _B^2]}{[s+\omega _l^2-(\mu-R _C) ^2+ R _B^2]^2+[2\omega _l(\mu-R _C)]^2}]$$<br>$$&#x3D;\sum _{l}\int _{s} s^{\frac{1}{2}}\omega _l\frac{s+\omega _l^2+(\mu-R _C)^2+ R _B^2}{[s+\omega _l^2-(\mu-R _C)^2+ R _B^2]^2+[2\omega _l(\mu-R _C)]^2}&#x3D;0$$<br>及</p>
+<p>$$\sum _{l}\int _{s} s^{\frac{1}{2}}\Im[\frac{ R_B}{s+(\widetilde{\omega}_l-i R_C)^2+ R_B^2}]$$<br>$$<br>        &#x3D;\sum _{l}\int _{s} s^{\frac{1}{2}}\Im[\frac{ R_B[s+\omega_l^2-(\mu-R_C)^2+ R_B^2-2i\omega_l(\mu-R_C)]}{[s+\omega_l^2-(\mu-R_C)^2+ R_B^2]^2+[2\omega_l(\mu-R_C)]^2}]$$<br>$$<br>&#x3D;-2R_B\sum _{l}\int _{s} s^{\frac{1}{2}}\omega_l\frac{\mu-R_C}{[s+\omega_l^2-(\mu-R_C)^2+ R_B^2]^2+[2\omega_l(\mu-R_C)]^2}&#x3D;0$$</p>
+<p>所以虚部之和为0, 只需要取实部即可.</p>
+<h4 id="核心公式-5"><a href="#核心公式-5" class="headerlink" title="核心公式"></a>核心公式</h4><p>$$<br>\frac{1}{\mathcal{T}}&#x3D;\frac{\Re(\mathcal{T})}{\Re(\mathcal{T})^2+\Im(\mathcal{T})}&#x3D;\frac{1}{\frac{\Re(\mathcal{T})^2+\Im(\mathcal{T})}{\Re(\mathcal{T})}}\rightarrow \int _{\tau _{uv}^2}^{\tau _{ir}^2}dx e^{-x \frac{\Re(\mathcal{T})^2+\Im(\mathcal{T})}{\Re(\mathcal{T})}}<br>        &#x3D;\frac{\Re(\mathcal{T})}{\Re(\mathcal{T})^2+\Im(\mathcal{T})}\times e^{-x|\frac{\Re(\mathcal{T})^2+\Im(\mathcal{T})}{\Re(\mathcal{T})}|}|^{\tau _{uv}^2} _{\tau _{ir}^2}<br>$$</p>
+<h4 id="结果-4"><a href="#结果-4" class="headerlink" title="结果"></a>结果</h4><img src="/images/QCD/other-results/7.png" alt="7.png" style="width:60%;display:block;margin:0 auto;"/>
+    <p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;">$T=0.0005$ and $\mu$ from 0 to 0.8 GeV</p>
+
+<h4 id="不合理之处-5"><a href="#不合理之处-5" class="headerlink" title="不合理之处"></a>不合理之处</h4><ul>
+<li>结果是crossover, 并且质量会上翘.</li>
+</ul>
+<h4 id="可取之处-4"><a href="#可取之处-4" class="headerlink" title="可取之处"></a>可取之处</h4><ul>
+<li>同样解决了虚数问题.</li>
+</ul>
+<h4 id="改进方案"><a href="#改进方案" class="headerlink" title="改进方案"></a>改进方案</h4><ul>
+<li>我们发现出现crossover在数值上因为总贡献偏大, 所以我们可以将$\Re(\mathcal{T})&lt;0$的部分不做任何正规化, 这样相当于多算了负数部分, 会压低总贡献, 可能会出现一级相变. 但是结果是, 即使这样, 仍然是crossover.</li>
+<li>所以问题就不只是负数部分, 正数部分贡献也偏大, 方法也需要调整.</li>
+</ul>
+<h3 id="7-新定义函数尝试"><a href="#7-新定义函数尝试" class="headerlink" title="7. 新定义函数尝试"></a>7. 新定义函数尝试</h3><p>由于现在只有正轴定义, 我们希望从头构造一个偶函数, 解决定义缺失的问题.</p>
+<h4 id="核心公式-6"><a href="#核心公式-6" class="headerlink" title="核心公式"></a>核心公式</h4><p>$$\frac{1}{\mathcal{T}}&#x3D;\frac{2}{\pi}\int_{Sign(\Re(\mathcal{T}))\tau_{uv}^2}^{Sign(\Re(\mathcal{T}))\tau_{ir}^2}sech(\mathcal{T}x)dx$$</p>
+<p>带入$R _B$公式为:</p>
+<p>$$R_B&#x3D;m<br>        +\frac{16}{3\pi^3}\frac{\alpha_{IR}}{m_G^2}\int_0^\infty ds\int_{-\infty}^\infty dp_0s^{\frac{1}{2}}R_B\int_{Sign(\Re(s+(p_0+i\mu’)^2+ R_B^2))\tau_{uv}^2}^{Sign(\Re(s+(p_0+i\mu’)^2+ R_B^2))\tau_{ir}^2}sech((s+(p_0+i\mu’)^2+ R_B^2)x)dx$$</p>
+<h4 id="结果-5"><a href="#结果-5" class="headerlink" title="结果"></a>结果</h4><img src="/images/QCD/other-results/Sechx.png" alt="Sechx.png" style="width:60%;display:block;margin:0 auto;"/>
+    <p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;">$T=0.0005$ and $\mu$ from 0 to 0.6 GeV</p>
+
+<h4 id="不合理之处-6"><a href="#不合理之处-6" class="headerlink" title="不合理之处"></a>不合理之处</h4><ul>
+<li><p>结果同样是crossover.</p>
+</li>
+<li><p>模型物理意义模糊.</p>
+</li>
+</ul>
+<h4 id="可取之处-5"><a href="#可取之处-5" class="headerlink" title="可取之处"></a>可取之处</h4><ul>
+<li>数学上<b>相对</b>严谨. 希望从源头解决定义缺失的问题.</li>
+</ul>
+<h3 id="8-四维硬截断"><a href="#8-四维硬截断" class="headerlink" title="8. 四维硬截断"></a>8. 四维硬截断</h3><p>有三维硬截断当然尝试过四维硬截断.</p>
+<h4 id="核心公式-7"><a href="#核心公式-7" class="headerlink" title="核心公式"></a>核心公式</h4><p>$$<br>n_+&#x3D;\frac{1}{2\pi}\int_{-\Lambda}^{\Lambda}dp_0\frac{E_{s,R_B}+\mu’}{(E_{s,R_B}+\mu’)^2+p_0^2}&#x3D;\frac{1}{\pi}\arctan(\frac{\Lambda}{E_{s,R_B}+\mu’})<br>$$<br>$$<br>        n_-&#x3D;\frac{1}{2\pi}\int_{-\Lambda}^{\Lambda}dp_0\frac{E_{s,R_B}-\mu’}{(E_{s,R_B}-\mu’)^2+p_0^2}&#x3D;\frac{1}{\pi}\arctan(\frac{\Lambda}{E_{s,R_B}-\mu’})<br>$$<br>因此$R _B$公式为(还可化简):<br>$$<br>        R _B&#x3D;m+\frac{8}{3\pi}\frac{\alpha _{IR}}{m _G^2}\int _s^{\Lambda^2}\frac{R _Bs^{\frac{1}{2}}}{E _{s,R _B}}\frac{1}{\pi}(\arctan(\frac{\Lambda}{E _{s,R _B}+\mu’})+\arctan(\frac{\Lambda}{E _{s,R _B}-\mu’}))<br>$$</p>
+<h4 id="结果-6"><a href="#结果-6" class="headerlink" title="结果"></a>结果</h4><div style="display: flex; justify-content: center; align-items: flex-start; gap: 24px;">
+  <div style="flex: 1; text-align: center;">
+    <img src="/images/QCD/other-results/NJL-4D-alpha.png" alt="NJL-4D-alpha.png" style="width:100%;display:block;margin:0 auto;"/>
+    <p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;">Change  $\alpha_{IR}$ from $0.93\pi$ to $0.8\pi$, $\Lambda=0.83$ GeV.</p>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <img src="/images/QCD/other-results/NJL-4D-lambda.png" alt="NJL-4D-lambda.png" style="width:100%;display:block;margin:0 auto;"/>
+    <p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;">Change  $\Lambda$ from 0.83 GeV to 0.75 GeV, $\alpha_{IR}=0.93\pi$.</p>
+  </div>
+</div>
+
+<h4 id="不合理之处-7"><a href="#不合理之处-7" class="headerlink" title="不合理之处"></a>不合理之处</h4><ul>
+<li>虽然是四维硬截断, 但是却并不协变. 正常的四维硬截断应该类似球坐标, 但是这里是柱坐标, 所以是有问题的.</li>
+</ul>
+<h3 id="9-参数修正法"><a href="#9-参数修正法" class="headerlink" title="9. 参数修正法"></a>9. 参数修正法</h3><p>考虑解禁闭, $\alpha _{IR}$应该随温度和化学势跑动而变化.</p>
+<h4 id="核心公式-8"><a href="#核心公式-8" class="headerlink" title="核心公式"></a>核心公式</h4><p>零温零化学势时$\lim _{T,\mu\rightarrow0}\alpha _{IR}\left(T,\mu\right)&#x3D;\alpha _{IR}\left(0,0\right)&#x3D;0.93\pi$</p>
+<p>温度化学势很高的时候$\lim _{T,\mu\rightarrow+\infty}\alpha _{IR}\left(T,\mu\right)&#x3D;0$</p>
+<p>因此我们可以构造一个函数, 使得$\alpha _{IR}$满足上述条件.</p>
+<p>$$\alpha _{IR}\left(T,\mu\right)&#x3D;\frac{M\left(T,\mu\right)}{M\left(0,0\right)}\alpha _{IR}$$</p>
+<p>然后可以考虑多次求解反复迭代.</p>
+<h4 id="结果-7"><a href="#结果-7" class="headerlink" title="结果"></a>结果</h4><p>零化学势有限温:</p>
+<div style="display: flex; justify-content: center; align-items: flex-start; gap: 24px;">
+  <div style="flex: 1; text-align: center;">
+    <img src="/images/QCD/other-results/All_Result_T_l.png" alt="All_Result_T_l.png" style="width:100%;display:block;margin:0 auto;"/>
+    <p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;">手征极限 $m=0$ GeV</p>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <img src="/images/QCD/other-results/All_Result_T_b.png" alt="All_Result_T_b.png" style="width:100%;display:block;margin:0 auto;"/>
+    <p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;">超越手征极限 $m=0.007$ GeV</p>
+  </div>
+</div>
+
+<p>零温有限化学势:</p>
+<div style="display: flex; justify-content: center; align-items: flex-start; gap: 24px;">
+  <div style="flex: 1; text-align: center;">
+    <img src="/images/QCD/other-results/All_Result_mu_l.png" alt="All_Result_mu_l.png" style="width:100%;display:block;margin:0 auto;"/>
+    <p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;">手征极限 $m=0$ GeV</p>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <img src="/images/QCD/other-results/All_Result_mu_b.png" alt="All_Result_mu_b.png" style="width:100%;display:block;margin:0 auto;"/>
+    <p style="font-size: 12px; color: #888; font-style: italic; margin: 8px 0 20px 0; text-align: center;">超越手征极限 $m=0.007$ GeV</p>
+  </div>
+</div>
+
+<h4 id="不合理之处-8"><a href="#不合理之处-8" class="headerlink" title="不合理之处"></a>不合理之处</h4><ul>
+<li>考虑M变小, 导致$\alpha _{IR}$变小; 然后代入Gap方程, $\alpha _{IR}$变小又导致M变小, 于是就会一直变小, 最终导致质量为0. M变大情况也同理. 其实就是这种迭代方法不收敛.</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li><p>这里列出的是主要的尝试, 还有一些其他的尝试由于物理比这些尝试更不清晰, 结果也不好, 导致丧失了记录.</p>
+</li>
+<li><p>这里的大部分方案的物理其实可以合并, 考虑下面的式子:<br>$$\frac{1}{\mathcal{T}}&#x3D;\frac{\mathcal{T}’}{\mathcal{T}}*\frac{1}{\mathcal{T}’}&#x3D;\frac{\mathcal{T}’}{\mathcal{T}}*\int _{0}^{+\infty}d\tau  e^{-\tau \mathcal{T}’} \rightarrow\frac{\mathcal{T}’}{\mathcal{T}}*\int _{\tau _{uv}^2}^{\tau _{ir}^2}d\tau  e^{-\tau \mathcal{T}’}<br> &#x3D;\frac{1}{\mathcal{T}}\times e^{-x\mathcal{T}’}|^{\tau _{uv}^2} _{x&#x3D;\tau _{ir}^2}$$</p>
+</li>
+<li><p>这里$\mathcal{T}’$可以是 $|\mathcal{T}|$, $Re(\mathcal{T})$, $|\mathcal{T}|^2$, $\frac{\Re(\mathcal{T})^2+\Im(\mathcal{T})}{\Re(\mathcal{T})}$等, 也可以是其他的函数, 只要保证$\mathcal{T}’$是实数即可. 这样就有自由性.</p>
+</li>
+<li><p>本质还是合理的几种结果都不好.</p>
+</li>
+</ul>
+<h3 id="10-最初的分类讨论计算"><a href="#10-最初的分类讨论计算" class="headerlink" title="10. 最初的分类讨论计算"></a>10. 最初的分类讨论计算</h3><p>在最初的计算中, 由于对Mathematica不熟悉, 于是只能通过分类讨论计算可能出现的所有情况.</p>
+<h4 id="资料保存-1"><a href="#资料保存-1" class="headerlink" title="资料保存"></a>资料保存</h4><p><a href="/images/QCD/other-results/details.tex" target="_blank">TEX代码</a></p>
+<p><a href="/images/QCD/other-results/details.pdf" target="_blank">PDF文件</a></p>
+<h4 id="不合理之处-9"><a href="#不合理之处-9" class="headerlink" title="不合理之处"></a>不合理之处</h4>
+  </div>
+  <!-- 许可协议标签，浅绿色背景，文章后另起一行 -->
+  <div class="post-copyright" style="background: #e6f9e6; color: #228B22; padding: 18px 28px; border-radius: 20px; margin-top: 32px;">
+    <p style="margin:0;">本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" style="color:#228B22;text-decoration:underline;">CC BY-NC-SA 4.0</a> 许可协议发布.<br>
+    作者: LiZnB, 文章链接: <a href="https://blog.liznb.org/2025/09/16/QCD3/" style="color:#228B22;text-decoration:underline;">
+      https://blog.liznb.org/2025/09/16/QCD3/
+    </a></p>
+    <p style="margin:0;">如果本文给你带来了帮助或让你觉得有趣, 可以考虑<a href="https://blog.liznb.org/about/#donate" target="_blank" style="color:#228B22;text-decoration:underline;">赞助我</a>¬_¬</p>
+  </div>
+</article>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a href="/categories/">Categories</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%99%84%E5%BD%95A-%E5%90%84%E7%A7%8D%E5%B0%9D%E8%AF%95%E8%BF%87%E7%9A%84%E6%AD%A3%E8%A7%84%E5%8C%96%E6%96%B9%E6%A1%88"><span class="toc-number">1.</span> <span class="toc-text">附录A 各种尝试过的正规化方案</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-%E5%B7%B2%E6%9C%89%E7%9A%84%E7%83%AD%E6%A0%B8%E6%AD%A3%E8%A7%84%E5%8C%96%E5%85%AC%E5%BC%8F"><span class="toc-number">1.1.1.</span> <span class="toc-text">0. 已有的热核正规化公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9C%80%E5%88%9D%E6%96%B9%E6%A1%88"><span class="toc-number">1.1.2.</span> <span class="toc-text">1. 最初方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%85%AC%E5%BC%8F"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">核心公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%88%E7%90%86%E4%B9%8B%E5%A4%84"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">不合理之处</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%A5%87%E6%80%AA%E7%9A%84%E4%BF%AE%E6%AD%A3%E6%96%B9%E6%A1%88"><span class="toc-number">1.1.3.</span> <span class="toc-text">2. 奇怪的修正方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%85%AC%E5%BC%8F-1"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">核心公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%88%E7%90%86%E4%B9%8B%E5%A4%84-1"><span class="toc-number">1.1.3.3.</span> <span class="toc-text">不合理之处</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%8F%96%E4%B9%8B%E5%A4%84"><span class="toc-number">1.1.3.4.</span> <span class="toc-text">可取之处</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%9C%80%E5%90%8E%E7%94%A8%E7%9A%84%E6%96%B9%E6%A1%88"><span class="toc-number">1.1.4.</span> <span class="toc-text">3. 最后用的方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%85%AC%E5%BC%8F-2"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">核心公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C-1"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%88%E7%90%86%E4%B9%8B%E5%A4%84-2"><span class="toc-number">1.1.4.3.</span> <span class="toc-text">不合理之处</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%8F%96%E4%B9%8B%E5%A4%84-1"><span class="toc-number">1.1.4.4.</span> <span class="toc-text">可取之处</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%BB%9D%E5%AF%B9%E5%80%BC%E6%96%B9%E6%A1%88"><span class="toc-number">1.1.5.</span> <span class="toc-text">4. 绝对值方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%85%AC%E5%BC%8F-3"><span class="toc-number">1.1.5.1.</span> <span class="toc-text">核心公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C-2"><span class="toc-number">1.1.5.2.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%88%E7%90%86%E4%B9%8B%E5%A4%84-3"><span class="toc-number">1.1.5.3.</span> <span class="toc-text">不合理之处</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%8F%96%E4%B9%8B%E5%A4%84-2"><span class="toc-number">1.1.5.4.</span> <span class="toc-text">可取之处</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%A8%A1%E6%96%B9%E6%96%B9%E6%A1%88"><span class="toc-number">1.1.6.</span> <span class="toc-text">5. 模方方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%84%E6%96%99%E4%BF%9D%E5%AD%98"><span class="toc-number">1.1.6.1.</span> <span class="toc-text">资料保存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%85%AC%E5%BC%8F-4"><span class="toc-number">1.1.6.2.</span> <span class="toc-text">核心公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E9%80%89%E5%8F%96"><span class="toc-number">1.1.6.3.</span> <span class="toc-text">参数选取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C-3"><span class="toc-number">1.1.6.4.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%88%E7%90%86%E4%B9%8B%E5%A4%84-4"><span class="toc-number">1.1.6.5.</span> <span class="toc-text">不合理之处</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%8F%96%E4%B9%8B%E5%A4%84-3"><span class="toc-number">1.1.6.6.</span> <span class="toc-text">可取之处</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%AE%9E%E9%83%A8%E6%96%B9%E6%A1%88"><span class="toc-number">1.1.7.</span> <span class="toc-text">6. 实部方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%85%AC%E5%BC%8F-5"><span class="toc-number">1.1.7.1.</span> <span class="toc-text">核心公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C-4"><span class="toc-number">1.1.7.2.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%88%E7%90%86%E4%B9%8B%E5%A4%84-5"><span class="toc-number">1.1.7.3.</span> <span class="toc-text">不合理之处</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%8F%96%E4%B9%8B%E5%A4%84-4"><span class="toc-number">1.1.7.4.</span> <span class="toc-text">可取之处</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%B9%E8%BF%9B%E6%96%B9%E6%A1%88"><span class="toc-number">1.1.7.5.</span> <span class="toc-text">改进方案</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E6%96%B0%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E5%B0%9D%E8%AF%95"><span class="toc-number">1.1.8.</span> <span class="toc-text">7. 新定义函数尝试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%85%AC%E5%BC%8F-6"><span class="toc-number">1.1.8.1.</span> <span class="toc-text">核心公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C-5"><span class="toc-number">1.1.8.2.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%88%E7%90%86%E4%B9%8B%E5%A4%84-6"><span class="toc-number">1.1.8.3.</span> <span class="toc-text">不合理之处</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%8F%96%E4%B9%8B%E5%A4%84-5"><span class="toc-number">1.1.8.4.</span> <span class="toc-text">可取之处</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%9B%9B%E7%BB%B4%E7%A1%AC%E6%88%AA%E6%96%AD"><span class="toc-number">1.1.9.</span> <span class="toc-text">8. 四维硬截断</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%85%AC%E5%BC%8F-7"><span class="toc-number">1.1.9.1.</span> <span class="toc-text">核心公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C-6"><span class="toc-number">1.1.9.2.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%88%E7%90%86%E4%B9%8B%E5%A4%84-7"><span class="toc-number">1.1.9.3.</span> <span class="toc-text">不合理之处</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E5%8F%82%E6%95%B0%E4%BF%AE%E6%AD%A3%E6%B3%95"><span class="toc-number">1.1.10.</span> <span class="toc-text">9. 参数修正法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%85%AC%E5%BC%8F-8"><span class="toc-number">1.1.10.1.</span> <span class="toc-text">核心公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C-7"><span class="toc-number">1.1.10.2.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%88%E7%90%86%E4%B9%8B%E5%A4%84-8"><span class="toc-number">1.1.10.3.</span> <span class="toc-text">不合理之处</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.1.11.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E6%9C%80%E5%88%9D%E7%9A%84%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA%E8%AE%A1%E7%AE%97"><span class="toc-number">1.1.12.</span> <span class="toc-text">10. 最初的分类讨论计算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%84%E6%96%99%E4%BF%9D%E5%AD%98-1"><span class="toc-number">1.1.12.1.</span> <span class="toc-text">资料保存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%88%E7%90%86%E4%B9%8B%E5%A4%84-9"><span class="toc-number">1.1.12.2.</span> <span class="toc-text">不合理之处</span></a></li></ol></li></ol></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.liznb.org/2025/09/16/QCD3/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.liznb.org/2025/09/16/QCD3/&text=论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.liznb.org/2025/09/16/QCD3/&title=论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.liznb.org/2025/09/16/QCD3/&is_video=false&description=论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案&body=Check out this article: https://blog.liznb.org/2025/09/16/QCD3/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.liznb.org/2025/09/16/QCD3/&title=论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.liznb.org/2025/09/16/QCD3/&title=论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.liznb.org/2025/09/16/QCD3/&title=论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.liznb.org/2025/09/16/QCD3/&title=论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.liznb.org/2025/09/16/QCD3/&name=论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.liznb.org/2025/09/16/QCD3/&t=论文记录-有限温有限化学势QCD-附录A 各种尝试过的正规化方案"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2025
+    LiZnB
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Categories</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

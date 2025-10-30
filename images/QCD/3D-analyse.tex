@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{pdfpages}
+\usepackage{float}%图片包
+%\usepackage{cite}
+\usepackage[backend=bibtex]{biblatex}
+%more math symbols
+\usepackage{amssymb}
+
+\title{Analyse First order or Crossover}
+\author{Xin-Peng Li}
+%Start of the document
+\begin{document}
+\maketitle
+When $\mu'\leq R_B$, the equation only have one solution, hence the multisolution zone must be $\mu'>R_B$. (There exists one possibility that both in $\mu'\leq R_B$ and $\mu'>R_B$ has at least one solution, but this case will not happen in CEP, so we ignore)
+When $\mu'>R_B$, the equation becomes
+\begin{equation}
+    \begin{split}
+    R_B=&m+\frac{8}{3\pi}\frac{\alpha_{IR}}{m_G^2}\int_{\mu'^2-R_B^2}^{\Lambda^2}\frac{R_Bs^{\frac{1}{2}}}{\sqrt{s+R_B^2}}ds\\
+        =&m+\frac{8}{3\pi}\frac{\alpha_{IR}R_B}{m_G^2}\left[R_B^2\ln(\sqrt{x+R_B^2}-\sqrt{x})+\sqrt{x(x+R_B^2)}\right]|_{\mu'^2-R_B^2}^{\Lambda^2}\\
+        =&m+\frac{8}{3\pi}\frac{\alpha_{IR}R_B}{m_G^2}\left[R_B^2\ln\frac{\sqrt{\Lambda^2+R_B^2}-\Lambda}{\mu'-\sqrt{\mu'^2-R_B^2}}+\Lambda\sqrt{\Lambda^2+R_B^2}-\mu'\sqrt{\mu'^2-R_B^2}\right]
+    \end{split}
+\end{equation}
+When the first order transition happens, we will get the picture as below:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{pic/shili.pdf}
+    \caption{There exists two points $(\mu_1,R_{B1}),(\mu_2,R_{B2})$; If the transition is crossover, we could not get these two points.}
+\end{figure}
+Define $\frac{8}{3\pi}\frac{\alpha_{IR}}{m_G^2}=k$. At these two points, the following relationship must be satisfied:
+\begin{itemize}
+    \item 
+    \begin{equation}
+        \begin{split}
+            F(x)=m+kx\left[x^2\ln\frac{\sqrt{\Lambda^2+x^2}-\Lambda}{\mu'-\sqrt{\mu'^2-x^2}}+\Lambda\sqrt{\Lambda^2+x^2}-\mu'\sqrt{\mu'^2-x^2}\right]-x=0
+        \end{split}
+    \end{equation}
+    \item 
+    \begin{equation}\label{F'}
+        \begin{split}
+            F'(x)=\frac{k\Lambda(3x^2+\Lambda^2)}{\sqrt{x^2+\Lambda^2}}-k\mu'\sqrt{\mu'^2-x^2}+3kx^2\ln\frac{\sqrt{\Lambda^2+x^2}-\Lambda}{\mu'-\sqrt{\mu'^2-x^2}}-1=0
+        \end{split}
+    \end{equation}
+\end{itemize}
+Solve the simultaneous equations and eliminate the logarithm part, we could get
+\begin{equation}
+    \begin{split}
+        &\frac{3}{2}m-kx\mu'\sqrt{\mu'^2-x^2}-x+\frac{kx\Lambda^3}{\sqrt{\Lambda^2+x^2}}=0\\
+        &\Leftrightarrow \mu'\sqrt{\mu'^2-x^2}=\frac{3}{2}\frac{m}{kx}-\frac{1}{k}+\frac{\Lambda^3}{\sqrt{\Lambda^2+x^2}}\equiv \frac{t(x)}{2}\\
+        &\Leftrightarrow \mu'=\sqrt{\frac{x^2+\sqrt{x^4+t^2(x)}}{2}}
+    \end{split}
+\end{equation}
+where $t(x)=\frac{3m}{kx}-\frac{2}{k}+\frac{2\Lambda^3}{\sqrt{\Lambda^2+x^2}}$
+Substitute this equation into \eqref{F'}, we could get
+    \begin{equation}
+        \begin{split}
+        &\frac{kx^2\Lambda}{\sqrt{x^2+\Lambda^2}}-\frac{1}{2}\frac{m}{x}+kx^2\ln\frac{\sqrt{\Lambda^2+x^2}-\Lambda}{\mu'-\sqrt{\mu'^2-x^2}}=0\\
+        &\Leftrightarrow \frac{kx^2\Lambda}{\sqrt{x^2+\Lambda^2}}-\frac{1}{2}\frac{m}{x}+kx^2\ln\frac{\sqrt{\Lambda^2+x^2}-\Lambda}{(\sqrt{x^4+t^2}-t)^{\frac{1}{2}}}=0\\
+        &\Leftrightarrow \frac{\Lambda}{\sqrt{x^2+\Lambda^2}}-\frac{1}{2}\frac{m}{kx^3}+\ln(\sqrt{\Lambda^2+x^2}-\Lambda)-\frac{1}{2}\ln(\sqrt{x^4+t^2}-t)\\
+        &= \frac{\Lambda}{\sqrt{x^2+\Lambda^2}}-\frac{1}{2}\frac{m}{kx^3}+\ln\frac{\sqrt{\Lambda^2+x^2}-\Lambda}{(\sqrt{x^4+t^2}-t)^{\frac{1}{2}}}=0\equiv F(x)
+        \end{split}
+    \end{equation}
+    If first order transition, the equation above must have two solutions; if crossover, the equation do not have any solution (in $x<M_0$).\\
+    So the CEP is:
+    \begin{itemize}
+        \item \begin{equation}\label{1}
+            F(x)=\frac{\Lambda}{\sqrt{x^2+\Lambda^2}}-\frac{1}{2}\frac{m}{kx^3}+\ln\frac{\sqrt{\Lambda^2+x^2}-\Lambda}{(\sqrt{x^4+t^2}-t)^{\frac{1}{2}}}= 0
+        \end{equation}
+        \item \begin{equation}\label{2}
+            xF'(x)=\frac{3m}{2kx^3}+\frac{xt'}{2\sqrt{x^4+t^2}}+\frac{\Lambda^3}{(x^2+\Lambda^2)^{\frac{3}{2}}}-\frac{t}{\sqrt{x^4+t^2}}=0
+        \end{equation}
+        where $t'=\frac{dt}{dx}=-\frac{3m}{kx^2}-\frac{2x\Lambda^3}{(x^2+\Lambda^2)^{\frac{3}{2}}}$.
+    \end{itemize}
+    We have use a fact that if $F(x)=0, F'(x)=0$, then $x^nF(x)=0, x^nF'(x)=0$.\\
+Solve the \autoref{2}, we could get
+\begin{equation}
+        \frac{3m}{2kx^3}+\frac{1}{\sqrt{x^4+t^2}}(\frac{xt'}{2}-t)+\frac{\Lambda^3}{(x^2+\Lambda^2)^\frac{3}{2}}= 0
+\end{equation}
+This equation is not a simple equation, we could numerically get a solution $x_0=x(m,k,\Lambda)$, and take into \autoref{1}. If $F(x_0)>0$, first order transition; If $F(x_0)\leq 0$, crossover.\\
+% 这个分析 没有考虑C的影响
+\end{document}
+
