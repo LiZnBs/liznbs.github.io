@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="介绍在即将结束有限温课题之前, 导师让我研究核聚变中的温度与密度效应. 由于工作比较简单, 调研只用了一天左右.这里记录一下调研的结论. μ子催化核聚变背景利用μ子替代电子, 使得氘核(Deuterium)和氚核(Tritium)之间的距离大大缩短, 从而克服库伦势垒, 促进核聚变反应发生. 由于μ子的质量大约是电子的207倍, 因此它在原子中的轨道半径要小得多, 这使得两个原子核能够更接近彼此.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="调研记录-μ子催化核聚变">
+<meta property="og:url" content="https://blog.liznb.org/2025/11/19/01-fusion/index.html">
+<meta property="og:site_name" content="LiZnB&#39;s Blog">
+<meta property="og:description" content="介绍在即将结束有限温课题之前, 导师让我研究核聚变中的温度与密度效应. 由于工作比较简单, 调研只用了一天左右.这里记录一下调研的结论. μ子催化核聚变背景利用μ子替代电子, 使得氘核(Deuterium)和氚核(Tritium)之间的距离大大缩短, 从而克服库伦势垒, 促进核聚变反应发生. 由于μ子的质量大约是电子的207倍, 因此它在原子中的轨道半径要小得多, 这使得两个原子核能够更接近彼此.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog.liznb.org/images/Fusion/T.png">
+<meta property="article:published_time" content="2025-11-19T07:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-05T12:17:08.461Z">
+<meta property="article:author" content="LiZnB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.liznb.org/images/Fusion/T.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>调研记录-μ子催化核聚变</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']],
+			  displayMath: [['$$','$$']]
+			},
+      TeX: {
+      Macros: {
+        slashed: ["{\\not\\!#1}", 1],
+        unit: "\\mathbb{I}"
+      }
+    }
+		  });
+		</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
+	
+  <!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//blog.liznb.org/matomo/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Categories</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2025/11/26/English5/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2025/10/30/202510tiyu/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.liznb.org/2025/11/19/01-fusion/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.liznb.org/2025/11/19/01-fusion/&text=调研记录-μ子催化核聚变"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.liznb.org/2025/11/19/01-fusion/&title=调研记录-μ子催化核聚变"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.liznb.org/2025/11/19/01-fusion/&is_video=false&description=调研记录-μ子催化核聚变"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=调研记录-μ子催化核聚变&body=Check out this article: https://blog.liznb.org/2025/11/19/01-fusion/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.liznb.org/2025/11/19/01-fusion/&title=调研记录-μ子催化核聚变"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.liznb.org/2025/11/19/01-fusion/&title=调研记录-μ子催化核聚变"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.liznb.org/2025/11/19/01-fusion/&title=调研记录-μ子催化核聚变"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.liznb.org/2025/11/19/01-fusion/&title=调研记录-μ子催化核聚变"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.liznb.org/2025/11/19/01-fusion/&name=调研记录-μ子催化核聚变&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.liznb.org/2025/11/19/01-fusion/&t=调研记录-μ子催化核聚变"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%CE%BC%E5%AD%90%E5%82%AC%E5%8C%96%E6%A0%B8%E8%81%9A%E5%8F%98%E8%83%8C%E6%99%AF"><span class="toc-number">2.</span> <span class="toc-text">μ子催化核聚变背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E5%86%85%E5%AE%B9"><span class="toc-number">3.</span> <span class="toc-text">研究内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#D-T-rightarrow-alpha-n"><span class="toc-number">3.1.</span> <span class="toc-text">$D+T\rightarrow \alpha + n$</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E9%83%A8%E5%88%86"><span class="toc-number">3.1.1.</span> <span class="toc-text">理论部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E5%8F%82%E6%95%B0"><span class="toc-number">3.1.2.</span> <span class="toc-text">输入参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E7%BB%93%E6%9E%9C"><span class="toc-number">3.1.3.</span> <span class="toc-text">计算结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D-T-mu-rightarrow-alpha-n-mu"><span class="toc-number">3.2.</span> <span class="toc-text">$D+T+\mu^-\rightarrow\alpha+n+\mu^-$</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B5%84%E6%96%99%E6%95%B4%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text">资料整理</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        调研记录-μ子催化核聚变
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">LiZnB</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-11-19T07:00:00.000Z" class="dt-published" itemprop="datePublished">2025-11-19</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        
+            <a href="/categories/01-Physics-Code-Record/03-Muon-Catalyzed-fusion/index.html">01-Physics-Code-Record/03-Muon-Catalyzed-fusion</a>
+            
+        
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>在即将结束有限温课题之前, 导师让我研究核聚变中的温度与密度效应. 由于工作比较简单, 调研只用了一天左右.<br>这里记录一下调研的结论.</p>
+<h1 id="μ子催化核聚变背景"><a href="#μ子催化核聚变背景" class="headerlink" title="μ子催化核聚变背景"></a>μ子催化核聚变背景</h1><p>利用μ子替代电子, 使得氘核(Deuterium)和氚核(Tritium)之间的距离大大缩短, 从而克服库伦势垒, 促进核聚变反应发生. 由于μ子的质量大约是电子的207倍, 因此它在原子中的轨道半径要小得多, 这使得两个原子核能够更接近彼此.</p>
+<p>发生的主要过程为:</p>
+<ol>
+<li>μ子与氘核或氚核结合形成μ子原子, $\mu\overset{10^{-12}s}{\rightarrow}d\mu\overset{10^{-9}s}{\rightarrow}t\mu$或者$\mu\rightarrow t\mu$</li>
+<li>形成共振分子$dt\mu$, $t\mu+dd\overset{10^{-9}s}{\rightarrow}dt\mu+d$</li>
+<li>共振分子发生聚变反应, $dt\mu\overset{10^{-12}s}{\rightarrow}\alpha+n+\mu+17.6MeV$</li>
+<li>有超过99.6%的概率μ子在聚变后逃逸, 继续重复上述过程, 但是有0.4%的概率μ子会被α粒子俘获, 失去催化能力, $dt\mu\rightarrow\alpha+n\mu+17.6MeV$</li>
+</ol>
+<p>μ子的寿命大约为$\tau_\mu&#x3D;2.2\times 10^{-6}s$ 相对于循环时长$10^{-8}s$来说是很长的, 可以进行约$\frac{10^{-6}}{10^{-8}}&#x3D;100$次.</p>
+<p>可以看到这里最耗时的步骤是形成共振分子$dt\mu$, 提高这个过程的速率是提升整体聚变速率的关键.</p>
+<p>另外, 这个方法没有被广泛应用的原因是μ子的产生需要消耗大量能量, 目前产生μ子的能量大于通过μ子催化核聚变所释放的能量, 因此整体上不划算.</p>
+<h1 id="研究内容"><a href="#研究内容" class="headerlink" title="研究内容"></a>研究内容</h1><h2 id="D-T-rightarrow-alpha-n"><a href="#D-T-rightarrow-alpha-n" class="headerlink" title="$D+T\rightarrow \alpha + n$"></a>$D+T\rightarrow \alpha + n$</h2><h3 id="理论部分"><a href="#理论部分" class="headerlink" title="理论部分"></a>理论部分</h3><p>假设D, T的质量分别为$m_D, m_T$, 约化质量为: $\mu&#x3D;\frac{m_D m_T}{m_D + m_T}$,<br>单位体积两个原子核的反应速率为:$n_{DT}&#x3D;n_Dn_T\langle\sigma v\rangle$, 其中$n_D$和$n_T$分别是两个原子核的密度, $\langle\sigma v\rangle$是反应概率, 有<br>$$\langle\sigma v\rangle &#x3D;\int _0^{+\infty} n(v)v\sigma(v) dv&#x3D;\mu^{-1}\int_0^{+\infty}  n(E)\sigma(E)dE$$<br>其中,$v(E)&#x3D;\sqrt{2E&#x2F;\mu}$是怕碰撞相对速度.<br>玻尔兹曼经典分布下,有<br>$$n(E)&#x3D;\frac{2E\sqrt{2\mu}}{\sqrt{\pi kT\mu}kT}e^{-E&#x2F;kT}$$</p>
+<p><span style="color: #ff0000ff;">注: 由于密度很低, 两个粒子之间间隔较远, 可以明显区分出两个粒子, 因此不存在量子统计效应. 只有密度较高, 温度很低的情况才需要考虑量子效应, 因此只需要使用经典统计.</span></p>
+<p>使用天体物理S因子表示截面, 有<br>$$\sigma(E)&#x3D;\frac{S(E)}{E}e^{-2\pi\eta(E)}$$<br>其中,$\eta(E)&#x3D;\frac{Z_D Z_T e^2}{\hbar}\sqrt{\frac{\mu}{2E}}$.<br>因此, 我们可以直接计算$\langle\sigma v\rangle(T)$,有<br>$$\langle\sigma v\rangle<br>&#x3D;\frac{2\sqrt{2}}{\sqrt{\pi kT\mu}kT}\int_0^{+\infty}  S(E)e^{-E&#x2F;kT-2\pi\eta(E)}dE$$</p>
+<p><a href="https://www.researchgate.net/profile/Hans-Haubold/publication/230916821_Analytical_representation_of_the_thermonuclear_reaction_rate_and_fusion_energy_production_in_a_spherical_plasma_shock_wave/links/54bf5daf0cf2acf661cdfca1/Analytical-representation-of-the-thermonuclear-reaction-rate-and-fusion-energy-production-in-a-spherical-plasma-shock-wave.pdf?_sg%5B0%5D=started_experiment_milestone&origin=journalDetail&_rtd=e30%3D&__cf_chl_rt_tk=MFA3gbpRGkP7nFntEClGgwpFI1_3QktroVFuXNaurHw-1758611129-1.0.1.1-mov41OLqegl6fMwQP7bZ83XC.v_Z.9aWVfb78nSatBY" target="_blank">参考文献</a></p>
+<h3 id="输入参数"><a href="#输入参数" class="headerlink" title="输入参数"></a>输入参数</h3><table>
+  <tr>
+    <th style="text-align:center;">符号</th>
+    <th style="text-align:center;">数值</th>
+  </tr>
+  <tr>
+    <td style="text-align:center;">$Z_D, Z_T$ </td>
+    <td style="text-align:center;">$1$</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">$AME$</td>
+    <td style="text-align:center;">$0.5110034D0$ $MeV/c^2$</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">$amp$</td>
+    <td style="text-align:center;">$938.2720813d0$ $MeV/c^2$</td>
+  </tr>
+    <tr>
+    <td style="text-align:center;">$amn$</td>
+    <td style="text-align:center;">$939.5654133d0$ $MeV/c^2$</td>
+  </tr>
+    <tr>
+    <td style="text-align:center;">$AMC12$</td>
+    <td style="text-align:center;">$931.494D0$ $MeV/c^2$</td>
+  </tr>
+    <tr>
+    <td style="text-align:center;">$m_D$</td>
+    <td style="text-align:center;">$3670.481D0 *AME$</td>
+  </tr>
+      <tr>
+    <td style="text-align:center;">$m_T$</td>
+    <td style="text-align:center;">$5496.918D0 *AME$</td>
+  </tr>
+      <tr>
+    <td style="text-align:center;">$AMALP$</td>
+    <td style="text-align:center;">$4.001506D0*AMC12$</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">$\frac{e^2}{\hbar}$</td>
+    <td style="text-align:center;">$1/137$ $c$</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">$k$</td>
+    <td style="text-align:center;">$1$</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">$S(E)$</td>
+    <td style="text-align:center;">$(26 - 0.361E + 248E^2)/(1+((E-0.0479)/(0.0392))^2)$ $MeV\cdot b$</td>
+  </tr>
+</table>
+
+<p><span style="color: #ff0000ff;">注: $S(E)$的公式引用自</span><a href="https://arxiv.org/pdf/2401.17358" target="_blank" style="color: #ff0000ff;text-decoration: underline; text-decoration-color: #ff0000ff;">这里.</a></p>
+<table>
+  <tr>
+    <th style="text-align:center;">单位换算</th>
+  </tr>
+  <tr>
+    <td style="text-align:center;">$1MeV=10^3$ $KeV$</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">$1b\cdot c\approx 1.807*10^{10}$ $cm^3/(Mol\cdot s)$</td>
+  </tr>
+</table>
+
+<h3 id="计算结果"><a href="#计算结果" class="headerlink" title="计算结果"></a>计算结果</h3><p>积分上限取$E_{uplim}&#x3D;300KeV$, 结果如下所示<br><img src="/images/Fusion/T.png" alt="RealDSE" style="width:80%;display:block;margin:0 auto;"/></p>
+<p>得到的结果与<a href="https://arxiv.org/pdf/1701.02756" target="_blank">文献</a>结果完全一致.</p>
+<h2 id="D-T-mu-rightarrow-alpha-n-mu"><a href="#D-T-mu-rightarrow-alpha-n-mu" class="headerlink" title="$D+T+\mu^-\rightarrow\alpha+n+\mu^-$"></a>$D+T+\mu^-\rightarrow\alpha+n+\mu^-$</h2><p>由于$t\mu+dd\rightarrow dt\mu+d$这个反应需要时间较长, 因此主导整个反应进程. 我们需要计算它的反应速率.</p>
+<p>分子形成率为:</p>
+<p>$$\lambda_{dt\mu}&#x3D;\pi\rho_d\Sigma_{K_i,K_f}P_{K_i}(T)\int_0^\infty dE|\langle \Psi_f|H_{int}|\Psi_i\rangle |^2f_{cm}(E;T)\delta(E-E_{K_iK_f}^{res})$$</p>
+<p>其中,$\Psi _i&#x3D;|[dx] _{K _i 0},(t\mu) _{1s}^F\rangle$是初态波函数, $\Psi _f&#x3D;|[(dt\mu) _{11} ^{S+}d]x2e| _{K _f 2}* \rangle$是终态波函数, $K _i$和$K _f$分别是初态和终态的分子旋转角动量.</p>
+<p>形成概率为:</p>
+<p>$$\lambda_{dt\mu}&#x3D;\pi\Sigma_{K_i,K_f}P_{K_i}(T)\int_0^\infty dE|\langle \Psi_f|H_{int}|\Psi_i\rangle |^2f_{cm}(E;T)\delta(E-E_{K_iK_f}^{res})$$</p>
+<p>只需要将公式里的几个输入确定:</p>
+<ul>
+<li>$f_{cm}(E;T)$遵循Maxwell-Boltzmann分布, 有<br>$$f_{cm}(E;T)&#x3D;\frac{2}{\sqrt{\pi}}\left(\frac{1}{kT}\right)^{3&#x2F;2}\sqrt{E}e^{-E&#x2F;kT}$$</li>
+<li>$P_{K_i}(T)$是温度为T时, 初态不同转动能级的占据概率, 有<br>$$P_{K_i}(T)&#x3D;\frac{(2K_i+1)\xi(K_i)e^{-E_{K_i}&#x2F;kT}}{\Sigma_{K_i}(2K_i+1)\xi(K_i)e^{-E_{K_i}&#x2F;kT}}$$<br>由于在dd交换下的总对称性,<br>$$\xi(K_i)&#x3D;\begin{cases}\frac{1}{3}, &amp; K_i&#x3D;odd\\frac{2}{3}, &amp; K_i&#x3D;even\end{cases}$$</li>
+<li>如果考虑共振宽度, $\delta$函数可以用Lorentzian函数代替:<br>$$\delta(E-E_{K_iK_f}^{res})\rightarrow \frac{\Gamma_{K_iK_f}&#x2F;2\pi}{(E-E_{K_iK_f}^{res})^2+(\Gamma_{K_iK_f}&#x2F;2)^2}$$</li>
+</ul>
+<h1 id="资料整理"><a href="#资料整理" class="headerlink" title="资料整理"></a>资料整理</h1><p><a href="/images/Fusion/fusion.pdf" target="_blank">Notes</a></p>
+<p><a href="https://arxiv.org/pdf/1701.02756" target="_blank">两体聚变Notebook代码</a></p>
+
+  </div>
+  <!-- 许可协议标签，浅绿色背景，文章后另起一行 -->
+  <div class="post-copyright" style="background: #e6f9e6; color: #228B22; padding: 18px 28px; border-radius: 20px; margin-top: 32px;">
+    <p style="margin:0;">本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" style="color:#228B22;text-decoration:underline;">CC BY-NC-SA 4.0</a> 许可协议发布.<br>
+    作者: LiZnB, 文章链接: <a href="https://blog.liznb.org/2025/11/19/01-fusion/" style="color:#228B22;text-decoration:underline;">
+      https://blog.liznb.org/2025/11/19/01-fusion/
+    </a></p>
+    <p style="margin:0;">如果本文给你带来了帮助或让你觉得有趣, 可以考虑<a href="https://blog.liznb.org/about/#donate" target="_blank" style="color:#228B22;text-decoration:underline;">赞助我</a>¬_¬</p>
+  </div>
+</article>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a href="/categories/">Categories</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%CE%BC%E5%AD%90%E5%82%AC%E5%8C%96%E6%A0%B8%E8%81%9A%E5%8F%98%E8%83%8C%E6%99%AF"><span class="toc-number">2.</span> <span class="toc-text">μ子催化核聚变背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E5%86%85%E5%AE%B9"><span class="toc-number">3.</span> <span class="toc-text">研究内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#D-T-rightarrow-alpha-n"><span class="toc-number">3.1.</span> <span class="toc-text">$D+T\rightarrow \alpha + n$</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E9%83%A8%E5%88%86"><span class="toc-number">3.1.1.</span> <span class="toc-text">理论部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E5%8F%82%E6%95%B0"><span class="toc-number">3.1.2.</span> <span class="toc-text">输入参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E7%BB%93%E6%9E%9C"><span class="toc-number">3.1.3.</span> <span class="toc-text">计算结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D-T-mu-rightarrow-alpha-n-mu"><span class="toc-number">3.2.</span> <span class="toc-text">$D+T+\mu^-\rightarrow\alpha+n+\mu^-$</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B5%84%E6%96%99%E6%95%B4%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text">资料整理</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.liznb.org/2025/11/19/01-fusion/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.liznb.org/2025/11/19/01-fusion/&text=调研记录-μ子催化核聚变"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.liznb.org/2025/11/19/01-fusion/&title=调研记录-μ子催化核聚变"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.liznb.org/2025/11/19/01-fusion/&is_video=false&description=调研记录-μ子催化核聚变"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=调研记录-μ子催化核聚变&body=Check out this article: https://blog.liznb.org/2025/11/19/01-fusion/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.liznb.org/2025/11/19/01-fusion/&title=调研记录-μ子催化核聚变"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.liznb.org/2025/11/19/01-fusion/&title=调研记录-μ子催化核聚变"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.liznb.org/2025/11/19/01-fusion/&title=调研记录-μ子催化核聚变"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.liznb.org/2025/11/19/01-fusion/&title=调研记录-μ子催化核聚变"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.liznb.org/2025/11/19/01-fusion/&name=调研记录-μ子催化核聚变&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.liznb.org/2025/11/19/01-fusion/&t=调研记录-μ子催化核聚变"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2025-2026
+    LiZnB
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Categories</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

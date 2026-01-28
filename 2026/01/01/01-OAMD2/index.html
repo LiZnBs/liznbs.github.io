@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="第一部分：构建64个基底理论部分梳理构建基底的理论主要参考Eichmann三体Faddeev基底论文. 下面进行简单的整理. 欧式convention动量$p\cdot q&#x3D;\sum_{k&#x3D;1}^4 p_kq_k$, $p^2&#x3D;p\cdot p$, $\slashed{p}&#x3D;p\cdot \gamma$若$p^2&gt;0$, 向量p是类空的; 若$p^2&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论文记录-三体OAMD-2 基底构建">
+<meta property="og:url" content="https://blog.liznb.org/2026/01/01/01-OAMD2/index.html">
+<meta property="og:site_name" content="LiZnB&#39;s Blog">
+<meta property="og:description" content="第一部分：构建64个基底理论部分梳理构建基底的理论主要参考Eichmann三体Faddeev基底论文. 下面进行简单的整理. 欧式convention动量$p\cdot q&#x3D;\sum_{k&#x3D;1}^4 p_kq_k$, $p^2&#x3D;p\cdot p$, $\slashed{p}&#x3D;p\cdot \gamma$若$p^2&gt;0$, 向量p是类空的; 若$p^2&amp;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-12-31T21:31:00.000Z">
+<meta property="article:modified_time" content="2026-01-28T11:15:48.614Z">
+<meta property="article:author" content="LiZnB">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>论文记录-三体OAMD-2 基底构建</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']],
+			  displayMath: [['$$','$$']]
+			},
+      TeX: {
+      Macros: {
+        slashed: ["{\\not\\!#1}", 1],
+        unit: "\\mathbb{I}"
+      }
+    }
+		  });
+		</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
+	
+  <!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//blog.liznb.org/matomo/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Categories</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2026/01/12/01-OAMD3/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2025/12/23/01-OAMD1/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.liznb.org/2026/01/01/01-OAMD2/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.liznb.org/2026/01/01/01-OAMD2/&text=论文记录-三体OAMD-2 基底构建"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.liznb.org/2026/01/01/01-OAMD2/&title=论文记录-三体OAMD-2 基底构建"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.liznb.org/2026/01/01/01-OAMD2/&is_video=false&description=论文记录-三体OAMD-2 基底构建"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=论文记录-三体OAMD-2 基底构建&body=Check out this article: https://blog.liznb.org/2026/01/01/01-OAMD2/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.liznb.org/2026/01/01/01-OAMD2/&title=论文记录-三体OAMD-2 基底构建"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.liznb.org/2026/01/01/01-OAMD2/&title=论文记录-三体OAMD-2 基底构建"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.liznb.org/2026/01/01/01-OAMD2/&title=论文记录-三体OAMD-2 基底构建"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.liznb.org/2026/01/01/01-OAMD2/&title=论文记录-三体OAMD-2 基底构建"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.liznb.org/2026/01/01/01-OAMD2/&name=论文记录-三体OAMD-2 基底构建&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.liznb.org/2026/01/01/01-OAMD2/&t=论文记录-三体OAMD-2 基底构建"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%9A%E6%9E%84%E5%BB%BA64%E4%B8%AA%E5%9F%BA%E5%BA%95"><span class="toc-number">1.</span> <span class="toc-text">第一部分：构建64个基底</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E9%83%A8%E5%88%86%E6%A2%B3%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">理论部分梳理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AC%A7%E5%BC%8Fconvention"><span class="toc-number">1.1.1.</span> <span class="toc-text">欧式convention</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">动量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Gamma%E7%9F%A9%E9%98%B5"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">Gamma矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8"><span class="toc-number">1.1.1.2.1.</span> <span class="toc-text">性质</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.1.2.2.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.1.1.2.3.</span> <span class="toc-text">表示</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%B5%E8%8D%B7%E5%85%B1%E8%BD%AD%E7%9F%A9%E9%98%B5"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">电荷共轭矩阵</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%A0%E9%87%8F%E7%A7%AF"><span class="toc-number">1.1.2.</span> <span class="toc-text">张量积</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E6%80%A7%E7%BA%A6%E6%9D%9F"><span class="toc-number">1.1.3.</span> <span class="toc-text">对称性约束</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Parity"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">Parity</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E5%8F%8D%E7%B2%92%E5%AD%90%E7%BA%A6%E6%9D%9F"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">正反粒子约束</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Scalar-Diquark"><span class="toc-number">1.1.3.3.</span> <span class="toc-text">Scalar-Diquark</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F%E5%8F%82%E6%95%B0"><span class="toc-number">1.1.4.</span> <span class="toc-text">动量参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E5%BD%92%E4%B8%80%E5%8C%96"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">正交归一化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E5%8C%96"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">参数化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E5%9F%BA%E5%BA%95"><span class="toc-number">1.1.5.</span> <span class="toc-text">正交基底</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%92%E5%8A%A8%E9%87%8F%E6%9C%AC%E5%BE%81%E5%9F%BA%E5%BA%95"><span class="toc-number">1.1.6.</span> <span class="toc-text">角动量本征基底</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%92%E5%8A%A8%E9%87%8F%E7%AE%97%E7%AC%A6"><span class="toc-number">1.1.6.1.</span> <span class="toc-text">角动量算符</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B4%A8%E5%AD%90%E6%80%BB%E8%87%AA%E6%97%8B%E7%AE%97%E7%AC%A6"><span class="toc-number">1.1.6.1.1.</span> <span class="toc-text">质子总自旋算符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%B8%E5%85%8B%E6%80%BB%E8%87%AA%E6%97%8B%E7%AE%97%E7%AC%A6"><span class="toc-number">1.1.6.1.2.</span> <span class="toc-text">夸克总自旋算符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%B8%E5%85%8B%E7%9B%B8%E5%AF%B9%E8%BD%A8%E9%81%93%E8%A7%92%E5%8A%A8%E9%87%8F%E7%AE%97%E7%AC%A6"><span class="toc-number">1.1.6.1.3.</span> <span class="toc-text">夸克相对轨道角动量算符</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%92%E5%8A%A8%E9%87%8F%E6%9C%AC%E5%BE%81%E5%9F%BA%E5%BA%95-1"><span class="toc-number">1.1.6.2.</span> <span class="toc-text">角动量本征基底</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%80%BB%E8%BE%91%E6%A2%B3%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">代码逻辑梳理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#FeynCalc%E5%8C%85"><span class="toc-number">1.2.1.</span> <span class="toc-text">FeynCalc包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.2.2.</span> <span class="toc-text">预定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E5%AE%8C%E5%A4%87%E6%AD%A3%E4%BA%A4SP%E5%9F%BA%E5%BA%95"><span class="toc-number">1.2.3.</span> <span class="toc-text">定义完备正交SP基底</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E8%A7%92%E5%8A%A8%E9%87%8F%E6%9C%AC%E5%BE%81%E5%9F%BA%E5%BA%95"><span class="toc-number">1.2.4.</span> <span class="toc-text">定义角动量本征基底</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%84%E5%88%99"><span class="toc-number">1.2.5.</span> <span class="toc-text">规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E6%AD%A3%E4%BA%A4%E5%BD%92%E4%B8%80%E5%85%B3%E7%B3%BB"><span class="toc-number">1.2.6.</span> <span class="toc-text">检查正交归一关系</span></a></li></ol></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        论文记录-三体OAMD-2 基底构建
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">LiZnB</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-12-31T21:31:00.000Z" class="dt-published" itemprop="datePublished">2026-01-01</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        
+            <a href="/categories/01-Physics-Code-Record/04-OAMD-Baryon/index.html">01-Physics-Code-Record/04-OAMD-Baryon</a>
+            
+        
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="第一部分：构建64个基底"><a href="#第一部分：构建64个基底" class="headerlink" title="第一部分：构建64个基底"></a>第一部分：构建64个基底</h1><h2 id="理论部分梳理"><a href="#理论部分梳理" class="headerlink" title="理论部分梳理"></a>理论部分梳理</h2><p>构建基底的理论主要参考<a href="/images/OAMD/Eichmann_basis.pdf" target="_blank">Eichmann三体Faddeev基底论文</a>. 下面进行简单的整理.</p>
+<h3 id="欧式convention"><a href="#欧式convention" class="headerlink" title="欧式convention"></a>欧式convention</h3><h4 id="动量"><a href="#动量" class="headerlink" title="动量"></a>动量</h4><p>$p\cdot q&#x3D;\sum_{k&#x3D;1}^4 p_kq_k$, $p^2&#x3D;p\cdot p$, $\slashed{p}&#x3D;p\cdot \gamma$<br>若$p^2&gt;0$, 向量p是类空的; 若$p^2&lt;0$, 向量p是类时的.</p>
+<h4 id="Gamma矩阵"><a href="#Gamma矩阵" class="headerlink" title="Gamma矩阵"></a>Gamma矩阵</h4><h5 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h5><ol>
+<li>厄米性: $\gamma ^\mu&#x3D;(\gamma ^\mu)^\dagger$</li>
+<li>反对易性: $\lbrace \gamma^\mu, \gamma^\nu\rbrace$</li>
+</ol>
+<h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><ol>
+<li>$\sigma^{\mu\nu}&#x3D;-\frac{i}{2}[\gamma^\mu,\gamma^\nu]$</li>
+<li>$\gamma^5&#x3D;-\gamma^1\gamma^2\gamma^3\gamma^4$</li>
+</ol>
+<p><span style="color: #ff0000ff;">注: $\sigma^{\mu\nu}$前面的符号来源于欧式-闵氏度规转换.</span></p>
+<h5 id="表示"><a href="#表示" class="headerlink" title="表示"></a>表示</h5><p>$$\gamma^k&#x3D;-i\gamma _M^k&#x3D;\begin{pmatrix}<br>0 &amp; -i\sigma^k \newline<br>i\sigma^k &amp; 0<br>\end{pmatrix},\ \gamma^4&#x3D;\gamma _M^0&#x3D;\begin{pmatrix}<br>\mathbb{1} &amp; 0 \newline<br>0 &amp; -\mathbb{1}<br>\end{pmatrix},\ \gamma^5&#x3D;\gamma _M^5&#x3D;\begin{pmatrix}<br>0 &amp; \mathbb{1} \newline<br>\mathbb{1} &amp; 0<br>\end{pmatrix}$$<br>其中, $\sigma^k$是Pauli矩阵.<br>$$\sigma^1&#x3D;\begin{pmatrix}<br>0 &amp; 1 \newline<br>1 &amp; 0<br>\end{pmatrix},\ \sigma^2&#x3D;\begin{pmatrix}<br>0 &amp; -i \newline<br>i &amp; 0<br>\end{pmatrix},\ \sigma^3&#x3D;\begin{pmatrix}<br>1 &amp;0 \newline<br>0 &amp; -1<br>\end{pmatrix}$$</p>
+<h4 id="电荷共轭矩阵"><a href="#电荷共轭矩阵" class="headerlink" title="电荷共轭矩阵"></a>电荷共轭矩阵</h4><p>$$C&#x3D;\gamma^4 \gamma^2,\ C^T&#x3D;C^\dagger&#x3D;C^{-1}&#x3D;-C$$<br>有$\overline{C}&#x3D;CC^TC^T&#x3D;CC^{-1}C^{-1}&#x3D;C^{-1}&#x3D;-C$.</p>
+<p>对于(赝)标量, (轴)矢量, 张量振幅, 定义荷共轭振幅<br>$$\overline{\Gamma}(p,q,P):&#x3D;C \Gamma(-p,-q,-P)^T C^T$$<br>$$\overline{\Gamma}^\alpha(p,q,P):&#x3D;-C \Gamma^\alpha(-p,-q,-P)^T C^T$$<br>$$\overline{\Gamma}^{\alpha\beta}(p,q,P):&#x3D;C \Gamma^{\alpha\beta}(-p,-q,-P)^T C^T$$</p>
+<h3 id="张量积"><a href="#张量积" class="headerlink" title="张量积"></a>张量积</h3><p>Faddeev振幅是一个旋量四点函数(三条夸克腿, 一条束缚态腿). 一个旋量$\Psi_\alpha$有一个指标, 有四个维度; 旋量四点函数就有四个指标, 一共有$4^4&#x3D;256$个维度, 我们就会有256个基底.</p>
+<p>一个物理上比较方便的方法是利用Dirac双线性型的现成基底描述, 因为可以利用CPT及其他对称性进行约束.(当然可以选择其他分解方法, 但是不好进行物理上的约束.) Dirac双线性型有16个基底$\lbrace \unit, \gamma^\mu, \sigma^{\mu\nu}, \gamma^\mu \gamma^5, \gamma^5 \rbrace$, 所以旋量四点函数可以表示为16x16&#x3D;256个基底的线性组合. 所以这些基底可以表示为两个Dirac双线性型的直积.</p>
+<p>定义Dirac矩阵的直积:<br>$$(A\otimes B)_ {\alpha\beta,\gamma \delta}&#x3D; A_ {\alpha\beta} B_ {\gamma \delta} $$<br>$$(A_1\otimes B_1)(A_2\otimes B_2)&#x3D;(A_1 A_2 \otimes B_1 B_2)$$<br>$$(A\otimes B)^T &#x3D; A^T \otimes B^T$$<br>$$Tr(A\otimes B) &#x3D; Tr(A) Tr(B)$$</p>
+<p><span style="color: #ff0000ff;">注: 这里的四个指标, 前三个指标是出射夸克腿的自旋指标, 第四个指标是入射束缚态腿的自旋指标. 通过Fierz变换可以交换指标顺序.</span></p>
+<p>定义旋量四点函数电荷共轭:<br>$$\overline{(A\otimes B)}(p,q,P):&#x3D;(C\otimes C) (A\otimes B)^T(-p,-q,-P) (C\otimes C)^T&#x3D;\overline{A}(p,q,P)\otimes \overline{B}(p,q,P)$$<br>其中, $C&#x3D;\gamma^4 \gamma^2$是电荷共轭矩阵.</p>
+<h3 id="对称性约束"><a href="#对称性约束" class="headerlink" title="对称性约束"></a>对称性约束</h3><p>对于s&#x3D;1&#x2F;2的束缚态, 可以考虑Parity和正反粒子对称性约束. 可以分成$(1&#x2F;2)^+, (1&#x2F;2)^-, \overline{(1&#x2F;2)^+}, \overline{(1&#x2F;2)^-}$四种情况, $\pm$代表宇称, 上划线代表正负粒子.</p>
+<h4 id="Parity"><a href="#Parity" class="headerlink" title="Parity"></a>Parity</h4><p>宇称变换是在保持自旋的基础上反转粒子的动量方向.<br>对于Dirac双线性型, 所有不带$\gamma^5$矩阵的双线性型都拥有正宇称, 带$\gamma^5$矩阵的双线性型都拥有负宇称(笔记P23).</p>
+<h4 id="正反粒子约束"><a href="#正反粒子约束" class="headerlink" title="正反粒子约束"></a>正反粒子约束</h4><p>正反粒子约束可以通过正负能投影算符来实现:<br>$$\Lambda^\pm(P)&#x3D;(1\pm\hat{\slashed{P}})&#x2F;2$$</p>
+<p><span style="color: #ff0000ff;">证明: Dirac方程: $(i\slashed{\partial}-m)\psi&#x3D;0$,<br>其正频平面波解: $\Psi&#x3D;u(p)e^{-ip\cdot x}$, 其中 $u(p)$ 满足 $(\slashed{p}-m)u(p)&#x3D;0$, 即$\slashed{p}u(p)&#x3D;mu(p)$.<br>负频平面波解: $\Psi&#x3D;v(p)e^{ip\cdot x}$, 其中 $v(p)$ 满足 $(\slashed{p}+m)v(p)&#x3D;0$, 即$\slashed{p}v(p)&#x3D;-mv(p)$.<br>所以: $\frac{m+\displaystyle\slashed{p}}{2m}u(p)&#x3D;\frac{m+m}{2m}u(p)&#x3D;u(p)$;<br>$\frac{m-\displaystyle\slashed{p}}{2m}u(p)&#x3D;\frac{m-m}{2m}u(p)&#x3D;0$;<br>$\frac{m+\displaystyle\slashed{p}}{2m}v(p)&#x3D;\frac{m-m}{2m}v(p)&#x3D;0$;<br>$\frac{m-\displaystyle\slashed{p}}{2m}v(p)&#x3D;\frac{m+m}{2m}v(p)&#x3D;v(p)$.<br>取归一化动量, 得到上述投影算符.<br>取了在壳条件才有不同极化, 因此正负能投影是针对束缚态外线而不是夸克内线(传播子)的.<br></span></p>
+<p>正负能投影算符具有以下性质:</p>
+<ol>
+<li>$\Lambda^2 _\pm &#x3D; \Lambda _\pm$;</li>
+<li>$\hat{\slashed{P}}\Lambda _\pm &#x3D; \pm \Lambda _\pm$.</li>
+</ol>
+<p>在旋量场里, $u(p)$代表费米子外线, $v(p)$代表反费米子外线. 我们只关注质子中子等费米子, 所以只取正能部分.<br>于是在束缚态所在的空间基底乘上正能投影算符, 构成如下形式基底:<br>$$A\otimes B\Lambda^+$$</p>
+<p>在第一空间(diquark空间)中, 并没有正负粒子要求, 但是因为其是正交的, 我们仍然可以将其分出两大正交的子空间如下, 方便后续计算.<br>$$A\Lambda^+ \otimes B\Lambda^+$$<br>$$A\Lambda^- \otimes B\Lambda^+$$</p>
+<p><span style="color: #ff0000ff;">注:<br>一个问题是: 只约束了束缚态取正粒子, 将正能投影算符作用在束缚态空间上, 是否会对和束缚态处于同一空间的夸克产生额外约束?<br></span></p>
+<h4 id="Scalar-Diquark"><a href="#Scalar-Diquark" class="headerlink" title="Scalar-Diquark"></a>Scalar-Diquark</h4><p>第一个空间是由两个夸克构成, 为了形成一个Dirac矩阵, 有一个夸克取了转置. 为了方便和夸克转置缩并, 可以在diquark空间乘一个C矩阵. 但是C矩阵具有负parity宇称, 为了保证宇称为正, 因此直接乘上$\gamma _5 C$因子, 类似于标量diquark结构形成如下基底形式.<br>$$A\gamma _5 C \otimes B\Lambda^+$$</p>
+<p>这样的话我们就得到了基础的基底形式:<br>$$\Omega^r(P)&#x3D;\Lambda^r(P)\gamma _5 C\otimes \Lambda^+(P)$$</p>
+<h3 id="动量参数"><a href="#动量参数" class="headerlink" title="动量参数"></a>动量参数</h3><p>Faddeev振幅依赖于三个夸克动量$p_1, p_2, p_3$, 也可以用总动量$P$和两个相对Jacobi动量$p,q$来表示. 这里总动量$P^2&#x3D;-M^2$为束缚态在壳条件. 两套动量的关系为:<br>$$p&#x3D;(1-\xi)p_3-\xi(p_1+p_2),\  p_1&#x3D;-q-\frac{p}{2}+\frac{1-\xi}{2}P$$<br>$$q&#x3D;\frac{p_2-p_1}{2},\ p_2&#x3D;q-\frac{p}{2}+\frac{1-\xi}{2}P$$<br>$$P&#x3D;p_1 + p_2 + p_3,\ p_3&#x3D;p+\xi P$$</p>
+<p>习惯上取$\xi&#x3D;\frac{1}{3}$, 于是得到<br>$$p&#x3D;\frac{2}{3}p_3-\frac{1}{3}(p_1+p_2),\  p_1&#x3D;-q-\frac{p}{2}+\frac{1}{3}P$$<br>$$q&#x3D;\frac{p_2-p_1}{2},\ p_2&#x3D;q-\frac{p}{2}+\frac{1}{3}P$$<br>$$P&#x3D;p_1 + p_2 + p_3,\ p_3&#x3D;p+\frac{1}{3} P$$</p>
+<h4 id="正交归一化"><a href="#正交归一化" class="headerlink" title="正交归一化"></a>正交归一化</h4><p>然后我们需要将上述动量正交化和归一化.<br>定义归一化动量算符: $\hat{k}&#x3D;\frac{k}{\sqrt{k^2}}$.<br>定义横向动量投影算符: $T _k^{\mu\nu}&#x3D;\delta^{\mu\nu}-\hat{k}^\mu \hat{k}^\nu$</p>
+<p>于是我们可以构建三个正交化的动量:</p>
+<ol>
+<li>第一个动量为总动量P.</li>
+<li>将相对动量p投影到垂直于P的空间, 得到第二个动量:$p _T^\mu:&#x3D;T _P^{\mu\nu}p^\nu$.</li>
+<li>将相对动量q先投影到垂直P的空间, 再投影到垂直$p _T$的空间, 得到第三个动量:$q _t^\mu:&#x3D;T _{p _T}^{\mu\nu}T _P^{\nu\lambda}q^\lambda&#x3D;T _{p _T}^{\mu\nu}q _T^\nu$.</li>
+</ol>
+<p>最后我们对这三个动量进行归一化, 得到最终的正交归一化动量$\lbrace\hat{p_T},\hat{q_t},\hat{P}\rbrace$, 满足<br>$$\hat{p _T}^2&#x3D;\hat{q _t}^2&#x3D;\hat{P}^2&#x3D;1$$<br>$$\hat{p _T}\cdot \hat{q _t}&#x3D;\hat{p _T}\cdot \hat{P}&#x3D;\hat{q _t}\cdot \hat{P}&#x3D;0$$</p>
+<h4 id="参数化"><a href="#参数化" class="headerlink" title="参数化"></a>参数化</h4><p>一个四维动量可以参数化为:<br>$$k^\mu&#x3D;\sqrt{k^2}\lbrace \sqrt{1-z^2}\sqrt{1-y^2}\sin\phi, \sqrt{1-z^2}\sqrt{1-y^2}\cos\phi, y\sqrt{1-z^2}, z\rbrace$$</p>
+<p>我们选择以总动量P为轴的球坐标系来参数化动量, 即<br> $$P&#x3D;IM\lbrace0,0,0,1\rbrace$$<br>$$\hat{P}&#x3D;\lbrace0,0,0,1\rbrace$$</p>
+<p>假设$z_1&#x3D;\hat{p}\cdot\hat{P}$, $z_2&#x3D;\hat{q}\cdot\hat{P}$, 并假设$\phi _1&#x3D;\phi _2&#x3D;0$.<br>那么<br>$$p&#x3D;\sqrt{p^2}\lbrace 0, \sqrt{1-z_1^2}\sqrt{1-y_p^2}, y_p\sqrt{1-z_1^2}, z_1\rbrace$$<br>$$q&#x3D;\sqrt{q^2}\lbrace 0, \sqrt{1-z_2^2}\sqrt{1-y_q^2}, y_q\sqrt{1-z_2^2}, z_2\rbrace$$<br>假设$z0&#x3D;\hat{p}_T\cdot\hat{q}_T$, 并假设$y_p&#x3D;1$, 有<br>$$p&#x3D;\sqrt{p^2}\lbrace 0, 0, \sqrt{1-z_1^2}, z_1\rbrace$$<br>$$q&#x3D;\sqrt{q^2}\lbrace 0, \sqrt{1-z_2^2}\sqrt{1-z_0^2}, z_0\sqrt{1-z_2^2}, z_2\rbrace$$<br>$$p _T&#x3D;\lbrace 0, 0, 1, 0\rbrace$$<br>$$q _T&#x3D;\sqrt{q^2}\lbrace 0, \sqrt{1-z_0^2}, z_0, 0\rbrace$$<br>于是<br>$$\hat{q_t}&#x3D;\lbrace 0,1,0,0 \rbrace$$<br>所以最后得到<br>$$P&#x3D;IM\lbrace0,0,0,1\rbrace$$<br>$$p&#x3D;\sqrt{p^2}\lbrace 0, 0, \sqrt{1-z_1^2}, z_1\rbrace$$<br>$$q&#x3D;\sqrt{q^2}\lbrace 0, \sqrt{1-z_2^2}\sqrt{1-z_0^2}, z_0\sqrt{1-z_2^2}, z_2\rbrace$$<br>$$\hat{P}&#x3D;\lbrace0,0,0,1\rbrace$$<br>$$\hat{p _T}&#x3D;\lbrace 0, 0, 1, 0\rbrace$$<br>$$\hat{q _t}&#x3D;\lbrace 0,1,0,0 \rbrace$$</p>
+<h3 id="正交基底"><a href="#正交基底" class="headerlink" title="正交基底"></a>正交基底</h3><p>前面说过Dirac双线性型有16个基底$\lbrace \mathbb{I}, \gamma^\mu, \sigma^{\mu\nu}, \gamma^\mu \gamma^5, \gamma^5 \rbrace$, 由于正宇称去掉含有$\gamma^5$的部分, 剩余$\lbrace \mathbb{I}, \gamma^\mu, \sigma^{\mu\nu}\rbrace$现在我们将这些基底和动量结合起来构建正交基底.<br>很容易可以想到以下组合:<br>$$\Gamma _i(p,q,P)\in\lbrace \unit,\frac{1}{2}[\hat{\slashed{p} _T},\hat{\slashed{q} _t}],\hat{\slashed{p} _T},\hat{\slashed{q} _t}\rbrace$$<br>不含$\hat{\slashed{P}}$是因为$\hat{\slashed{P}}\Lambda^+&#x3D;\Lambda^+$.</p>
+<p>利用$\frac{1}{2}[\hat{\slashed{p} _T},\hat{\slashed{q} _t}]&#x3D;\hat{\slashed{p} _T}\hat{\slashed{q} _t}-\hat{p _T}\hat{q _t}$以及正交性$\hat{p _T}\hat{q _t}&#x3D;0$, 得到$\frac{1}{2}[\hat{\slashed{p} _T},\hat{\slashed{q} _t}]&#x3D;\hat{\slashed{p} _T}\hat{\slashed{q} _t}$.<br>所以最终<br>$$\Gamma _i(p,q,P)\Lambda^+(P)\in\lbrace \unit,\hat{\slashed{p} _T},\hat{\slashed{q} _t},\hat{\slashed{p} _T}\hat{\slashed{q} _t}\rbrace\Lambda^+(P)$$</p>
+<p>这样我们就构建了$4\times 4\times 2&#x3D;32$个基底:<br>$$(\Gamma _i\otimes \Gamma _j)\Omega ^r$$<br>两个空间都乘$\gamma^5$(保证整体的宇称为正), 很自然可以拓展另外32个基底, 构成一共64个基底:<br>$$<br>\begin{pmatrix}<br>S _{ij}^r(p,q,P) \newline<br>P _{ij}^r(p,q,P)<br>\end{pmatrix}:&#x3D;<br>\begin{pmatrix}<br>\unit\otimes \unit \newline<br>\gamma^5\otimes \gamma^5<br>\end{pmatrix}<br>(\Gamma _i\otimes \Gamma _j)\Omega ^r<br>$$<br>这里S, P分别代表两个scalar和pseudoscalar成分, 组成到一起构成正宇称.</p>
+<p>类似同样可以定义vector, axialvector和tensor成分的基底.<br>$$<br>\begin{pmatrix}<br>V _{ij}^r(p,q,P) \newline<br>A _{ij}^r(p,q,P) \newline<br>T _{ij}^r(p,q,P)<br>\end{pmatrix}:&#x3D;<br>\begin{pmatrix}<br>\gamma _T^\mu\otimes \gamma _T^\mu \newline<br>\gamma _T^\mu\gamma^5\otimes \gamma _T^\mu\gamma^5 \newline<br>\sigma _T^{\mu\nu}\otimes \sigma _T^{\mu\nu}<br>\end{pmatrix}<br>(\Gamma _i\otimes \Gamma _j)\Omega ^r<br>$$<br>其中, $\gamma _T^\mu&#x3D;T_P^{\mu\nu}\gamma^\nu$, $\sigma _T^{\mu\nu}&#x3D; -\frac{i}{2}[\gamma _T^\mu,\gamma _T^\nu]$.<br><span style="color: #ff0000ff;">注: 这里之所以是$\gamma _T^\mu$是因为我们选择束缚态静止系. 带方向的量需要减去平行于P的分量.</span></p>
+<p>这所有基底中, 只需要SP就足以表达所有64个基底, 因此VAT的这些基底全部可以用SP基底线性表示出来. 这里给出VA基底用SP基底表示的结果:</p>
+<div style="width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; margin:0 auto;">
+<table style="width:100%; border-collapse:collapse; min-width:480px; border-bottom:1px solid #060606c9;">
+    <thead>
+      <tr style="height: 32px">
+        <th style="text-align:center; width: 50%;">$A_{ij}^r$</th>
+        <th style="text-align:center; width: 30%;">$V_{ij}^r$</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="height: 32px">
+        <td>$A_{11}^\pm=P_{33}^\pm+P_{44}^\pm\pm S_{22}$</td>
+        <td>$V_{11}^\pm=S_{33}^\pm+S_{44}^\pm\pm P_{22}$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>$A_{12}^\pm=P_{34}^\pm-P_{43}^\pm\mp S_{21}^\pm$</td>
+        <td>$V_{12}^\pm=S_{34}^\pm-S_{43}^\pm\mp P_{21}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>$A_{13}^\pm=P_{31}^\pm-P_{42}^\pm\pm S_{24}^\pm$</td>
+        <td>$V_{13}^\pm=S_{31}^\pm-S_{42}^\pm\pm P_{24}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>$A_{14}^\pm=P_{32}^\pm+P_{41}^\pm\mp S_{23}^\pm$</td>
+        <td>$V_{14}^\pm=S_{32}^\pm+S_{41}^\pm\mp P_{23}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>$A_{21}^\pm=P_{43}^\pm-P_{34}^\pm\mp S_{12}^\pm$</td>
+        <td>$V_{21}^\pm=S_{43}^\pm-S_{34}^\pm\mp P_{12}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>$A_{22}^\pm=P_{33}^\pm+P_{44}^\pm\pm S_{11}^\pm$</td>
+        <td>$V_{22}^\pm=S_{33}^\pm+S_{44}^\pm\pm P_{11}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>$A_{23}^\pm=P_{32}^\pm+P_{41}^\pm\mp S_{14}^\pm$</td>
+        <td>$V_{23}^\pm=S_{32}^\pm+S_{41}^\pm\mp P_{14}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>$A_{24}^\pm=P_{42}^\pm-P_{31}^\pm\pm S_{13}^\pm$</td>
+        <td>$V_{24}^\pm=S_{42}^\pm-S_{31}^\pm\pm P_{13}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>$A_{31}^\pm=P_{13}^\pm-P_{24}^\pm\pm S_{42}^\pm$</td>
+        <td>$V_{31}^\pm=S_{13}^\pm-S_{24}^\pm\pm P_{42}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>$A_{32}^\pm=P_{14}^\pm+P_{23}^\pm\mp S_{41}^\pm$</td>
+        <td>$V_{32}^\pm=S_{14}^\pm+S_{23}^\pm\mp P_{41}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>$A_{33}^\pm=P_{11}^\pm+P_{22}^\pm\pm S_{44}^\pm$</td>
+        <td>$V_{33}^\pm=S_{11}^\pm+S_{22}^\pm\pm P_{44}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>$A_{34}^\pm=P_{12}^\pm-P_{21}^\pm\mp S_{43}^\pm$</td>
+        <td>$V_{34}^\pm=S_{12}^\pm-S_{21}^\pm\mp P_{43}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>$A_{41}^\pm=P_{14}^\pm+P_{23}^\pm\mp S_{32}^\pm$</td>
+        <td>$V_{41}^\pm=S_{14}^\pm+S_{23}^\pm\mp P_{32}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>$A_{42}^\pm=P_{24}^\pm-P_{13}^\pm\pm S_{31}^\pm$</td>
+        <td>$V_{42}^\pm=S_{24}^\pm-S_{13}^\pm\pm P_{31}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>$A_{43}^\pm=P_{21}^\pm-P_{12}^\pm\mp S_{34}^\pm$</td>
+        <td>$V_{43}^\pm=S_{21}^\pm-S_{12}^\pm\mp P_{34}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>$A_{44}^\pm=P_{11}^\pm+P_{22}^\pm\pm S_{33}^\pm$</td>
+        <td>$V_{44}^\pm=S_{11}^\pm+S_{22}^\pm\pm P_{33}^\pm$</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3 id="角动量本征基底"><a href="#角动量本征基底" class="headerlink" title="角动量本征基底"></a>角动量本征基底</h3><p>要构建角动量本征基底, 必须先构建角动量算符.</p>
+<h4 id="角动量算符"><a href="#角动量算符" class="headerlink" title="角动量算符"></a>角动量算符</h4><p>由于总角动量守恒, 有$\mathbf{W_j}&#x3D;\mathbf{W_l}+\mathbf{W_s}$, 其中$\mathbf{ W_j}$是质子总角动量算符, $\mathbf{W_l}$是夸克相对轨道角动量算符, $\mathbf{W_s}$是夸克总自旋算符.</p>
+<h5 id="质子总自旋算符"><a href="#质子总自旋算符" class="headerlink" title="质子总自旋算符"></a>质子总自旋算符</h5><p>质子总自旋算符(Pauli-Lubanski operator)只与质子性质有关, 所以作用在质子空间上:<br>$$W_j^\mu&#x3D;\frac{1}{2}\epsilon^{\mu\nu\alpha\beta}\hat{P}^\nu J^{\alpha\beta}$$<br>总自旋的平方:<br>$$\begin{align}<br>W_j^2&#x3D;&amp;W_j^\mu W_j^\mu\newline<br>&#x3D;&amp;\frac{1}{4}\epsilon^{\mu\nu _1\alpha _1\beta _1}\epsilon^{\mu\nu _2\alpha _2\beta _2}\hat{P}^{\nu _1} \hat{P}^{\nu _2} J^{\alpha _1\beta _1}J^{\alpha _2\beta _2}\newline<br>&#x3D;&amp;\frac{1}{4}\delta^{\nu _1\alpha _1\beta _1;\nu _2\alpha _2\beta _2}\hat{P}^{\nu_1} \hat{P}^{\nu_2} J^{\alpha _1\beta _1} J^{\alpha _2\beta _2}\newline<br>&#x3D;&amp;\frac{1}{4}(\delta^{\nu _1\nu _2}\delta^{\alpha _1\alpha _2}\delta^{\beta _1\beta _2}+\delta^{\nu _1\alpha _2}\delta^{\alpha _1\beta _2}\delta^{\beta _1\nu _2}+\delta^{\nu _1\beta _2}\delta^{\alpha _1\nu _2}\delta^{\beta _1\alpha _2}-\delta^{\nu _1\nu _2}\delta^{\alpha _1\beta _2}\delta^{\beta _1\alpha _2}\newline<br>&amp;-\delta^{\nu _1\alpha_2}\delta^{\alpha _1\nu _2}\delta^{\beta _1\beta _2}-\delta^{\nu _1\beta _2}\delta^{\alpha _1\alpha _2}\delta^{\beta _1\nu _2})\hat{P}^{\nu_1} \hat{P}^{\nu_2} J^{\alpha _1\beta _1} J^{\alpha _2\beta _2}\newline<br>&#x3D;&amp;\frac{1}{4}( \hat{P}^\nu\hat{P}^\nu J^{\alpha \beta} J^{\alpha \beta} + \hat{P}^{\nu} \hat{P}^{\beta} J^{\alpha \beta} J^{\nu \alpha} + \hat{P}^{\beta} \hat{P}^{\nu} J^{\nu \alpha} J^{\alpha \beta}\newline<br>&amp;-\hat{P}^{\nu} \hat{P}^{\nu} J^{\beta\alpha} J^{\alpha\beta}-\hat{P}^{\beta} \hat{P}^{\nu} J^{\nu\alpha} J^{\beta \alpha} - \hat{P}^\alpha \hat{P}^\nu J^{\beta \nu} J^{ \beta\alpha})\newline<br>&#x3D;&amp;\frac{1}{4}(J^{\alpha \beta} J^{\alpha \beta} + \hat{P}^{\nu} \hat{P}^{\beta} J^{\alpha \beta} J^{\nu \alpha} + \hat{P}^{\beta} \hat{P}^{\nu} J^{\nu \alpha} J^{\alpha \beta}\newline<br>&amp;-J^{\beta\alpha} J^{\alpha\beta}-\hat{P}^{\beta} \hat{P}^{\nu} J^{\nu\alpha} J^{\beta \alpha} - \hat{P}^\alpha \hat{P}^\nu J^{\beta \nu} J^{ \beta\alpha})<br>\end{align}$$<br>由于角动量算符反对称, 有$J^{\alpha \beta}&#x3D;-J^{\beta \alpha}$, 所以上式化简为:<br>$$W_j^2&#x3D;\frac{1}{2}J^{\mu\nu}J^{\mu\nu}+\hat{P}^\mu \hat{P}^\nu  J^{\mu\alpha}J^{\alpha\nu}\rightarrow j(j+1)$$<br>其本征值定义了总自旋j.</p>
+<h5 id="夸克总自旋算符"><a href="#夸克总自旋算符" class="headerlink" title="夸克总自旋算符"></a>夸克总自旋算符</h5><p>对于夸克自旋算符, 仍然使用Pauli-Lubanski operator定义, 但是作用在夸克空间上 $W_s^\mu&#x3D;\frac{1}{2}\epsilon^{\mu\nu\alpha\beta}\hat{P}^\nu S^{\alpha\beta}$, 并且$S^{\alpha\beta}&#x3D;\frac{1}{2}\sigma^{\alpha\beta}$($s&#x3D;\frac{1}{2}$). 所以<br>$$W_s^\mu&#x3D;\frac{1}{4}\epsilon^{\mu\nu\alpha\beta}\hat{P}^\nu \sigma^{\alpha\beta}$$<br>而质子中一共有三个夸克, 所以夸克总自旋算符为:<br>$$W_s^\mu&#x3D;\frac{1}{4}\epsilon^{\mu\nu\alpha\beta}\hat{P}^\nu (\sigma^{\alpha\beta}\otimes\unit\otimes\unit+perm.)$$<br>总自旋的平方:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;align&#125;</span><br><span class="line">W_s^2=&amp;W_s^\mu W_s^\mu\newline</span><br><span class="line">=&amp;\frac&#123;1&#125;&#123;16&#125;\epsilon^&#123;\mu\nu _1\alpha _1\beta _1&#125;\epsilon^&#123;\mu\nu _2\alpha _2\beta _2&#125;\hat&#123;P&#125;^&#123;\nu _1&#125; \hat&#123;P&#125;^&#123;\nu _ 2&#125;(\sigma^&#123;\alpha _1\beta _1&#125;\otimes\unit\otimes\unit+perm.)(\sigma^&#123;\alpha _2\beta _2&#125;\otimes\unit\otimes\unit+perm.)\newline</span><br><span class="line">=&amp;\frac&#123;1&#125;&#123;16&#125;(\delta^&#123;\nu _1\nu _2&#125;\delta^&#123;\alpha _1\alpha _2&#125;\delta^&#123;\beta _1\beta _2&#125;+\delta^&#123;\nu _1\alpha _2&#125;\delta^&#123;\alpha _1\beta _2&#125;\delta^&#123;\beta _1\nu _2&#125;+\delta^&#123;\nu _1\beta _2&#125;\delta^&#123;\alpha _1\nu _2&#125;\delta^&#123;\beta _1\alpha _2&#125;-\delta^&#123;\nu _1\nu _2&#125;\delta^&#123;\alpha _1\beta _2&#125;\delta^&#123;\beta _1\alpha _2&#125;\newline</span><br><span class="line">&amp;-\delta^&#123;\nu _1\alpha_2&#125;\delta^&#123;\alpha _1\nu _2&#125;\delta^&#123;\beta _1\beta _2&#125;-\delta^&#123;\nu _1\beta _2&#125;\delta^&#123;\alpha _1\alpha _2&#125;\delta^&#123;\beta _1\nu _2&#125;)\hat&#123;P&#125;^&#123;\nu_1&#125; \hat&#123;P&#125;^&#123;\nu_2&#125; \newline</span><br><span class="line">&amp;(\sigma^&#123;\alpha _1\beta _1&#125;\sigma^&#123;\alpha _2\beta _2&#125;\otimes\unit\otimes\unit+...(7)...+\unit\otimes\unit\otimes\sigma^&#123;\alpha _1\beta _1&#125;\sigma^&#123;\alpha _2\beta _2&#125;)\newline</span><br><span class="line">=&amp;\frac&#123;1&#125;&#123;16&#125;(\delta^&#123;\alpha _1\alpha _2&#125;\delta^&#123;\beta _1\beta _2&#125;+\hat&#123;P&#125;^&#123;\alpha_2&#125; \hat&#123;P&#125;^&#123;\beta_1&#125;\delta^&#123;\alpha _1\beta _2&#125;+\hat&#123;P&#125;^&#123;\beta_2&#125; \hat&#123;P&#125;^&#123;\alpha_1&#125;\delta^&#123;\beta _1\alpha _2&#125;-\delta^&#123;\alpha _1\beta _2&#125;\delta^&#123;\beta _1\alpha _2&#125;\newline</span><br><span class="line">&amp;-\hat&#123;P&#125;^&#123;\alpha_2&#125; \hat&#123;P&#125;^&#123;\alpha_1&#125;\delta^&#123;\beta _1\beta _2&#125;-\hat&#123;P&#125;^&#123;\beta_2&#125; \hat&#123;P&#125;^&#123;\beta_1&#125;\delta^&#123;\alpha _1\alpha _2&#125;) \newline</span><br><span class="line">&amp;(\sigma^&#123;\alpha _1\beta _1&#125;\sigma^&#123;\alpha _2\beta _2&#125;\otimes\unit\otimes\unit+...(7)...+\unit\otimes\unit\otimes\sigma^&#123;\alpha _1\beta _1&#125;\sigma^&#123;\alpha _2\beta _2&#125;)\newline</span><br><span class="line">=&amp;\frac&#123;1&#125;&#123;16&#125;(\delta^&#123;\alpha _1\alpha _2&#125;\delta^&#123;\beta _1\beta _2&#125;+\hat&#123;P&#125;^&#123;\alpha_2&#125; \hat&#123;P&#125;^&#123;\beta_1&#125;\delta^&#123;\alpha _1\beta _2&#125;+\hat&#123;P&#125;^&#123;\beta_2&#125; \hat&#123;P&#125;^&#123;\alpha_1&#125;\delta^&#123;\beta _1\alpha _2&#125;-\delta^&#123;\alpha _1\beta _2&#125;\delta^&#123;\beta _1\alpha _2&#125;\newline</span><br><span class="line">&amp;-\hat&#123;P&#125;^&#123;\alpha_2&#125; \hat&#123;P&#125;^&#123;\alpha_1&#125;\delta^&#123;\beta _1\beta _2&#125;-\hat&#123;P&#125;^&#123;\beta_2&#125; \hat&#123;P&#125;^&#123;\beta_1&#125;\delta^&#123;\alpha _1\alpha _2&#125;) \newline</span><br><span class="line">&amp;(\sigma^&#123;\alpha _1\beta _1&#125;\sigma^&#123;\alpha _2\beta _2&#125;\otimes\unit\otimes\unit+...(7)...+\unit\otimes\unit\otimes\sigma^&#123;\alpha _1\beta _1&#125;\sigma^&#123;\alpha _2\beta _2&#125;)\newline</span><br><span class="line">\end&#123;align&#125;$$</span><br><span class="line"></span><br><span class="line">...(待补充)注意sigma的定义差一个符号</span><br></pre></td></tr></table></figure>
+
+<p>最后得到:<br>$$W_s^2&#x3D;\frac{9}{4}\unit\otimes\unit\otimes\unit+\frac{1}{4}(\sigma _T^{\mu\nu}\otimes\sigma _T^{\mu\nu}\otimes\unit+perm.)\rightarrow s(s+1)$$<br>其本征值定义了总自旋s.</p>
+<h5 id="夸克相对轨道角动量算符"><a href="#夸克相对轨道角动量算符" class="headerlink" title="夸克相对轨道角动量算符"></a>夸克相对轨道角动量算符</h5><p>有两个相对动量p, q, 每个相对动量都有一个轨道角动量算符:<br>$$L _{(p)}^\mu&#x3D;\frac{i}{2}\epsilon^{\mu\nu\alpha\beta}\hat{P}^\nu (p^\alpha \frac{\partial}{\partial p^\beta}-p^\beta \frac{\partial}{\partial p^\alpha})\unit\otimes\unit\otimes\unit$$<br>$$L _{(q)}^\mu&#x3D;\frac{i}{2}\epsilon^{\mu\nu\alpha\beta}\hat{P}^\nu (q^\alpha \frac{\partial}{\partial q^\beta}-q^\beta \frac{\partial}{\partial q^\alpha})\unit\otimes\unit\otimes\unit$$</p>
+<h4 id="角动量本征基底-1"><a href="#角动量本征基底-1" class="headerlink" title="角动量本征基底"></a>角动量本征基底</h4><div style="width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; margin:0 auto;">
+<table style="width:100%; border-collapse:collapse; min-width:480px; border-bottom:1px solid #060606c9;">
+    <thead>
+      <tr style="height: 32px">
+        <th style="text-align:center; width: 30%;">编号</th>
+        <th style="text-align:center; width: 5%;">s</th>
+        <th style="text-align:center; width: 5%;">l</th>
+        <th style="text-align:center; width: 30%;">$X_{ij,k}^r$</th>
+        <th style="text-align:center; width: 30%;">$T_{ij}$</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="height: 32px">
+        <td>1/2</td>
+        <td>1/2</td>
+        <td>0</td>
+        <td>$X_{11,1}^\pm=S_{11}^\pm$</td>
+        <td rowspan="2">$T_{11}=\unit\otimes\unit$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>3/4</td>
+        <td>1/2</td>
+        <td>0</td>
+        <td>$X_{11,2}^\pm=P_{11}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>5/6</td>
+        <td>1/2</td>
+        <td>1</td>
+        <td>$X_{12,1}^\pm=S_{12}^\pm$</td>
+        <td rowspan="2">$T_{12}=\unit\otimes\frac{1}{2}[\slashed{p}_T,\slashed{q}_t]$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>7/8</td>
+        <td>1/2</td>
+        <td>1</td>
+        <td>$X_{12,2}^\pm=P_{12}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>9/10</td>
+        <td>1/2</td>
+        <td>1</td>
+        <td>$X_{13,1}^\pm=S_{13}^\pm$</td>
+    <td rowspan="2">$T_{13}=\unit\otimes\slashed{p}_T$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>11/12</td>
+        <td>1/2</td>
+        <td>1</td>
+        <td>$X_{13,2}^\pm=P_{13}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>13/14</td>
+        <td>1/2</td>
+        <td>1</td>
+        <td>$X_{14,1}^\pm=S_{14}^\pm$</td>
+        <td rowspan="2">$T_{14}=\unit\otimes\slashed{q}_t$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>15/16</td>
+        <td>1/2</td>
+        <td>1</td>
+        <td>$X_{14,2}^\pm=P_{14}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>17/18</td>
+        <td>1/2</td>
+        <td>0</td>
+        <td>$\sqrt{3}X_{21,1}^\pm=V_{11}^\pm$</td>
+        <td rowspan="2">$\sqrt{3}T_{21}=\gamma _T^\mu\otimes\gamma _T^\mu$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>19/20</td>
+        <td>1/2</td>
+        <td>0</td>
+        <td>$\sqrt{3}X_{21,2}^\pm=A_{11}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>21/22</td>
+        <td>1/2</td>
+        <td>1</td>
+        <td>$\sqrt{3}X_{22,1}^\pm=V_{12}^\pm$</td>
+        <td rowspan="2">$\sqrt{3}T_{22}=\gamma _T^\mu\otimes\gamma _T^\mu\frac{1}{2}[\slashed{p}_T,\slashed{q}_t]$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>23/24</td>
+        <td>1/2</td>
+        <td>1</td>
+        <td>$\sqrt{3}X_{22,2}^\pm=A_{12}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>25/26</td>
+        <td>1/2</td>
+        <td>1</td>
+        <td>$\sqrt{3}X_{23,1}^\pm=V_{13}^\pm$</td>
+        <td rowspan="2">$\sqrt{3}T_{23}=\gamma _T^\mu\otimes\gamma _T^\mu\slashed{p}_T$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>27/28</td>
+        <td>1/2</td>
+        <td>1</td>
+        <td>$\sqrt{3}X_{23,2}^\pm=A_{13}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>29/30</td>
+        <td>1/2</td>
+        <td>1</td>
+        <td>$\sqrt{3}X_{24,1}^\pm=V_{14}^\pm$</td>
+        <td rowspan="2">$\sqrt{3}T_{24}=\gamma _T^\mu\otimes\gamma _T^\mu\slashed{q}_t$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>31/32</td>
+        <td>1/2</td>
+        <td>1</td>
+        <td>$\sqrt{3}X_{24,2}^\pm=A_{14}^\pm$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>33/34</td>
+        <td>3/2</td>
+        <td>2</td>
+        <td>$\sqrt{6}X_{31,1}^\pm=(3S_{33}-V_{11})$</td>
+        <td rowspan="2">$\sqrt{6}T_{31}=3\slashed{p}\otimes\slashed{p}-\gamma_T^\mu\otimes\gamma_T^\mu$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>35/36</td>
+        <td>3/2</td>
+        <td>2</td>
+        <td>$\sqrt{6}X_{31,2}^\pm=3P_{33}-A_{11}$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>37/38</td>
+        <td>3/2</td>
+        <td>1</td>
+        <td>$\sqrt{6}X_{32,1}^\pm=3S_{34}-3S_{43}-2V_{12}$</td>
+        <td rowspan="2">$ \sqrt{6}T_{32}=3\slashed{p}\otimes\slashed{q}-3\slashed{q}\otimes\slashed{p}-\gamma_T^\mu\otimes\gamma_T^\mu[\slashed{p},\slashed{q}]$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>39/40</td>
+        <td>3/2</td>
+        <td>1</td>
+        <td>$\sqrt{6}X_{32,2}^\pm=3P_{34}-3P_{43}-2A_{12}$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>41/42</td>
+        <td>3/2</td>
+        <td>1</td>
+        <td>$\sqrt{6}X_{33,1}^\pm=3S_{31}-V_{13}$</td>
+        <td rowspan="2">$ \sqrt{6}T_{33}=3\slashed{p}\otimes\mathbb{1}-\gamma_T^\mu\otimes\gamma_T^\mu\slashed{p}$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>43/44</td>
+        <td>3/2</td>
+        <td>1</td>
+        <td>$\sqrt{6}X_{33,2}^\pm=3P_{31}-A_{13}$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>45/46</td>
+        <td>3/2</td>
+        <td>1</td>
+        <td>$\sqrt{6}X_{34,1}^\pm=3S_{41}-V_{14}$</td>
+        <td rowspan="2">$ \sqrt{6}T_{34}=3\slashed{q}\otimes\mathbb{1}-\gamma_T^\mu\otimes\gamma_T^\mu\slashed{q}$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>47/48</td>
+        <td>3/2</td>
+        <td>1</td>
+        <td>$\sqrt{6}X_{34,2}^\pm=3P_{41}-A_{14}$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>49/50</td>
+        <td>3/2</td>
+        <td>2</td>
+        <td>$\sqrt{2}X_{41,1}^\pm=2S_{44}+S_{33}-V_{11}$</td>
+        <td rowspan="2">$\sqrt{2}T_{41}=\slashed{p}\otimes\slashed{p}+2\slashed{q}\otimes\slashed{q}-\gamma_T^\mu\otimes\gamma_T^\mu$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>51/52</td>
+        <td>3/2</td>
+        <td>2</td>
+        <td>$\sqrt{2}X_{41,2}^\pm=2P_{44}+P_{33}-A_{11}$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>53/54</td>
+        <td>3/2</td>
+        <td>2</td>
+        <td>$\sqrt{2}X_{42,1}^\pm=S_{34}+S_{43}$</td>
+        <td rowspan="2">$\sqrt{2}T_{42}=\slashed{p}\otimes\slashed{q}+\slashed{q}\otimes\slashed{p}$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>55/56</td>
+        <td>3/2</td>
+        <td>2</td>
+        <td>$\sqrt{2}X_{42,2}^\pm=P_{34}+P_{43}$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>57/58</td>
+        <td>3/2</td>
+        <td>2</td>
+        <td>$\sqrt{2}X_{43,1}^\pm=-2S_{42}+S_{31}-V_{13}$</td>
+        <td rowspan="2">$ \sqrt{2}T_{43}=\slashed{q}\otimes[\slashed{q},\slashed{p}]-\frac{1}{2}\gamma_T^\mu\otimes[\gamma_T^\mu,\slashed{p}]$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>59/60</td>
+        <td>3/2</td>
+        <td>2</td>
+        <td>$\sqrt{2}X_{43,2}^\pm=-2P_{42}+P_{31}-A_{13}$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>61/62</td>
+        <td>3/2</td>
+        <td>2</td>
+        <td>$\sqrt{2}X_{44,1}^\pm=2S_{32}+S_{41}-V_{14}$</td>
+        <td rowspan="2">$ \sqrt{2}T_{44}=\slashed{p}\otimes[\slashed{p},\slashed{q}]-\frac{1}{2}\gamma_T^\mu\otimes[\gamma_T^\mu,\slashed{q}]$</td>
+      </tr>
+      <tr style="height: 32px">
+        <td>63/64</td>
+        <td>3/2</td>
+        <td>2</td>
+        <td>$\sqrt{2}X_{44,2}^\pm=2P_{32}+P_{41}-A_{14}$</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="代码逻辑梳理"><a href="#代码逻辑梳理" class="headerlink" title="代码逻辑梳理"></a>代码逻辑梳理</h2><p>代码块主要适用Wolfram Language编写, 实现:</p>
+<ol>
+<li>定义角动量本征基底;</li>
+<li>验证基底正交归一性关系.</li>
+</ol>
+<p>代码详见<a href="/images/OAMD/Code/Basis_X-pqP-4422.wls" target="_blank">wls代码</a>.</p>
+<h3 id="FeynCalc包"><a href="#FeynCalc包" class="headerlink" title="FeynCalc包"></a>FeynCalc包</h3><p>FeynCalc包可以进行指标缩并, gamma矩阵运算等操作, 导入FeynCalc包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt; FeynCalc`</span><br></pre></td></tr></table></figure>
+
+<h3 id="预定义"><a href="#预定义" class="headerlink" title="预定义"></a>预定义</h3><p>定义$\Lambda^\pm(P), \Omega^\pm(P), \overline{\Omega}^\pm(P)$以及$\Gamma_i$矩阵.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">(* Definitions *)</span><br><span class="line">(* Charge conjugation matrix *)</span><br><span class="line">Cm=-I.GA[0].GA[2]; </span><br><span class="line"></span><br><span class="line">(* respective projectors *)</span><br><span class="line">\[Lambda]p[t_]:=(1+GS[t])/2;</span><br><span class="line">\[Lambda]m[t_]:=(1-GS[t])/2;</span><br><span class="line"></span><br><span class="line">(* Omega_r *)</span><br><span class="line">\[Omega]p[t_]:=&#123;\[Lambda]p[t].GA5.Cm ,\[Lambda]p[t]&#125;;</span><br><span class="line">\[Omega]m[t_]:=&#123;\[Lambda]m[t].GA5.Cm ,\[Lambda]p[t]&#125;;</span><br><span class="line"></span><br><span class="line">C\[Omega]p[t_]:=&#123;-Cm.FCCCT[GA5 ].FCCCT[\[Lambda]p[t] ] ,FCCCT[\[Lambda]p[t] ] &#125;;</span><br><span class="line">C\[Omega]m[t_]:=&#123;-Cm.FCCCT[GA5 ].FCCCT[\[Lambda]m[t] ] ,FCCCT[\[Lambda]p[t] ] &#125;;</span><br><span class="line"></span><br><span class="line">(* Gammametrix *)</span><br><span class="line">Gm[p_,q_,i_]:=&#123;1,GS[p],GS[q],GS[p].GS[q]&#125;[[i]];</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>FeynCalc包中的$\gamma$矩阵是闵氏空间$\gamma$矩阵, 欧式电荷共轭算符C的公式需要换算到闵氏中;</li>
+<li>电荷共轭使用FCCCT函数实现, 但是注意FCCCT只对$\gamma$矩阵有效, 不操作动量. 依据定义需要手动翻转动量, 我没有在这里定义函数部分翻转, 而在函数调用部分翻转;</li>
+<li>FCCCT中含有过多$\gamma$矩阵会报错, 所以将一个大FCCCT拆分成多个小FCCCT(注意反序).</li>
+</ol>
+<h3 id="定义完备正交SP基底"><a href="#定义完备正交SP基底" class="headerlink" title="定义完备正交SP基底"></a>定义完备正交SP基底</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Sp[p_,q_,P_,i_,j_]:=Fpair[Gm[p,q,i].\[Omega]p[P][[1]], Gm[p,q,j].\[Omega]p[P][[2]]];</span><br><span class="line">Sm[p_,q_,P_,i_,j_]:=Fpair[Gm[p,q,i].\[Omega]m[P][[1]], Gm[p,q,j].\[Omega]m[P][[2]]];</span><br><span class="line"></span><br><span class="line">CSp[p_,q_,P_,i_,j_]:=Fpair[Calc[C\[Omega]p[P][[1]].FCCCT[Gm[p,q,i] ] ], Calc[C\[Omega]p[P][[2]]].FCCCT[Gm[p,q,j] ] ];</span><br><span class="line">CSm[p_,q_,P_,i_,j_]:=Fpair[Calc[C\[Omega]m[P][[1]].FCCCT[Gm[p,q,i] ] ], Calc[C\[Omega]m[P][[2]]].FCCCT[Gm[p,q,j] ] ];</span><br><span class="line"></span><br><span class="line">Pp[p_,q_,P_,i_,j_]:=Fpair[GA5.Gm[p,q,i].\[Omega]p[P][[1]], GA5.Gm[p,q,j].\[Omega]p[P][[2]]];</span><br><span class="line">Pm[p_,q_,P_,i_,j_]:=Fpair[GA5.Gm[p,q,i].\[Omega]m[P][[1]], GA5.Gm[p,q,j].\[Omega]m[P][[2]]];</span><br><span class="line"></span><br><span class="line">CPp[p_,q_,P_,i_,j_]:=Fpair[Calc[C\[Omega]p[P][[1]].FCCCT[Gm[p,q,i] ].FCCCT[GA5] ], Calc[C\[Omega]p[P][[2]].FCCCT[Gm[p,q,j] ].FCCCT[GA5] ] ];</span><br><span class="line">CPm[p_,q_,P_,i_,j_]:=Fpair[Calc[C\[Omega]m[P][[1]].FCCCT[Gm[p,q,i] ].FCCCT[GA5] ], Calc[C\[Omega]m[P][[2]].FCCCT[Gm[p,q,j] ].FCCCT[GA5] ] ];</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>由于直积是一种特殊运算, 需要定义. 然而实际操作中我们不需要定义完整直积运算, 只需要定义出来这种运算的运算规则即可. 这里使用Fpair函数实现. 在Mathematica中这种函数是抽象函数, 只表示一种运算关系, 并不进行实际计算, 也就是$a\otimes b$会存储成表达式$Fpair[a,b]$形式;</li>
+<li>为了节约时间, 化简计算, 在这种偏低层的部分提前使用Calc函数对表达式进行化简.</li>
+</ol>
+<h3 id="定义角动量本征基底"><a href="#定义角动量本征基底" class="headerlink" title="定义角动量本征基底"></a>定义角动量本征基底</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br></pre></td><td class="code"><pre><span class="line">(* Base of 64 sets *)</span><br><span class="line"></span><br><span class="line">X[p_,q_,P_] := Module[&#123;array&#125;,</span><br><span class="line">    array = ConstantArray[0, &#123;4,4,2,2&#125;]; </span><br><span class="line">    array[[1, 1, 1, 1]] = Sp[p, q, P, 1, 1]; array[[1, 1, 1, 2]] = Sm[p, q, P, 1, 1];</span><br><span class="line">    array[[1, 2, 1, 1]] = Sp[p, q, P, 1, 2]; array[[1, 2, 1, 2]] = Sm[p, q, P, 1, 2];</span><br><span class="line">    array[[1, 3, 1, 1]] = Sp[p, q, P, 1, 3]; array[[1, 3, 1, 2]] = Sm[p, q, P, 1, 3];</span><br><span class="line">    array[[1, 4, 1, 1]] = Sp[p, q, P, 1, 4]; array[[1, 4, 1, 2]] = Sm[p, q, P, 1, 4];</span><br><span class="line"></span><br><span class="line">    array[[1, 1, 2, 1]] = Pp[p, q, P, 1, 1]; array[[1, 1, 2, 2]] = Pm[p, q, P, 1, 1];</span><br><span class="line">    array[[1, 2, 2, 1]] = Pp[p, q, P, 1, 2]; array[[1, 2, 2, 2]] = Pm[p, q, P, 1, 2];</span><br><span class="line">    array[[1, 3, 2, 1]] = Pp[p, q, P, 1, 3]; array[[1, 3, 2, 2]] = Pm[p, q, P, 1, 3];</span><br><span class="line">    array[[1, 4, 2, 1]] = Pp[p, q, P, 1, 4]; array[[1, 4, 2, 2]] = Pm[p, q, P, 1, 4];</span><br><span class="line"></span><br><span class="line">    array[[2, 1, 1, 1]] = 1/Sqrt[3]*Sp[p, q, P, 3, 3]+1/Sqrt[3]*Sp[p, q, P, 4, 4]+1/Sqrt[3]*Pp[p, q, P, 2, 2];</span><br><span class="line">    array[[2, 1, 1, 2]] = 1/Sqrt[3]*Sm[p, q, P, 3, 3]+1/Sqrt[3]*Sm[p, q, P, 4, 4]-1/Sqrt[3]*Pm[p, q, P, 2, 2];</span><br><span class="line">    array[[2, 2, 1, 1]] = 1/Sqrt[3]*Sp[p, q, P, 3, 4]-1/Sqrt[3]*Sp[p, q, P, 4, 3]-1/Sqrt[3]*Pp[p, q, P, 2, 1];</span><br><span class="line">    array[[2, 2, 1, 2]] = 1/Sqrt[3]*Sm[p, q, P, 3, 4]-1/Sqrt[3]*Sm[p, q, P, 4, 3]+1/Sqrt[3]*Pm[p, q, P, 2, 1];</span><br><span class="line">    array[[2, 3, 1, 1]] = 1/Sqrt[3]*Sp[p, q, P, 3, 1]-1/Sqrt[3]*Sp[p, q, P, 4, 2]+1/Sqrt[3]*Pp[p, q, P, 2, 4];</span><br><span class="line">    array[[2, 3, 1, 2]] = 1/Sqrt[3]*Sm[p, q, P, 3, 1]-1/Sqrt[3]*Sm[p, q, P, 4, 2]-1/Sqrt[3]*Pm[p, q, P, 2, 4];</span><br><span class="line">    array[[2, 4, 1, 1]] = 1/Sqrt[3]*Sp[p, q, P, 3, 2]+1/Sqrt[3]*Sp[p, q, P, 4, 1]-1/Sqrt[3]*Pp[p, q, P, 2, 3];</span><br><span class="line">    array[[2, 4, 1, 2]] = 1/Sqrt[3]*Sm[p, q, P, 3, 2]+1/Sqrt[3]*Sm[p, q, P, 4, 1]+1/Sqrt[3]*Pm[p, q, P, 2, 3];</span><br><span class="line"></span><br><span class="line">    array[[2, 1, 2, 1]] = 1/Sqrt[3]*Pp[p, q, P, 3, 3]+1/Sqrt[3]*Pp[p, q, P, 4, 4]+1/Sqrt[3]*Sp[p, q, P, 2, 2];</span><br><span class="line">    array[[2, 1, 2, 2]] = 1/Sqrt[3]*Pm[p, q, P, 3, 3]+1/Sqrt[3]*Pm[p, q, P, 4, 4]-1/Sqrt[3]*Sm[p, q, P, 2, 2];</span><br><span class="line">    array[[2, 2, 2, 1]] = 1/Sqrt[3]*Pp[p, q, P, 3, 4]-1/Sqrt[3]*Pp[p, q, P, 4, 3]-1/Sqrt[3]*Sp[p, q, P, 2, 1];</span><br><span class="line">    array[[2, 2, 2, 2]] = 1/Sqrt[3]*Pm[p, q, P, 3, 4]-1/Sqrt[3]*Pm[p, q, P, 4, 3]+1/Sqrt[3]*Sm[p, q, P, 2, 1];</span><br><span class="line">    array[[2, 3, 2, 1]] = 1/Sqrt[3]*Pp[p, q, P, 3, 1]-1/Sqrt[3]*Pp[p, q, P, 4, 2]+1/Sqrt[3]*Sp[p, q, P, 2, 4];</span><br><span class="line">    array[[2, 3, 2, 2]] = 1/Sqrt[3]*Pm[p, q, P, 3, 1]-1/Sqrt[3]*Pm[p, q, P, 4, 2]-1/Sqrt[3]*Sm[p, q, P, 2, 4];</span><br><span class="line">    array[[2, 4, 2, 1]] = 1/Sqrt[3]*Pp[p, q, P, 3, 2]+1/Sqrt[3]*Pp[p, q, P, 4, 1]-1/Sqrt[3]*Sp[p, q, P, 2, 3];</span><br><span class="line">    array[[2, 4, 2, 2]] = 1/Sqrt[3]*Pm[p, q, P, 3, 2]+1/Sqrt[3]*Pm[p, q, P, 4, 1]+1/Sqrt[3]*Sm[p, q, P, 2, 3];</span><br><span class="line"></span><br><span class="line">    array[[3, 1, 1, 1]] =  2/Sqrt[6]*Sp[p, q, P, 3, 3]-1/Sqrt[6]*Sp[p, q, P, 4, 4]-1/Sqrt[6]*Pp[p, q, P, 2, 2];</span><br><span class="line">    array[[3, 1, 1, 2]] =  2/Sqrt[6]*Sm[p, q, P, 3, 3]-1/Sqrt[6]*Sm[p, q, P, 4, 4]+1/Sqrt[6]*Pm[p, q, P, 2, 2];</span><br><span class="line">    array[[3, 2, 1, 1]] =  1/Sqrt[6]*Sp[p, q, P, 3, 4]-1/Sqrt[6]*Sp[p, q, P, 4, 3]+2/Sqrt[6]*Pp[p, q, P, 2, 1];</span><br><span class="line">    array[[3, 2, 1, 2]] =  1/Sqrt[6]*Sm[p, q, P, 3, 4]-1/Sqrt[6]*Sm[p, q, P, 4, 3]-2/Sqrt[6]*Pm[p, q, P, 2, 1];</span><br><span class="line">    array[[3, 3, 1, 1]] =  2/Sqrt[6]*Sp[p, q, P, 3, 1]+1/Sqrt[6]*Sp[p, q, P, 4, 2]-1/Sqrt[6]*Pp[p, q, P, 2, 4];</span><br><span class="line">    array[[3, 3, 1, 2]] =  2/Sqrt[6]*Sm[p, q, P, 3, 1]+1/Sqrt[6]*Sm[p, q, P, 4, 2]+1/Sqrt[6]*Pm[p, q, P, 2, 4];</span><br><span class="line">    array[[3, 4, 1, 1]] =  2/Sqrt[6]*Sp[p, q, P, 4, 1]-1/Sqrt[6]*Sp[p, q, P, 3, 2]+1/Sqrt[6]*Pp[p, q, P, 2, 3];</span><br><span class="line">    array[[3, 4, 1, 2]] =  2/Sqrt[6]*Sm[p, q, P, 4, 1]-1/Sqrt[6]*Sm[p, q, P, 3, 2]-1/Sqrt[6]*Pm[p, q, P, 2, 3];</span><br><span class="line"></span><br><span class="line">    array[[3, 1, 2, 1]] =  2/Sqrt[6]*Pp[p, q, P, 3, 3]-1/Sqrt[6]*Pp[p, q, P, 4, 4]-1/Sqrt[6]*Sp[p, q, P, 2, 2];</span><br><span class="line">    array[[3, 1, 2, 2]] =  2/Sqrt[6]*Pm[p, q, P, 3, 3]-1/Sqrt[6]*Pm[p, q, P, 4, 4]+1/Sqrt[6]*Sm[p, q, P, 2, 2];</span><br><span class="line">    array[[3, 2, 2, 1]] =  1/Sqrt[6]*Pp[p, q, P, 3, 4]-1/Sqrt[6]*Pp[p, q, P, 4, 3]+2/Sqrt[6]*Sp[p, q, P, 2, 1];</span><br><span class="line">    array[[3, 2, 2, 2]] =  1/Sqrt[6]*Pm[p, q, P, 3, 4]-1/Sqrt[6]*Pm[p, q, P, 4, 3]-2/Sqrt[6]*Sm[p, q, P, 2, 1];</span><br><span class="line">    array[[3, 3, 2, 1]] =  2/Sqrt[6]*Pp[p, q, P, 3, 1]+1/Sqrt[6]*Pp[p, q, P, 4, 2]-1/Sqrt[6]*Sp[p, q, P, 2, 4];</span><br><span class="line">    array[[3, 3, 2, 2]] =  2/Sqrt[6]*Pm[p, q, P, 3, 1]+1/Sqrt[6]*Pm[p, q, P, 4, 2]+1/Sqrt[6]*Sm[p, q, P, 2, 4];</span><br><span class="line">    array[[3, 4, 2, 1]] =  2/Sqrt[6]*Pp[p, q, P, 4, 1]-1/Sqrt[6]*Pp[p, q, P, 3, 2]+1/Sqrt[6]*Sp[p, q, P, 2, 3];</span><br><span class="line">    array[[3, 4, 2, 2]] =  2/Sqrt[6]*Pm[p, q, P, 4, 1]-1/Sqrt[6]*Pm[p, q, P, 3, 2]-1/Sqrt[6]*Sm[p, q, P, 2, 3];</span><br><span class="line"></span><br><span class="line">    array[[4, 1, 1, 1]] =  1/Sqrt[2]*Sp[p, q, P, 4, 4]-1/Sqrt[2]*Pp[p, q, P, 2, 2];</span><br><span class="line">    array[[4, 1, 1, 2]] =  1/Sqrt[2]*Sm[p, q, P, 4, 4]+1/Sqrt[2]*Pm[p, q, P, 2, 2];</span><br><span class="line">    array[[4, 2, 1, 1]] =  1/Sqrt[2]*Sp[p, q, P, 3, 4]+1/Sqrt[2]*Sp[p, q, P, 4, 3];</span><br><span class="line">    array[[4, 2, 1, 2]] =  1/Sqrt[2]*Sm[p, q, P, 3, 4]+1/Sqrt[2]*Sm[p, q, P, 4, 3];</span><br><span class="line">    array[[4, 3, 1, 1]] = -1/Sqrt[2]*Sp[p, q, P, 4, 2]-1/Sqrt[2]*Pp[p, q, P, 2, 4];</span><br><span class="line">    array[[4, 3, 1, 2]] = -1/Sqrt[2]*Sm[p, q, P, 4, 2]+1/Sqrt[2]*Pm[p, q, P, 2, 4];</span><br><span class="line">    array[[4, 4, 1, 1]] =  1/Sqrt[2]*Sp[p, q, P, 3, 2]+1/Sqrt[2]*Pp[p, q, P, 2, 3];</span><br><span class="line">    array[[4, 4, 1, 2]] =  1/Sqrt[2]*Sm[p, q, P, 3, 2]-1/Sqrt[2]*Pm[p, q, P, 2, 3];</span><br><span class="line"></span><br><span class="line">    array[[4, 1, 2, 1]] =  1/Sqrt[2]*Pp[p, q, P, 4, 4]-1/Sqrt[2]*Sp[p, q, P, 2, 2];</span><br><span class="line">    array[[4, 1, 2, 2]] =  1/Sqrt[2]*Pm[p, q, P, 4, 4]+1/Sqrt[2]*Sm[p, q, P, 2, 2];</span><br><span class="line">    array[[4, 2, 2, 1]] =  1/Sqrt[2]*Pp[p, q, P, 3, 4]+1/Sqrt[2]*Pp[p, q, P, 4, 3];</span><br><span class="line">    array[[4, 2, 2, 2]] =  1/Sqrt[2]*Pm[p, q, P, 3, 4]+1/Sqrt[2]*Pm[p, q, P, 4, 3];</span><br><span class="line">    array[[4, 3, 2, 1]] = -1/Sqrt[2]*Pp[p, q, P, 4, 2]-1/Sqrt[2]*Sp[p, q, P, 2, 4];</span><br><span class="line">    array[[4, 3, 2, 2]] = -1/Sqrt[2]*Pm[p, q, P, 4, 2]+1/Sqrt[2]*Sm[p, q, P, 2, 4];</span><br><span class="line">    array[[4, 4, 2, 1]] =  1/Sqrt[2]*Pp[p, q, P, 3, 2]+1/Sqrt[2]*Sp[p, q, P, 2, 3];</span><br><span class="line">    array[[4, 4, 2, 2]] =  1/Sqrt[2]*Pm[p, q, P, 3, 2]-1/Sqrt[2]*Sm[p, q, P, 2, 3];</span><br><span class="line"></span><br><span class="line">    array </span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">CX[p_,q_,P_] := Module[&#123;array&#125;,</span><br><span class="line">    array = ConstantArray[0, &#123;4,4,2,2&#125;]; </span><br><span class="line">    array[[1, 1, 1, 1]] = CSp[-p, -q, -P, 1, 1]; array[[1, 1, 1, 2]] = CSm[-p, -q, -P, 1, 1];</span><br><span class="line">    array[[1, 2, 1, 1]] = CSp[-p, -q, -P, 1, 2]; array[[1, 2, 1, 2]] = CSm[-p, -q, -P, 1, 2];</span><br><span class="line">    array[[1, 3, 1, 1]] = CSp[-p, -q, -P, 1, 3]; array[[1, 3, 1, 2]] = CSm[-p, -q, -P, 1, 3];</span><br><span class="line">    array[[1, 4, 1, 1]] = CSp[-p, -q, -P, 1, 4]; array[[1, 4, 1, 2]] = CSm[-p, -q, -P, 1, 4];</span><br><span class="line"></span><br><span class="line">    array[[1, 1, 2, 1]] = CPp[-p, -q, -P, 1, 1]; array[[1, 1, 2, 2]] = CPm[-p, -q, -P, 1, 1];</span><br><span class="line">    array[[1, 2, 2, 1]] = CPp[-p, -q, -P, 1, 2]; array[[1, 2, 2, 2]] = CPm[-p, -q, -P, 1, 2];</span><br><span class="line">    array[[1, 3, 2, 1]] = CPp[-p, -q, -P, 1, 3]; array[[1, 3, 2, 2]] = CPm[-p, -q, -P, 1, 3];</span><br><span class="line">    array[[1, 4, 2, 1]] = CPp[-p, -q, -P, 1, 4]; array[[1, 4, 2, 2]] = CPm[-p, -q, -P, 1, 4];</span><br><span class="line"></span><br><span class="line">    array[[2, 1, 1, 1]] = 1/Sqrt[3]*CSp[-p, -q, -P, 3, 3]+1/Sqrt[3]*CSp[-p, -q, -P, 4, 4]+1/Sqrt[3]*CPp[-p, -q, -P, 2, 2];</span><br><span class="line">    array[[2, 1, 1, 2]] = 1/Sqrt[3]*CSm[-p, -q, -P, 3, 3]+1/Sqrt[3]*CSm[-p, -q, -P, 4, 4]-1/Sqrt[3]*CPm[-p, -q, -P, 2, 2];</span><br><span class="line">    array[[2, 2, 1, 1]] = 1/Sqrt[3]*CSp[-p, -q, -P, 3, 4]-1/Sqrt[3]*CSp[-p, -q, -P, 4, 3]-1/Sqrt[3]*CPp[-p, -q, -P, 2, 1];</span><br><span class="line">    array[[2, 2, 1, 2]] = 1/Sqrt[3]*CSm[-p, -q, -P, 3, 4]-1/Sqrt[3]*CSm[-p, -q, -P, 4, 3]+1/Sqrt[3]*CPm[-p, -q, -P, 2, 1];</span><br><span class="line">    array[[2, 3, 1, 1]] = 1/Sqrt[3]*CSp[-p, -q, -P, 3, 1]-1/Sqrt[3]*CSp[-p, -q, -P, 4, 2]+1/Sqrt[3]*CPp[-p, -q, -P, 2, 4];</span><br><span class="line">    array[[2, 3, 1, 2]] = 1/Sqrt[3]*CSm[-p, -q, -P, 3, 1]-1/Sqrt[3]*CSm[-p, -q, -P, 4, 2]-1/Sqrt[3]*CPm[-p, -q, -P, 2, 4];</span><br><span class="line">    array[[2, 4, 1, 1]] = 1/Sqrt[3]*CSp[-p, -q, -P, 3, 2]+1/Sqrt[3]*CSp[-p, -q, -P, 4, 1]-1/Sqrt[3]*CPp[-p, -q, -P, 2, 3];</span><br><span class="line">    array[[2, 4, 1, 2]] = 1/Sqrt[3]*CSm[-p, -q, -P, 3, 2]+1/Sqrt[3]*CSm[-p, -q, -P, 4, 1]+1/Sqrt[3]*CPm[-p, -q, -P, 2, 3];</span><br><span class="line"></span><br><span class="line">    array[[2, 1, 2, 1]] = 1/Sqrt[3]*CPp[-p, -q, -P, 3, 3]+1/Sqrt[3]*CPp[-p, -q, -P, 4, 4]+1/Sqrt[3]*CSp[-p, -q, -P, 2, 2];</span><br><span class="line">    array[[2, 1, 2, 2]] = 1/Sqrt[3]*CPm[-p, -q, -P, 3, 3]+1/Sqrt[3]*CPm[-p, -q, -P, 4, 4]-1/Sqrt[3]*CSm[-p, -q, -P, 2, 2];</span><br><span class="line">    array[[2, 2, 2, 1]] = 1/Sqrt[3]*CPp[-p, -q, -P, 3, 4]-1/Sqrt[3]*CPp[-p, -q, -P, 4, 3]-1/Sqrt[3]*CSp[-p, -q, -P, 2, 1];</span><br><span class="line">    array[[2, 2, 2, 2]] = 1/Sqrt[3]*CPm[-p, -q, -P, 3, 4]-1/Sqrt[3]*CPm[-p, -q, -P, 4, 3]+1/Sqrt[3]*CSm[-p, -q, -P, 2, 1];</span><br><span class="line">    array[[2, 3, 2, 1]] = 1/Sqrt[3]*CPp[-p, -q, -P, 3, 1]-1/Sqrt[3]*CPp[-p, -q, -P, 4, 2]+1/Sqrt[3]*CSp[-p, -q, -P, 2, 4];</span><br><span class="line">    array[[2, 3, 2, 2]] = 1/Sqrt[3]*CPm[-p, -q, -P, 3, 1]-1/Sqrt[3]*CPm[-p, -q, -P, 4, 2]-1/Sqrt[3]*CSm[-p, -q, -P, 2, 4];</span><br><span class="line">    array[[2, 4, 2, 1]] = 1/Sqrt[3]*CPp[-p, -q, -P, 3, 2]+1/Sqrt[3]*CPp[-p, -q, -P, 4, 1]-1/Sqrt[3]*CSp[-p, -q, -P, 2, 3];</span><br><span class="line">    array[[2, 4, 2, 2]] = 1/Sqrt[3]*CPm[-p, -q, -P, 3, 2]+1/Sqrt[3]*CPm[-p, -q, -P, 4, 1]+1/Sqrt[3]*CSm[-p, -q, -P, 2, 3];</span><br><span class="line"></span><br><span class="line">    array[[3, 1, 1, 1]] =  2/Sqrt[6]*CSp[-p, -q, -P, 3, 3]-1/Sqrt[6]*CSp[-p, -q, -P, 4, 4]-1/Sqrt[6]*CPp[-p, -q, -P, 2, 2];</span><br><span class="line">    array[[3, 1, 1, 2]] =  2/Sqrt[6]*CSm[-p, -q, -P, 3, 3]-1/Sqrt[6]*CSm[-p, -q, -P, 4, 4]+1/Sqrt[6]*CPm[-p, -q, -P, 2, 2];</span><br><span class="line">    array[[3, 2, 1, 1]] =  1/Sqrt[6]*CSp[-p, -q, -P, 3, 4]-1/Sqrt[6]*CSp[-p, -q, -P, 4, 3]+2/Sqrt[6]*CPp[-p, -q, -P, 2, 1];</span><br><span class="line">    array[[3, 2, 1, 2]] =  1/Sqrt[6]*CSm[-p, -q, -P, 3, 4]-1/Sqrt[6]*CSm[-p, -q, -P, 4, 3]-2/Sqrt[6]*CPm[-p, -q, -P, 2, 1];</span><br><span class="line">    array[[3, 3, 1, 1]] =  2/Sqrt[6]*CSp[-p, -q, -P, 3, 1]+1/Sqrt[6]*CSp[-p, -q, -P, 4, 2]-1/Sqrt[6]*CPp[-p, -q, -P, 2, 4];</span><br><span class="line">    array[[3, 3, 1, 2]] =  2/Sqrt[6]*CSm[-p, -q, -P, 3, 1]+1/Sqrt[6]*CSm[-p, -q, -P, 4, 2]+1/Sqrt[6]*CPm[-p, -q, -P, 2, 4];</span><br><span class="line">    array[[3, 4, 1, 1]] =  2/Sqrt[6]*CSp[-p, -q, -P, 4, 1]-1/Sqrt[6]*CSp[-p, -q, -P, 3, 2]+1/Sqrt[6]*CPp[-p, -q, -P, 2, 3];</span><br><span class="line">    array[[3, 4, 1, 2]] =  2/Sqrt[6]*CSm[-p, -q, -P, 4, 1]-1/Sqrt[6]*CSm[-p, -q, -P, 3, 2]-1/Sqrt[6]*CPm[-p, -q, -P, 2, 3];</span><br><span class="line"></span><br><span class="line">    array[[3, 1, 2, 1]] =  2/Sqrt[6]*CPp[-p, -q, -P, 3, 3]-1/Sqrt[6]*CPp[-p, -q, -P, 4, 4]-1/Sqrt[6]*CSp[-p, -q, -P, 2, 2];</span><br><span class="line">    array[[3, 1, 2, 2]] =  2/Sqrt[6]*CPm[-p, -q, -P, 3, 3]-1/Sqrt[6]*CPm[-p, -q, -P, 4, 4]+1/Sqrt[6]*CSm[-p, -q, -P, 2, 2];</span><br><span class="line">    array[[3, 2, 2, 1]] =  1/Sqrt[6]*CPp[-p, -q, -P, 3, 4]-1/Sqrt[6]*CPp[-p, -q, -P, 4, 3]+2/Sqrt[6]*CSp[-p, -q, -P, 2, 1];</span><br><span class="line">    array[[3, 2, 2, 2]] =  1/Sqrt[6]*CPm[-p, -q, -P, 3, 4]-1/Sqrt[6]*CPm[-p, -q, -P, 4, 3]-2/Sqrt[6]*CSm[-p, -q, -P, 2, 1];</span><br><span class="line">    array[[3, 3, 2, 1]] =  2/Sqrt[6]*CPp[-p, -q, -P, 3, 1]+1/Sqrt[6]*CPp[-p, -q, -P, 4, 2]-1/Sqrt[6]*CSp[-p, -q, -P, 2, 4];</span><br><span class="line">    array[[3, 3, 2, 2]] =  2/Sqrt[6]*CPm[-p, -q, -P, 3, 1]+1/Sqrt[6]*CPm[-p, -q, -P, 4, 2]+1/Sqrt[6]*CSm[-p, -q, -P, 2, 4];</span><br><span class="line">    array[[3, 4, 2, 1]] =  2/Sqrt[6]*CPp[-p, -q, -P, 4, 1]-1/Sqrt[6]*CPp[-p, -q, -P, 3, 2]+1/Sqrt[6]*CSp[-p, -q, -P, 2, 3];</span><br><span class="line">    array[[3, 4, 2, 2]] =  2/Sqrt[6]*CPm[-p, -q, -P, 4, 1]-1/Sqrt[6]*CPm[-p, -q, -P, 3, 2]-1/Sqrt[6]*CSm[-p, -q, -P, 2, 3];</span><br><span class="line"></span><br><span class="line">    array[[4, 1, 1, 1]] =  1/Sqrt[2]*CSp[-p, -q, -P, 4, 4]-1/Sqrt[2]*CPp[-p, -q, -P, 2, 2];</span><br><span class="line">    array[[4, 1, 1, 2]] =  1/Sqrt[2]*CSm[-p, -q, -P, 4, 4]+1/Sqrt[2]*CPm[-p, -q, -P, 2, 2];</span><br><span class="line">    array[[4, 2, 1, 1]] =  1/Sqrt[2]*CSp[-p, -q, -P, 3, 4]+1/Sqrt[2]*CSp[-p, -q, -P, 4, 3];</span><br><span class="line">    array[[4, 2, 1, 2]] =  1/Sqrt[2]*CSm[-p, -q, -P, 3, 4]+1/Sqrt[2]*CSm[-p, -q, -P, 4, 3];</span><br><span class="line">    array[[4, 3, 1, 1]] = -1/Sqrt[2]*CSp[-p, -q, -P, 4, 2]-1/Sqrt[2]*CPp[-p, -q, -P, 2, 4];</span><br><span class="line">    array[[4, 3, 1, 2]] = -1/Sqrt[2]*CSm[-p, -q, -P, 4, 2]+1/Sqrt[2]*CPm[-p, -q, -P, 2, 4];</span><br><span class="line">    array[[4, 4, 1, 1]] =  1/Sqrt[2]*CSp[-p, -q, -P, 3, 2]+1/Sqrt[2]*CPp[-p, -q, -P, 2, 3];</span><br><span class="line">    array[[4, 4, 1, 2]] =  1/Sqrt[2]*CSm[-p, -q, -P, 3, 2]-1/Sqrt[2]*CPm[-p, -q, -P, 2, 3];</span><br><span class="line"></span><br><span class="line">    array[[4, 1, 2, 1]] =  1/Sqrt[2]*CPp[-p, -q, -P, 4, 4]-1/Sqrt[2]*CSp[-p, -q, -P, 2, 2];</span><br><span class="line">    array[[4, 1, 2, 2]] =  1/Sqrt[2]*CPm[-p, -q, -P, 4, 4]+1/Sqrt[2]*CSm[-p, -q, -P, 2, 2];</span><br><span class="line">    array[[4, 2, 2, 1]] =  1/Sqrt[2]*CPp[-p, -q, -P, 3, 4]+1/Sqrt[2]*CPp[-p, -q, -P, 4, 3];</span><br><span class="line">    array[[4, 2, 2, 2]] =  1/Sqrt[2]*CPm[-p, -q, -P, 3, 4]+1/Sqrt[2]*CPm[-p, -q, -P, 4, 3];</span><br><span class="line">    array[[4, 3, 2, 1]] = -1/Sqrt[2]*CPp[-p, -q, -P, 4, 2]-1/Sqrt[2]*CSp[-p, -q, -P, 2, 4];</span><br><span class="line">    array[[4, 3, 2, 2]] = -1/Sqrt[2]*CPm[-p, -q, -P, 4, 2]+1/Sqrt[2]*CSm[-p, -q, -P, 2, 4];</span><br><span class="line">    array[[4, 4, 2, 1]] =  1/Sqrt[2]*CPp[-p, -q, -P, 3, 2]+1/Sqrt[2]*CSp[-p, -q, -P, 2, 3];</span><br><span class="line">    array[[4, 4, 2, 2]] =  1/Sqrt[2]*CPm[-p, -q, -P, 3, 2]-1/Sqrt[2]*CSm[-p, -q, -P, 2, 3];</span><br><span class="line"></span><br><span class="line">    array </span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">Basis=X[p,q,P];</span><br><span class="line">CBasis=CX[p,q,P];</span><br><span class="line"></span><br><span class="line">(* Flatten:&#123;1111, 1112, 1121, 1122, 1211, 1212,</span><br><span class="line">1221, 1222, 1311, 1312, 1321, 1322,</span><br><span class="line">1411, 1412, 1421, 1422, 2111, 2112,</span><br><span class="line">2121, 2122, 2211, 2212, 2221, 2222,</span><br><span class="line">2311, 2312, 2321, 2322, 2411, 2412,</span><br><span class="line">2421, 2422, 3111, 3112, 3121, 3122,</span><br><span class="line">3211, 3212, 3221, 3222, 3311, 3312,</span><br><span class="line">3321, 3322, 3411, 3412, 3421, 3422,</span><br><span class="line">4111, 4112, 4121, 4122, 4211, 4212,</span><br><span class="line">4221, 4222, 4311, 4312, 4321, 4322,</span><br><span class="line">4411, 4412, 4421, 4422&#125; *)</span><br><span class="line"></span><br><span class="line">Basis64=Flatten[Basis];</span><br><span class="line">CBasis64=Flatten[CBasis];</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>使用SP而非AV进行定义, 节约计算时间;</li>
+<li>将所有的系数从Fpair中提取出来运算, 避免重复计算;</li>
+<li>在这里进行电荷共轭的动量反转;</li>
+<li>因为没有定义Fpair的加法运算规则, 目前整个式子仍然保持Fpair相加的格式;</li>
+<li>前面的部分是定义基底, 定义是不会计算的. 为了节约时间, 我们完整运算一遍基底, 将他们存到变量Basis和CBasis中, 以后需要直接调用数据即可而不需要反复调用定义计算, 所以这一步计算必不可少;</li>
+<li>为方便后续计算, 将4维张量压平成64维向量Basis64和CBasis64, 压平后对应顺序按照注释顺序进行.</li>
+</ol>
+<h3 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">rules=&#123;</span><br><span class="line">    Pair[Momentum[x_], Momentum[y_] ] :&gt; If[x === y, 1, 0]</span><br><span class="line">  &#125;;</span><br><span class="line">  </span><br><span class="line">mergeFpair =</span><br><span class="line">   Times[pre___, Fpair[a_, b_], Fpair[c_, d_], post___] :&gt; </span><br><span class="line">   Times[pre, Fpair[Dot[a, c], Dot[b, d] ], post];</span><br><span class="line"></span><br><span class="line">traceFpair =</span><br><span class="line">  Fpair[a_, b_] :&gt; TR@DotSimplify[a]*TR@DotSimplify[b];</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>rules: 定义动量的内积规则. 相同动量内积为1, 不同动量内积为0. “&#x3D;&#x3D;&#x3D;”用于严格判断表达式而非值是否完全相同;</li>
+<li>mergeFpair: 定义Fpair的乘法规则. 两个Fpair相乘时, 系数执行普通乘法, Fpair函数内对应系数矩阵进行点乘. 若多个Fpair相乘, 只需要递归调用此规则即可;</li>
+<li>traceFpair: 定义Fpair的迹运算规则. Fpair的迹等于其系数矩阵的迹的乘积. 先用DotSimplify将矩阵中的动量内积进行简化, TR用于计算矩阵的迹.</li>
+</ol>
+<h3 id="检查正交归一关系"><a href="#检查正交归一关系" class="headerlink" title="检查正交归一关系"></a>检查正交归一关系</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">(* Check for orthogonality relations *)</span><br><span class="line">CloseKernels[];(*64核并行计算*)</span><br><span class="line">LaunchKernels[64];</span><br><span class="line">ParallelEvaluate[&lt;&lt; FeynCalc`];(*加载FeynCalc包*)</span><br><span class="line">Table[Print[&quot;&quot;], &#123;5&#125;];(*刷掉加载FeynCalc包的信息*)</span><br><span class="line">Result = 0.25*ParallelMap[(Expand[#]//.mergeFpair//.traceFpair//.rules) &amp;, Outer[Times, CBasis64, Basis64] ];</span><br><span class="line">Result = FullSimplify[Result];</span><br><span class="line">Paths=FileNameJoin[&#123;&quot;Results&quot;,&quot;Orthogonality.wls&quot;&#125;];</span><br><span class="line">If[$OperatingSystem === &quot;Windows&quot;, </span><br><span class="line">    Paths = StringReplace[Paths, &quot;\\&quot; -&gt; &quot;\\\\&quot;]</span><br><span class="line">];</span><br><span class="line">Export[Paths, Result];</span><br><span class="line">nonZeroPositions = Position[Result, _?(# != 0 &amp;)];</span><br><span class="line">nonZeroValues = Extract[Result, nonZeroPositions];</span><br><span class="line">Print[nonZeroPositions,&quot;\n&quot;, nonZeroValues];</span><br></pre></td></tr></table></figure>
+<p>(需要再测试一下删掉DistributeDefinitions[Basis,CBasis,rules];结果)</p>
+<ol>
+<li>0.25*ParallelMap[(Expand[#]&#x2F;&#x2F;.mergeFpair&#x2F;&#x2F;.traceFpair&#x2F;&#x2F;.rules) &amp;, Outer[Times, CBasis64, Basis64] ]; 这句代码解释如下:</li>
+</ol>
+<ul>
+<li>首先, Outer[Times, CBasis64, Basis64] 生成两个集合所有元素两两相乘的结果, 结果是一个64x64的矩阵;</li>
+<li>然后, ParallelMap[func, obj]对上一步生成的每个矩阵中的每一个元素并行进行计算, 计算内容是对obj元素使用func函数进行计算;</li>
+<li>func函数的内容如下:<ul>
+<li>先使用Expand[#]将形如$(Fpair[]+Fpair[]).(Fpair[]+Fpair[])$的表达式进行展开, 变成$Fpair[].Fpair[] + Fpair[].Fpair[] + …$的形式; </li>
+<li>接着递归使用&#x2F;&#x2F;.mergeFpair对展开后的表达式进行Fpair乘法的合并, 变为$Fpair[]+Fpair[]+…$的形式;</li>
+<li>然后(迭代)使用&#x2F;&#x2F;.traceFpair对表达式进行迹运算;</li>
+<li>最后迭代使用&#x2F;&#x2F;.rules对迹运算后的表达式进行动量内积的简化;</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>为防止化简不干净, 最后对结果再进行一个FullSimplify;</li>
+<li>后面的内容是将结果导出到Results文件夹下的Orthogonality.wls文件中, 并打印出非零元素的位置和数值.</li>
+</ol>
+
+  </div>
+  <!-- 许可协议标签，浅绿色背景，文章后另起一行 -->
+  <div class="post-copyright" style="background: #e6f9e6; color: #228B22; padding: 18px 28px; border-radius: 20px; margin-top: 32px;">
+    <p style="margin:0;">本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" style="color:#228B22;text-decoration:underline;">CC BY-NC-SA 4.0</a> 许可协议发布.<br>
+    作者: LiZnB, 文章链接: <a href="https://blog.liznb.org/2026/01/01/01-OAMD2/" style="color:#228B22;text-decoration:underline;">
+      https://blog.liznb.org/2026/01/01/01-OAMD2/
+    </a></p>
+    <p style="margin:0;">如果本文给你带来了帮助或让你觉得有趣, 可以考虑<a href="https://blog.liznb.org/about/#donate" target="_blank" style="color:#228B22;text-decoration:underline;">赞助我</a>¬_¬</p>
+  </div>
+</article>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a href="/categories/">Categories</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%9A%E6%9E%84%E5%BB%BA64%E4%B8%AA%E5%9F%BA%E5%BA%95"><span class="toc-number">1.</span> <span class="toc-text">第一部分：构建64个基底</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E9%83%A8%E5%88%86%E6%A2%B3%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">理论部分梳理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AC%A7%E5%BC%8Fconvention"><span class="toc-number">1.1.1.</span> <span class="toc-text">欧式convention</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">动量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Gamma%E7%9F%A9%E9%98%B5"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">Gamma矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8"><span class="toc-number">1.1.1.2.1.</span> <span class="toc-text">性质</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.1.2.2.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.1.1.2.3.</span> <span class="toc-text">表示</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%B5%E8%8D%B7%E5%85%B1%E8%BD%AD%E7%9F%A9%E9%98%B5"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">电荷共轭矩阵</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%A0%E9%87%8F%E7%A7%AF"><span class="toc-number">1.1.2.</span> <span class="toc-text">张量积</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E6%80%A7%E7%BA%A6%E6%9D%9F"><span class="toc-number">1.1.3.</span> <span class="toc-text">对称性约束</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Parity"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">Parity</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E5%8F%8D%E7%B2%92%E5%AD%90%E7%BA%A6%E6%9D%9F"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">正反粒子约束</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Scalar-Diquark"><span class="toc-number">1.1.3.3.</span> <span class="toc-text">Scalar-Diquark</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F%E5%8F%82%E6%95%B0"><span class="toc-number">1.1.4.</span> <span class="toc-text">动量参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E5%BD%92%E4%B8%80%E5%8C%96"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">正交归一化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E5%8C%96"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">参数化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E5%9F%BA%E5%BA%95"><span class="toc-number">1.1.5.</span> <span class="toc-text">正交基底</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%92%E5%8A%A8%E9%87%8F%E6%9C%AC%E5%BE%81%E5%9F%BA%E5%BA%95"><span class="toc-number">1.1.6.</span> <span class="toc-text">角动量本征基底</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%92%E5%8A%A8%E9%87%8F%E7%AE%97%E7%AC%A6"><span class="toc-number">1.1.6.1.</span> <span class="toc-text">角动量算符</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B4%A8%E5%AD%90%E6%80%BB%E8%87%AA%E6%97%8B%E7%AE%97%E7%AC%A6"><span class="toc-number">1.1.6.1.1.</span> <span class="toc-text">质子总自旋算符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%B8%E5%85%8B%E6%80%BB%E8%87%AA%E6%97%8B%E7%AE%97%E7%AC%A6"><span class="toc-number">1.1.6.1.2.</span> <span class="toc-text">夸克总自旋算符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%B8%E5%85%8B%E7%9B%B8%E5%AF%B9%E8%BD%A8%E9%81%93%E8%A7%92%E5%8A%A8%E9%87%8F%E7%AE%97%E7%AC%A6"><span class="toc-number">1.1.6.1.3.</span> <span class="toc-text">夸克相对轨道角动量算符</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%92%E5%8A%A8%E9%87%8F%E6%9C%AC%E5%BE%81%E5%9F%BA%E5%BA%95-1"><span class="toc-number">1.1.6.2.</span> <span class="toc-text">角动量本征基底</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%80%BB%E8%BE%91%E6%A2%B3%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">代码逻辑梳理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#FeynCalc%E5%8C%85"><span class="toc-number">1.2.1.</span> <span class="toc-text">FeynCalc包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.2.2.</span> <span class="toc-text">预定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E5%AE%8C%E5%A4%87%E6%AD%A3%E4%BA%A4SP%E5%9F%BA%E5%BA%95"><span class="toc-number">1.2.3.</span> <span class="toc-text">定义完备正交SP基底</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E8%A7%92%E5%8A%A8%E9%87%8F%E6%9C%AC%E5%BE%81%E5%9F%BA%E5%BA%95"><span class="toc-number">1.2.4.</span> <span class="toc-text">定义角动量本征基底</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%84%E5%88%99"><span class="toc-number">1.2.5.</span> <span class="toc-text">规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E6%AD%A3%E4%BA%A4%E5%BD%92%E4%B8%80%E5%85%B3%E7%B3%BB"><span class="toc-number">1.2.6.</span> <span class="toc-text">检查正交归一关系</span></a></li></ol></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.liznb.org/2026/01/01/01-OAMD2/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.liznb.org/2026/01/01/01-OAMD2/&text=论文记录-三体OAMD-2 基底构建"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.liznb.org/2026/01/01/01-OAMD2/&title=论文记录-三体OAMD-2 基底构建"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.liznb.org/2026/01/01/01-OAMD2/&is_video=false&description=论文记录-三体OAMD-2 基底构建"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=论文记录-三体OAMD-2 基底构建&body=Check out this article: https://blog.liznb.org/2026/01/01/01-OAMD2/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.liznb.org/2026/01/01/01-OAMD2/&title=论文记录-三体OAMD-2 基底构建"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.liznb.org/2026/01/01/01-OAMD2/&title=论文记录-三体OAMD-2 基底构建"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.liznb.org/2026/01/01/01-OAMD2/&title=论文记录-三体OAMD-2 基底构建"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.liznb.org/2026/01/01/01-OAMD2/&title=论文记录-三体OAMD-2 基底构建"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.liznb.org/2026/01/01/01-OAMD2/&name=论文记录-三体OAMD-2 基底构建&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.liznb.org/2026/01/01/01-OAMD2/&t=论文记录-三体OAMD-2 基底构建"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2025-2026
+    LiZnB
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Categories</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

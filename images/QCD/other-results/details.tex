@@ -1,0 +1,316 @@
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+% Useful packages
+\usepackage{color}%\textcolor;\color
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{pdfpages}
+\usepackage{float}%图片包
+%create figure in latex
+\usepackage{tikz}
+%\usepackage{cite}
+\usepackage[backend=bibtex]{biblatex}
+%more math symbols
+\usepackage{amssymb}
+%Information to be included in the title page:
+\title{Classified Discussion}
+\author{Xin-Peng Li}
+%Start of the document
+\begin{document}
+\maketitle
+For clarity and accuracy, we need a classified discussion to take into account different situations.
+%section
+\section{Finite temperature and zero chemical potential}
+%content
+If $\ \mu=0\ $, the denominator part
+\begin{equation}
+    s+M^2+\widetilde{\omega_l}^2=s+M^2+\left(2l+1\right)^2\pi^2T^2 \geq M^2+\pi^2 T^2 >  0 
+\end{equation}
+and we obtain
+\begin{equation}
+    \begin{split}
+        \mathcal{G} &=T \sum_{l=-\infty}^{+\infty} \int_{\tau_{uv}^2}^{\tau_{ir}^2}d\tau\ e^{-\tau \left(M^2+\omega_l^2\right)}  \int_{0}^{+\infty}ds  s^{\frac{1}{2}}e^{-\tau s}\\
+        &=T\sum_{l=-\infty}^{+\infty}\frac{\sqrt{\pi}}{2}\int_{\tau_{uv}^2}^{\tau_{ir}^2}d\tau \frac{e^{-\tau\left(M^2+\omega_l^2\right)}}{\tau^{\frac{3}{2}}}\\
+        &=\frac{T\sqrt{\pi}}{2}\int_{\tau_{uv}^2}^{\tau_{ir}^2}d\tau \frac{e^{-\tau M^2}}{\tau^{\frac{3}{2}}}\sum_{l=-\infty}^{+\infty}e^{-\tau \omega_l^2}\\
+        &=\frac{T\sqrt{\pi}}{2}\int_{\tau_{uv}^2}^{\tau_{ir}^2}d\tau \frac{e^{-\tau M^2}}{\tau^{\frac{3}{2}}}\  EllipticTheta[2,0,e^{-4\pi^2 T^2 \tau}] 
+    \end{split}
+\end{equation}
+\section{Finite temperature and chemical potential}
+If$\ \mu\neq0\ $, the denominator
+\begin{equation}
+    s+M^2+\widetilde{\omega_l}^2=s+M^2+\omega_l^2-\mu^2+2i\omega_l\mu 
+\end{equation}
+has a negative part $ -\mu^2 $; therefore, whether the real part of the denominator is negative or positive is not able to be intuitively determined.
+\\For convenience, we define
+\begin{equation}
+    t=M^2-\mu^2 
+\end{equation}
+and it could be noticed that
+\begin{equation}
+    \omega_l^2 \geq \pi^2 T^2\equiv \omega_{min}^2 
+\end{equation}\
+\subsection{If \texorpdfstring{$\ t>-\omega_{min}^2=-\pi^2T^2$}{}, i.e. \texorpdfstring{$\omega_{min}^2+t>0$}{}}
+The real part of the denominator is
+\begin{equation}
+    Re\left[s+M^2+\widetilde{\omega_l}^2\right]=s+\omega_l^2+t\geq0+\omega_{min}^2+t>0 
+\end{equation}
+This situation can be solved by using the first solution .
+\\In detail
+\begin{equation}
+    \begin{split}
+        \mathcal{G} &=T \sum_{l=-\infty}^{+\infty} \int_{\tau_{uv}^2}^{\tau_{ir}^2}d\tau\ e^{-\tau \left(t+\omega_l^2+2i\omega_l\mu\right)}  \int_{0}^{+\infty}ds  s^{\frac{1}{2}}e^{-\tau s}\\
+        &=T\sum_{l=-\infty}^{+\infty}\frac{\sqrt{\pi}}{2}\int_{\tau_{uv}^2}^{\tau_{ir}^2}d\tau \frac{e^{-\tau\left(t+\omega_l^2+2i\omega_l\mu \right)}}{\tau^{\frac{3}{2}}}\\
+        &=\frac{T\sqrt{\pi}}{2}\int_{\tau_{uv}^2}^{\tau_{ir}^2}d\tau \frac{e^{-\tau t}}{\tau^{\frac{3}{2}}}\sum_{l=-\infty}^{+\infty}e^{-\tau \left(\omega_l^2+2i\omega_l\mu\right)}\\
+        &=\frac{1}{4}\int_{\tau_{uv}^2}^{\tau_{ir}^2}d\tau \frac{e^{-\tau M^2}}{\tau^2}\  EllipticTheta[3,\frac{\pi T+i\mu}{2T},e^{-\frac{1}{4T^2\tau}}] 
+    \end{split}
+\end{equation}
+\newpage
+\subsection{If \texorpdfstring{$\ t=-\omega_{min}^2=-\pi^2T^2$}{}, i.e. \texorpdfstring{$\omega_{min}^2+t=0$}{}}\label{2.2.2}
+The real part of the denominator is
+\begin{equation}
+    Re\left[s+M^2+\widetilde{\omega_l}^2\right]=s+\omega_l^2+t\geq0+\omega_{min}^2+t\geq 0 
+\end{equation}
+if and only if $s=0 \ l=0$ the equality holds.
+\\However, we run into trouble. We have not discussed yet what is going to happen when the value of the denominator is equal to zero, hence we have to analyse the contributions before and after regularization where we assume to use the first case approximate to the zero point.\\
+If two contributions are the same, so we certify that the regularization procedure is available at the zero point.\\
+For $s+\omega_l^2+t\approx 0$ , we have $l=0\ and\ s\approx0$ .\\
+In this situation, the contribution to the gap equation before regularization is
+\begin{equation}
+    \begin{split}
+        \lim_{s\rightarrow 0^+}\mathcal{G} \lvert_{l=0}
+        &=T\int_{0}^{0^+}s^{\frac{1}{2}} \frac{ds}{s+\omega_l^2+t+2i\omega_l\mu}\lvert_{l=0}
+        =T\int_{0}^{0^+}\frac{s^{\frac{1}{2}}ds}{s+2i\pi T\mu}\\
+        &=T\int_{0}^{0^+}\frac{s^{\frac{3}{2}}ds}{s^2+4\pi^2 T^2\mu^2}- i2\pi \mu T^2\int_{0}^{0^+}\frac{s^{\frac{1}{2}}ds}{s^2+4\pi^2 T^2\mu^2}     
+    \end{split}
+\end{equation}
+If $\mu T\neq0$ , we could get the result
+\begin{equation}
+    \lim_{s\rightarrow 0^+}\mathcal{G} \lvert_{l=0}
+    =\frac{1}{4\pi^2 T\mu^2}\int_{0}^{0^+}s^{\frac{3}{2}}ds-\frac{i}{2\pi \mu}\int_{0}^{0^+}s^{\frac{1}{2}}ds
+    =0 
+\end{equation} 
+if $\mu T=0$ , it is applicable to assume that $\mu T\ll s$ .
+\\Thus,
+\begin{equation}
+    \lim_{s\rightarrow 0^+}\mathcal{G} \lvert_{l=0}
+    =T\int_{0}^{0^+}s^{-\frac{1}{2}}ds- i2\pi \mu T^2\int_{0}^{0^+}s^{-\frac{3}{2}}ds
+    =0 
+\end{equation} 
+where the imaginary part goes to zero because
+\begin{equation}
+    -2\pi \mu T^2\int_{0}^{0^+}s^{-\frac{3}{2}}ds
+    =4\pi T \left[\mu T s^{-\frac{1}{2}}\right]\lvert_{s=0}^{0^+}
+    \ll 4\pi T s^{\frac{1}{2}}\lvert_{0}^{0^+}
+    =0 
+\end{equation} 
+\begin{figure}[H]
+    \begin{minipage}{0.45\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{pic/f1.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{pic/f2.png}
+    \end{minipage}
+    \caption{When $\mu T\approx 0$, the integrand divergency, with converge after integration.}
+\end{figure}
+After regularization, using the first solution , the contribution is
+\begin{equation}
+    \begin{split}
+    \lim_{s\rightarrow 0^+}\mathcal{G} \lvert_{l=0}
+    &=T\int_{0}^{+\infty}e^{-2i\tau\omega_l\mu}d\tau\int_{0}^{0^+}s^{\frac{1}{2}} e^{-\tau\left(s+\omega_l^2+t\right)}ds\lvert_{l=0} \\
+    &=T\int_{0}^{+\infty}e^{-2i\tau\omega_l\mu}d\tau\int_{0}^{0^+}s^{\frac{1}{2}} e^{-\tau s}ds\rightarrow T\ast\left[Finite\right]\ast0
+    =0 
+    \end{split}
+\end{equation}
+We could find that the contribution before and after regularization is the same, even both of them are equal to zero which means that the zero point barely contribute.\\
+Therefore, the regulation procedure above is available in this mediocre situation as well, and could be included in the case mentioned.
+\newpage
+\subsection{If \texorpdfstring{$\ t<-\omega_{min}^2=-\pi^2T^2$}{}, i.e. \texorpdfstring{$\omega_{min}^2+t<0$}{}} 
+In this situation, we could easily obtain that the real part of the denominator is positive in some regions, and negative in other regions, we have to divide the whole area of $l$ into parts.\\
+Let $l_0>-\frac{1}{2}$ which satisfies $\omega_{l_0}^2=-t$, i.e. $\omega_{l_0}^2+t=0$, and let $\lfloor l_0 \rfloor $ be the integrate part of the $l_0$, which is not larger than $l_0$. For example, $\lfloor1.5\rfloor=1$, $\lfloor-1.5\rfloor=-2$, $\lfloor-2\rfloor=-2$.\\
+Hence if $l_0$ is not an integer, we could divide the whole area of $l$ into two parts
+\begin{equation}\label{parts}
+    \begin{cases}
+        \omega_l^2+t>0,&l\in\left(-\infty,\lfloor-l_0\rfloor -1\right] \bigcup\left[\lfloor l_0\rfloor +1,+\infty\right)\equiv L_1   \\ \\
+        \omega_l^2+t<0,&l\in\left[\lfloor-l_0\rfloor,\lfloor l_0\rfloor\right]\equiv L_2.
+    \end{cases}       
+\end{equation}
+This is represented in the schematic diagram below.
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.75\linewidth]{pic/pic1.png}
+\caption{\label{fig:1}Two parts mentioned in \autoref{parts}.}
+\end{figure}
+\\However, if $l_0$ is an integer, we have to divide the whole area of $l$ into three parts
+\begin{equation}
+    \begin{cases}\label{three_cases}  
+        \omega_l^2+t>0,&l\in\left( -\infty,-l_0-1 \right] \bigcup\left[ l_0+1,+\infty \right) \equiv L_1  \\ \\
+        \omega_l^2+t<0,&l\in\left[ -l_0+1,l_0-1 \right] \equiv L_2 \\ \\
+        \omega_l^2+t=0,&l\in\{-l_0,l_0\} \equiv L_3 
+    \end{cases}       
+\end{equation}
+then we need to discuss every possible case.
+\newpage
+
+We have two cases as discussed.\\
+(a)\quad When $l\in L_1$,\\
+$\omega_l^2+t>0$ , the real part of the denominator is
+\begin{equation}
+    Re\left[s+M^2+\widetilde{\omega_l}^2\right]=s+\omega_l^2+t>0 
+\end{equation}
+thus this situation can be solved by using the first solution.
+\\The details are shown below.
+\begin{equation}
+    \begin{split}
+        \mathcal{G} &=T \sum_{l\in L_1}^{ } \int_{\tau_{uv}^2}^{\tau_{ir}^2}d\tau\ e^{-\tau \left(t+\omega_l^2+2i\omega_l\mu\right)}  \int_{0}^{+\infty}ds  s^{\frac{1}{2}}e^{-\tau s}\\
+        &=T\left(\sum_{l=-\infty}^{+\infty}-\sum_{l=-\lfloor l_0\rfloor}^{\lfloor l_0\rfloor}\right)\int_{\tau_{uv}^2}^{\tau_{ir}^2}d\tau\ e^{-\tau \left(t+\omega_l^2+2i\omega_l\mu\right)}  \int_{0}^{+\infty}ds  s^{\frac{1}{2}}e^{-\tau s}\\
+        &=\frac{1}{4}\int_{\tau_{uv}^2}^{\tau_{ir}^2}d\tau \frac{e^{-\tau M^2}}{\tau^2}\  EllipticTheta[3,\frac{\pi T+i\mu}{2T},e^{-\frac{1}{4T^2\tau}}]\\
+        &-\frac{T\sqrt{\pi}}{2}\sum_{l=-\lfloor l_0\rfloor}^{\lfloor l_0\rfloor}\int_{\tau_{uv}^2}^{\tau_{ir}^2}d\tau \frac{e^{-\tau \left(M^2+\omega_l^2-\mu^2+2i\omega_l\mu\right)}}{\tau^{\frac{3}{2}}} 
+    \end{split}
+\end{equation}
+(b)\quad When $l\in L_2$, \\
+$\omega_l^2+t<0$ , but $s+\omega_l^2+t$ has both positive and negative cases.
+It then follows that necessarily $s_0>0$, which satisfies $s_0+\omega_l^2+t=0$ as well.\\
+(1)\quad When $0<s<s_0$. \\
+The real part of the denominator is
+\begin{equation}
+Re\left[s+M^2+\widetilde{\omega_l}^2\right]=s+\omega_l^2+t<0 
+\end{equation}
+Therefore this situation can be solved by using the second solution.
+\\In particular
+\begin{equation}\label{first}
+    \begin{split}
+        \mathcal{G} &=-T \sum_{l=\lfloor -l_0\rfloor}^{\lfloor l_0\rfloor} \int_{\tau_{uv}^2}^{\tau_{ir}^2}d\tau\ e^{\tau \left(-s_0+2i\omega_l\mu\right)}  \int_{0}^{s_0}ds  s^{\frac{1}{2}}e^{\tau s}\\
+        &=T\sum_{l=\lfloor -l_0\rfloor}^{\lfloor l_0\rfloor}s_0^{\frac{3}{2}}
+        \int_{\tau_{uv}^2}^{\tau_{ir}^2}d\tau e^{\tau\left(-s_0+2i\omega_l\mu \right)}*Re\left[ExpIntegralE\left[-\frac{1}{2},-\tau s_0\right]\right] 
+    \end{split}
+\end{equation}
+(2)\quad When $s>s_0$. \\
+The real part of the denominator is
+\begin{equation}
+    Re\left[s+M^2+\widetilde{\omega_l}^2\right]=s+\omega_l^2+t>0 
+\end{equation}
+In this situation, the solution could be pluged in and the equation may not be written as
+\begin{equation}
+    \begin{split}
+        \mathcal{G} &=T \sum_{l=\left[-l_0\right]}^{\left[l_0\right]}  \int_{\tau_{uv}^2}^{\tau_{ir}^2}d\tau\ e^{-\tau \left(-s_0+2i\omega_l\mu\right)}  \int_{s_0}^{+\infty}ds  s^{\frac{1}{2}}e^{-\tau s}\\
+        &=T \sum_{l=\lfloor -l_0\rfloor }^{\lfloor l_0\rfloor }\int_{\tau_{uv}^2}^{\tau_{ir}^2}d\tau\ e^{-\tau \left(-s_0+2i\omega_l\mu\right)}\frac{2e^{-s_0\tau}\sqrt{s_0\tau}+\sqrt{\pi}Erfc\left[\sqrt{s_0\tau}\right]}{2\tau^{\frac{3}{2}}} 
+    \end{split}
+\end{equation}
+\newpage$ $\\
+(3)\quad When $s=s_0$. \\
+The real part of the denominator is
+\begin{equation}
+    Re\left[s+M^2+\widetilde{\omega_l}^2\right]=s+\omega_l^2+t=0 
+\end{equation}
+In this situation, the contribution to the gap equation before regularization is
+\begin{equation}\label{real}
+    \begin{split}
+        \lim_{s\rightarrow s_0}\mathcal{G} 
+        &=T s_0^{\frac{1}{2}}\int_{s_0^-}^{s_0^+}\frac{ds}{s+\omega_l^2+t+2i\omega_l\mu}\\
+        &=T s_0^{\frac{1}{2}}\int_{s_0^-}^{s_0^+}\frac{\left(s+\omega_l^2+t\right)ds}{\left(s+\omega_l^2+t\right)^2+4\omega_l^2\mu^2}
+    \end{split}
+\end{equation}
+We ignore the imaginary part, because the imaginary part is very small compare to the real part.\footnote{The imaginary part is small but not zero. Its existence plays an important role in the choice of the integral loop.}\\
+if $\mu \omega_l\neq0$ , we could immediately get the result
+\begin{equation}
+    \lim_{s\rightarrow s_0}\mathcal{G} 
+    =\frac{T s_0^{\frac{1}{2}}}{4\omega_l^2\mu^2}\int_{s_0^-}^{s_0^+}\left(s+\omega_l^2+t\right)ds
+    =0 
+\end{equation} 
+if $\mu \omega_l=0$ , it could be applicable to assume that $\left|\mu \omega_l\right|\ll \left|s+\omega_l^2+t\right|$ .
+\\Therefore,
+\begin{equation}
+        \lim_{s\rightarrow s_0}\mathcal{G} 
+        =T s_0^{\frac{1}{2}}\int_{s_0^-}^{s_0^+}\frac{ds}{s+\omega_l^2+t}
+        \stackrel{x=s+\omega_l^2+t}{=}T s_0^{\frac{1}{2}}\int_{-a_1}^{a_2}\frac{dx}{x}     
+\end{equation} 
+where 
+\begin{equation}
+    \begin{split}
+        -a_1&=s_{0^-}+\omega_l^2+t \\
+        a_2&=s_{0^+}+\omega_l^2+t
+    \end{split}
+\end{equation} 
+and 
+\begin{equation}
+    \begin{split}
+        &a_1,a_2\rightarrow0^+\\
+        &\left|\mu \omega_l\right|\ll a_1\\
+        &\left|\mu \omega_l\right|\ll a_2 
+    \end{split}
+\end{equation}
+Therefore we get 
+\begin{equation}
+    \begin{split}
+        &\lim_{s\rightarrow s_0}\mathcal{G} 
+        =T s_0^{\frac{1}{2}}\int_{-a_1}^{a_2}\frac{dx}{x}\\
+        &=T s_0^{\frac{1}{2}}\left(\int_{-a_1}^{0}+\int_{0}^{a_2}\right)\frac{dx}{x}\\
+        &=T s_0^{\frac{1}{2}}\left(\int_{0}^{a_2}-\int_{0}^{a_1}\right)\frac{dx}{x}\\
+        &=T s_0^{\frac{1}{2}}\int_{a_1}^{a_2}\frac{dx}{x}
+        =T s_0^{\frac{1}{2}}\ln \frac{a_2}{a_1}
+    \end{split}
+\end{equation} 
+After regularization, the contribution is
+\begin{equation}
+    \begin{split}
+    &\lim_{s\rightarrow s_0}\mathcal{G} 
+    =T\left(\int_{s_0^-}^{s_0}+\int_{s_0}^{s_0^+}\right)s^{\frac{1}{2}} \frac{ds}{s+\omega_l^2+t+2i\omega_l\mu}\\
+    &=T s_0^{\frac{1}{2}}
+        \int_{0}^{+\infty}d\tau\ e^{-2i\tau \omega_l\mu}  \int_{s_0}^{s_0^+}ds  e^{-\tau \left(s+\omega_l^2+t\right)}
+    -T s_0^{\frac{1}{2}}\int_{0}^{+\infty}d\tau\ e^{2i\tau \omega_l\mu}  \int_{s_0^-}^{s_0}ds  e^{\tau \left(s+\omega_l^2+t\right)}\\
+    &=T s_0^\frac{1}{2}\left(\int_{0}^{+\infty}d\tau\ e^{-2i\tau \omega_l\mu}  \int_{0}^{a_2}dx  e^{-\tau x}-\int_{0}^{+\infty}d\tau\ e^{2i\tau \omega_l\mu}  \int_{-a_1}^{0}dx  e^{\tau x}\right)\\
+    &=T s_0^\frac{1}{2}\left(\int_{0}^{+\infty}d\tau\ e^{-2i\tau \omega_l\mu}\ \frac{1-e^{-\tau a_2}}{\tau}-\int_{0}^{+\infty}d\tau\ e^{2i\tau \omega_l\mu}\ \frac{1-e^{-\tau a_1}}{\tau} \right)\\
+    &=T s_0^\frac{1}{2}\int_{0}^{+\infty}\frac{d\tau}{\tau}\left(e^{-\tau a_1+2i\tau\omega_l\mu}-e^{-\tau a_2-2i\tau\omega_l\mu}\right)\\
+    &= T s_0^\frac{1}{2}\left\{ExpIntegralEi[\tau\left(-a_1+2i\omega_l\mu\right)]-ExpIntegralEi[\tau\left(-a_2-2i\omega_l\mu\right)]\right\}\lvert_{\tau=0}^{\tau=+\infty}
+    \end{split}   
+\end{equation}
+\newpage$ $\\
+Then we need to expand the last equation into summation of series.
+We ignore the imaginary part here as well, the reason is as same as \autoref{real}.\\
+We have
+\begin{equation}
+    \begin{split}
+\lim_{\tau\rightarrow0}&ExpIntegralEi[A\tau]=\gamma+\ln \left(\tau\left|A\right|\right)+O\left(\tau\right) \\
+\lim_{\tau\rightarrow+\infty}&ExpIntegralEi[A\tau]=\frac{e^{A\tau}}{A\tau}+O\left(\frac{1}{\tau^2}\right)  
+    \end{split}  
+\end{equation}
+and we have $Re[A]=-a_1<0$ or $Re[A]=-a_2<0$ ,\\
+therefore
+\begin{equation} 
+    ExpIntegralEi[A\tau]\lvert_{\tau\rightarrow+\infty}\rightarrow 0 
+\end{equation}
+Finally,we conclude
+\begin{equation}
+    \begin{split}
+        \lim_{s\rightarrow s_0}\mathcal{G} 
+        &=- T s_0^\frac{1}{2}\left\{ExpIntegralEi[\tau\left(-a_1+2i\omega_l\mu\right)]-ExpIntegralEi[\tau\left(-a_2-2i\omega_l\mu\right)]\right\}\lvert_{\tau=0}\\
+        &= T s_0^\frac{1}{2}\left\{\left[\gamma+\frac{1}{2}\ln \left(a_2^2+4\omega_l^2\mu^2\right)+\ln\tau\right]-\left[\gamma+\frac{1}{2}\ln \left(a_1^2+4\omega_l^2\mu^2\right)+\ln\tau\right]\right\}\\
+        &= \frac{T s_0^\frac{1}{2}}{2}\ln \frac{a_2^2+4\omega_l^2\mu^2}{a_1^2+4\omega_l^2\mu^2}
+        =
+            \begin{cases}
+                0 &, \mu \omega_l\neq0\\ \\
+                T s_0^{\frac{1}{2}}\ln \frac{a_2}{a_1} &,\left|\mu \omega_l\right|\ll a_1and\left|\mu \omega_l\right|\ll a_2.
+            \end{cases}       
+    \end{split}    
+\end{equation}
+We could find that the contribution is strictly equality before and after regularization. Hence this means the regularization procedure is valid, because this procedure dose not damage the final value in this situation.\\
+However, there is a serious problem. We expect that this part should goes to zero, because the zero point is just a point, hence this point should not contribute in the whole domain, but we could find not only it makes a contribution, but also depends on the rate of approach; we could get every possible different results while we changing the progressive rate. It is a serious problem, and we need to find a way to fix it.\\
+Actually, the trouble we are facing is that at zero point, the integrand diverges, so the integrand function has no defination at zero point. So we have to complete the defination of the value at zero point.\\
+Fortunately, we could use Cauchy principal value integral, it define as follows
+\begin{equation}
+        P.V.\lim_{s\rightarrow s_0}\mathcal{G} 
+        =T s_0^{\frac{1}{2}}\ \int_{-a}^{a}\frac{dx}{x}
+        =0
+        ,
+\end{equation} 
+hence, this contribution vanish.
+
+It seems that we have three parts, listed in \autoref{three_cases}. However, it is easy to find that the discussion methods and results of the first two parts are the same as before, and the last one done so in \autoref{2.2.2}, the result is that this kind of regulation procedure is also adapt with this mediocre situation, and we could just discuss with the case $s>0$ together. Thus further discussion could be omitted.
+\end{document}
+
