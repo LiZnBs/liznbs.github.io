@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="第四部分：波函数分解理论梳理">
+    <meta name="description" content="第四部分：波函数分解理论梳理自旋Faddeev振幅和波函数都是庞加莱协变的, 其中的标量函数是不依赖参考系的. 但是每一个基底分量并不是庞加莱协变的. 那么轨道角动量L和自旋S在不同的参考系中的分解就不同. 在静止系中, 有$\vec{J}&#x3D;\vec{L}+\vec{S}$, 我们也只在静止系中讨论L和S的分解. 质子总自旋$J&#x3D;1&#x2F;2$, 为了满足$J&#x3D;|">
 <meta property="og:type" content="article">
 <meta property="og:title" content="论文记录-三体OAMD-5 波函数分解">
 <meta property="og:url" content="https://blog.liznb.org/2026/01/28/01-OAMD5/index.html">
 <meta property="og:site_name" content="LiZnB&#39;s Blog">
-<meta property="og:description" content="第四部分：波函数分解理论梳理">
+<meta property="og:description" content="第四部分：波函数分解理论梳理自旋Faddeev振幅和波函数都是庞加莱协变的, 其中的标量函数是不依赖参考系的. 但是每一个基底分量并不是庞加莱协变的. 那么轨道角动量L和自旋S在不同的参考系中的分解就不同. 在静止系中, 有$\vec{J}&#x3D;\vec{L}+\vec{S}$, 我们也只在静止系中讨论L和S的分解. 质子总自旋$J&#x3D;1&#x2F;2$, 为了满足$J&#x3D;|">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-01-28T11:20:00.000Z">
-<meta property="article:modified_time" content="2026-01-28T11:22:18.741Z">
+<meta property="article:modified_time" content="2026-02-06T08:27:28.578Z">
 <meta property="article:author" content="LiZnB">
 <meta name="twitter:card" content="summary">
     
@@ -146,7 +146,7 @@
     
     
       <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86%EF%BC%9A%E6%B3%A2%E5%87%BD%E6%95%B0%E5%88%86%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">第四部分：波函数分解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E6%A2%B3%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">理论梳理</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86%EF%BC%9A%E6%B3%A2%E5%87%BD%E6%95%B0%E5%88%86%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">第四部分：波函数分解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E6%A2%B3%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">理论梳理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E6%97%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">自旋</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Faddeev%E6%B3%A2%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text">Faddeev波函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E5%87%BD%E6%95%B0%E5%88%86%E8%A7%A3"><span class="toc-number">1.1.3.</span> <span class="toc-text">波函数分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%99%85%E5%8C%96%E7%AE%80%E8%BF%90%E7%AE%97"><span class="toc-number">1.1.4.</span> <span class="toc-text">实际化简运算</span></a></li></ol></li></ol></li></ol>
       </div>
     
   </span>
@@ -194,7 +194,28 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="第四部分：波函数分解"><a href="#第四部分：波函数分解" class="headerlink" title="第四部分：波函数分解"></a>第四部分：波函数分解</h1><h2 id="理论梳理"><a href="#理论梳理" class="headerlink" title="理论梳理"></a>理论梳理</h2>
+    <h1 id="第四部分：波函数分解"><a href="#第四部分：波函数分解" class="headerlink" title="第四部分：波函数分解"></a>第四部分：波函数分解</h1><h2 id="理论梳理"><a href="#理论梳理" class="headerlink" title="理论梳理"></a>理论梳理</h2><h3 id="自旋"><a href="#自旋" class="headerlink" title="自旋"></a>自旋</h3><p>Faddeev振幅和波函数都是庞加莱协变的, 其中的标量函数是不依赖参考系的. 但是每一个基底分量并不是庞加莱协变的. 那么轨道角动量L和自旋S在不同的参考系中的分解就不同. 在静止系中, 有$\vec{J}&#x3D;\vec{L}+\vec{S}$, 我们也只在静止系中讨论L和S的分解.</p>
+<p>质子总自旋$J&#x3D;1&#x2F;2$, 为了满足$J&#x3D;|L-S|,\dots,L+S$, ${}^{2S+1}L_{J&#x3D;\frac{1}{2}}$有如下可能:</p>
+<ul>
+<li>$J&#x3D;1&#x2F;2, S&#x3D;1&#x2F;2\rightarrow L&#x3D;0,L&#x3D;1\rightarrow {}^2S, {}^2P$</li>
+<li>$J&#x3D;1&#x2F;2, S&#x3D;3&#x2F;2\rightarrow L&#x3D;1,L&#x3D;2\rightarrow {}^4P, {}^4D$</li>
+</ul>
+<h3 id="Faddeev波函数"><a href="#Faddeev波函数" class="headerlink" title="Faddeev波函数"></a>Faddeev波函数</h3><p>用Faddeev振幅构建Faddeev波函数:<br>$$\begin{align}<br>    \Theta _{\alpha _1\alpha _2;\alpha _3 \delta}^n (p_1,p_2,p_3)&#x3D;&amp;S _{\alpha _1\alpha _{1’}}(p_1)S _{\alpha _2\alpha _{2’}}(p_2)S _{\alpha _3\alpha _{3’}}(p_3)\psi _{\alpha _{1’}\alpha _{2’};\alpha _{3’}\delta}^n(p_1,p_2,p_3)\newline<br>    &#x3D;&amp;S _{\alpha _1\alpha _{1’}}(p_1)S _{\alpha _{2’}\alpha _2}^T(p_2)S _{\alpha _3\alpha _{3’}}(p_3)\psi _{\alpha _{1’}\alpha _{2’};\alpha _{3’}\delta}^n(p_1,p_2,p_3)\newline<br>    &#x3D;&amp;(S(p_1)\otimes S(p_3)) _{\alpha _1\alpha _{1’};\alpha _3\alpha _{3’}}\psi _{\alpha _{1’}\alpha _{2’};\alpha _{3’}\rho}^n(p_1,p_2,p_3)(S^T(p_2)\otimes \unit) _{\alpha _{2’}\alpha _2;\rho\delta}<br>\end{align}$$</p>
+<p>Faddeev波函数也可以按照64个Dirac空间基底展开:<br><span id="eq1"></span><br>$$\Theta _{\alpha\beta;\gamma\delta}^n(p_1,p_2,p_3)&#x3D;\sum _{g&#x3D;1}^{64}F ^n_g(p^2,q^2,z_1,z_2,z_0)X _{\alpha\beta;\gamma\delta}^{g}(\hat{p_T},\hat{q_t},\hat{P})\tag{1}$$</p>
+<p><span style="color: #ff0000ff;">注意这里的动量已经显式写成不一样的.</span></p>
+<h3 id="波函数分解"><a href="#波函数分解" class="headerlink" title="波函数分解"></a>波函数分解</h3><p>定义静止坐标系角动量强度:</p>
+<ul>
+<li>$${}^2S&#x3D;\mathbb{N}^{-1}\sum_{g\in {}^2S}\int\frac{d^4p}{(2\pi)^4}\frac{d^4q}{(2\pi)^4}|F_g(p,q,P)|^2$$</li>
+<li>$${}^2P&#x3D;\mathbb{N}^{-1}\sum_{g\in {}^2P}\int\frac{d^4p}{(2\pi)^4}\frac{d^4q}{(2\pi)^4}|F_g(p,q,P)|^2$$</li>
+<li>$${}^4P&#x3D;\mathbb{N}^{-1}\sum_{g\in {}^4P}\int\frac{d^4p}{(2\pi)^4}\frac{d^4q}{(2\pi)^4}|F_g(p,q,P)|^2$$</li>
+<li>$${}^4D&#x3D;\mathbb{N}^{-1}\sum_{g\in {}^4D}\int\frac{d^4p}{(2\pi)^4}\frac{d^4q}{(2\pi)^4}|F_g(p,q,P)|^2$$</li>
+</ul>
+<p>其中$\mathbb{N}$为归一化常数, 使得${}^2S+{}^2P+{}^4P+{}^4D&#x3D;1$<br>$$\mathbb{N}&#x3D;\sum_{g&#x3D;1}^{64}\int\frac{d^4p}{(2\pi)^4}\frac{d^4q}{(2\pi)^4}|F_g(p,q,P)|^2$$</p>
+<h3 id="实际化简运算"><a href="#实际化简运算" class="headerlink" title="实际化简运算"></a>实际化简运算</h3><p>由上述定义我们可以发现, 问题关键在于提取每个基底分量的系数$F_g^n(p^2,q^2,z_1,z_2,z_0)$. 为此, 在<a href="#eq1">式(1)</a>两边同时左乘$\overline{X} _{\alpha\beta;\gamma\delta}^{g’}(\hat{p_T},\hat{q_t},\hat{P})$, 并利用正交归一性求迹:<br>$$\begin{align}<br>    Tr\lbrace\overline{X} ^{g’}(\hat{p_T},\hat{q_t},\hat{P})\Theta ^n(p_1,p_2,p_3)\rbrace&#x3D;&amp;\sum _{g&#x3D;1}^{64}F ^n_g(p^2,q^2,z_1,z_2,z_0)Tr\lbrace\overline{X} ^{g’}(\hat{p_T},\hat{q_t},\hat{P}) X ^{g}(\hat{p_T},\hat{q_t},\hat{P})\rbrace\newline<br>    &#x3D;&amp;\sum _{g&#x3D;1}^{64}F ^n_g(p^2,q^2,z_1,z_2,z_0)4\delta _{gg’}\newline<br>    &#x3D;&amp;4F _{g’}^n(p^2,q^2,z_1,z_2,z_0)<br>\end{align}$$</p>
+<p>也就是:<br>$$\begin{align}<br>    F ^n_{g’}(p^2,q^2,z_1,z_2,z_0)&#x3D;&amp;\frac{1}{4}Tr\lbrace\overline{X} ^{g’}(\hat{p_T},\hat{q_t},\hat{P})\Theta ^n(p_1,p_2,p_3)\rbrace\newline<br>    &#x3D;&amp; \frac{1}{4}Tr\lbrace\overline{X} ^{g’}(\hat{p_T},\hat{q_t},\hat{P})(S(p_1)\otimes S(p_3))\psi ^n(p_1,p_2,p_3)(S^T(p_2)\otimes \unit)\rbrace\newline<br>    &#x3D;&amp; \frac{1}{4}\sum _{g&#x3D;1}^{64}f ^n _g(p^2,q^2,z_1,z_2,z_0)Tr\lbrace\overline{X} ^{g’}(\hat{p_T},\hat{q_t},\hat{P})(S(p_1)\otimes S(p_3))X ^{g}(\hat{p_T},\hat{q_t},\hat{P})(S^T(p_2)\otimes \unit)\rbrace<br>\end{align}$$</p>
+<p>利用基底形式$X&#x3D;A\Lambda^r\gamma _5 C \otimes B\Lambda^+$, 消除迹中的电荷共轭矩阵C:</p>
+<p>$$\begin{align}<br>    &amp;Tr\lbrace\overline{X} ^{g’}(\hat{p_T},\hat{q_t},\hat{P})(S(p_1)\otimes S(p_3))X ^{g}(\hat{p_T},\hat{q_t},\hat{P})(S^T(p_2)\otimes \unit)\rbrace\newline<br>    &#x3D;&amp;Tr\lbrace(\overline{A _{g’}\Lambda^{r _{g’}}\gamma _5 C \otimes B _{g’}\Lambda^+})(S(p _1)\otimes S(p _3))(A _g\Lambda^{r _g}\gamma _5 C \otimes B _g\Lambda^+)(S^T(p _2)\otimes \unit)\rbrace\newline<br>    &#x3D;&amp;Tr\lbrace\overline{C}\overline{\gamma _5}\overline{\Lambda^{r _{g’}}}\overline{A _{g’}}S(p _1) A _g\Lambda^{r _g}\gamma _5 CS^T(p _2)\otimes \overline{\Lambda^+}\overline{B _{g’}}S(p _3)B _g\Lambda^+\rbrace\newline<br>    &#x3D;&amp;Tr\lbrace\overline{\gamma _5}\overline{\Lambda^{r _{g’}}}\overline{A _{g’}}S(p _1) A _g\Lambda^{r _g}\gamma _5 CS^T(p _2)C^T\otimes \overline{\Lambda^+}\overline{B _{g’}}S(p _3)B _g\Lambda^+\rbrace\newline<br>    &#x3D;&amp;Tr\lbrace\overline{\gamma _5}\overline{\Lambda^{r _{g’}}}\overline{A _{g’}}S(p _1) A _g\Lambda^{r _g}\gamma _5 \overline{S}(-p _2)\otimes \overline{\Lambda^+}\overline{B _{g’}}S(p _3)B _g\Lambda^+\rbrace\newline<br>\end{align}$$</p>
+
   </div>
   <!-- 许可协议标签，浅绿色背景，文章后另起一行 -->
   <div class="post-copyright" style="background: #e6f9e6; color: #228B22; padding: 18px 28px; border-radius: 20px; margin-top: 32px;">
@@ -228,7 +249,7 @@
     
     
       <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86%EF%BC%9A%E6%B3%A2%E5%87%BD%E6%95%B0%E5%88%86%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">第四部分：波函数分解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E6%A2%B3%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">理论梳理</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86%EF%BC%9A%E6%B3%A2%E5%87%BD%E6%95%B0%E5%88%86%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">第四部分：波函数分解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E6%A2%B3%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">理论梳理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E6%97%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">自旋</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Faddeev%E6%B3%A2%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text">Faddeev波函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E5%87%BD%E6%95%B0%E5%88%86%E8%A7%A3"><span class="toc-number">1.1.3.</span> <span class="toc-text">波函数分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%99%85%E5%8C%96%E7%AE%80%E8%BF%90%E7%AE%97"><span class="toc-number">1.1.4.</span> <span class="toc-text">实际化简运算</span></a></li></ol></li></ol></li></ol>
       </div>
     
 

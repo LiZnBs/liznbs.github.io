@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="第二部分：计算复DSE结果理论梳理">
+    <meta name="description" content="第二部分：计算复DSE结果采用QC模型, 整体过程思路与之前几乎一致, 参考QC模型复DSE记录. 但是由于应用与参数不同, 需要重新调整代码计算, 这里着重记录调整的部分. 参数选取QC模型参数参考文章, 整理如下:         计算参数                 积分上限: $\Lambda$     $100\ GeV$           动量方向离散取点数：$n_k$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="论文记录-三体OAMD-3 复DSE">
 <meta property="og:url" content="https://blog.liznb.org/2026/01/12/01-OAMD3/index.html">
 <meta property="og:site_name" content="LiZnB&#39;s Blog">
-<meta property="og:description" content="第二部分：计算复DSE结果理论梳理">
+<meta property="og:description" content="第二部分：计算复DSE结果采用QC模型, 整体过程思路与之前几乎一致, 参考QC模型复DSE记录. 但是由于应用与参数不同, 需要重新调整代码计算, 这里着重记录调整的部分. 参数选取QC模型参数参考文章, 整理如下:         计算参数                 积分上限: $\Lambda$     $100\ GeV$           动量方向离散取点数：$n_k$">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-01-12T04:22:00.000Z">
-<meta property="article:modified_time" content="2026-01-28T11:19:54.076Z">
+<meta property="article:modified_time" content="2026-01-29T12:07:09.603Z">
 <meta property="article:author" content="LiZnB">
 <meta name="twitter:card" content="summary">
     
@@ -146,7 +146,7 @@
     
     
       <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%9A%E8%AE%A1%E7%AE%97%E5%A4%8DDSE%E7%BB%93%E6%9E%9C"><span class="toc-number">1.</span> <span class="toc-text">第二部分：计算复DSE结果</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E6%A2%B3%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">理论梳理</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%9A%E8%AE%A1%E7%AE%97%E5%A4%8DDSE%E7%BB%93%E6%9E%9C"><span class="toc-number">1.</span> <span class="toc-text">第二部分：计算复DSE结果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E9%80%89%E5%8F%96"><span class="toc-number">1.0.1.</span> <span class="toc-text">参数选取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9EDSE"><span class="toc-number">1.0.2.</span> <span class="toc-text">实DSE</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E6%A2%B3%E7%90%86"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">理论梳理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%80%BB%E8%BE%91"><span class="toc-number">1.0.2.2.</span> <span class="toc-text">代码逻辑</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8DDSE"><span class="toc-number">1.0.3.</span> <span class="toc-text">复DSE</span></a></li></ol></li></ol></li></ol>
       </div>
     
   </span>
@@ -194,7 +194,86 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="第二部分：计算复DSE结果"><a href="#第二部分：计算复DSE结果" class="headerlink" title="第二部分：计算复DSE结果"></a>第二部分：计算复DSE结果</h1><h2 id="理论梳理"><a href="#理论梳理" class="headerlink" title="理论梳理"></a>理论梳理</h2>
+    <h1 id="第二部分：计算复DSE结果"><a href="#第二部分：计算复DSE结果" class="headerlink" title="第二部分：计算复DSE结果"></a>第二部分：计算复DSE结果</h1><p>采用QC模型, 整体过程思路与之前几乎一致, 参考<a href="https://blog.liznb.org/2025/08/28/01-QC-Model3/" target="_blank">QC模型复DSE记录</a>.</p>
+<p>但是由于应用与参数不同, 需要重新调整代码计算, 这里着重记录调整的部分.</p>
+<h3 id="参数选取"><a href="#参数选取" class="headerlink" title="参数选取"></a>参数选取</h3><p>QC模型参数<a href="https://arxiv.org/pdf/2403.08088" target="_blank">参考文章</a>, 整理如下:</p>
+<table>
+  <tr>
+    <th style="text-align:center;">计算参数</th>
+    <th style="text-align:center;"> </th>
+  </tr>
+  <tr>
+    <td style="text-align:center;">积分上限: $\Lambda$</td>
+    <td style="text-align:center;">$100\ GeV$</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">动量方向离散取点数：$n_k$</td>
+    <td style="text-align:center;">$150$</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">z轴方向离散取点数：$n_z$</td>
+    <td style="text-align:center;">$24$</td>
+  </tr>
+  <tr>
+    <th style="text-align:center;">模型参数</th>
+    <th style="text-align:center;"> </th>
+  </tr>
+  <tr>
+    <td style="text-align:center;"> D</td>
+    <td style="text-align:center;">$1\ GeV^2$</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">$\omega$</td>
+    <td style="text-align:center;">$0.8\ GeV$</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">$m_t$</td>
+    <td style="text-align:center;">$0.5\ GeV$</td>
+  </tr>
+    <tr>
+    <td style="text-align:center;">$\tau$</td>
+    <td style="text-align:center;">$e^2-1$</td>
+  </tr>
+    <tr>
+    <td style="text-align:center;">$N_f$</td>
+    <td style="text-align:center;">$4$</td>
+  </tr>
+    <tr>
+    <td style="text-align:center;">$\Lambda_{QCD}$</td>
+    <td style="text-align:center;">$0.234\ GeV$</td>
+  </tr>
+    <tr>
+    <td style="text-align:center;">$\gamma_m$</td>
+    <td style="text-align:center;">$\frac{12}{33-2N_f}$</td>
+  </tr>
+    <tr>
+    <td style="text-align:center;">$m$</td>
+    <td style="text-align:center;">$0.00604\ GeV$</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">$\zeta$</td>
+    <td style="text-align:center;">$19\ GeV$</td>
+  </tr>
+</table>
+
+<h3 id="实DSE"><a href="#实DSE" class="headerlink" title="实DSE"></a>实DSE</h3><h4 id="理论梳理"><a href="#理论梳理" class="headerlink" title="理论梳理"></a>理论梳理</h4><p>因为需要和师兄提供的现有Faddeev数据匹配, 因此需要统一重正化方案, 需要在原有实DSE代码基础上, 改成流质量不变重正化方案, 参考<a href="/images/QC-Model/Yao.pdf" target="_blank">姚照千毕业论文</a>中式(2.17-2.19).</p>
+<h4 id="代码逻辑"><a href="#代码逻辑" class="headerlink" title="代码逻辑"></a>代码逻辑</h4><p>式(2.17)代码实现如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">CalAsBs[ a0_, b0_, c0_, d0_, kp0_, zp0_, Z2_, Z4_]:=Module[</span><br><span class="line">    &#123;s1=Table[0,&#123;Length[a0]&#125;],s2=Table[0,&#123;Length[b0]&#125;],</span><br><span class="line">    s3=Table[0,&#123;Length[c0]&#125;],s4=Table[0,&#123;Length[d0]&#125;]</span><br><span class="line">    &#125;,</span><br><span class="line">    (*Functions*)</span><br><span class="line">    (*Input p=p2*)</span><br><span class="line">    P[p_]:=&#123;0,0,0,Sqrt[p]&#125;;</span><br><span class="line">    (*Because of the symmetry of y, we do not need to calculate y*)</span><br><span class="line">    (*Q[q_,y_,z_]:=&#123;0, Sqrt[q(1-z^2)(1-y^2)], y Sqrt[q(1-z^2)], Sqrt[q] z&#125;;*)</span><br><span class="line">    Q[q_,z_]:=&#123;0, Sqrt[q(1-z^2)], 0, Sqrt[q] z&#125;;</span><br><span class="line"></span><br><span class="line">    fa[p_,q_,z_,A_,B_]:=G[(P[p]-Q[q,z]).(P[p]-Q[q,z])]*</span><br><span class="line">    A/(q*A^2+B^2)*</span><br><span class="line">    (P[p].Q[q,z]+2((P[p]-Q[q,z]).Q[q,z])((P[p]-Q[q,z]).P[p])/((P[p]-Q[q,z]).(P[p]-Q[q,z])));</span><br><span class="line"></span><br><span class="line">    fb[p_,q_,z_,A_,B_]:=G[(P[p]-Q[q,z]).(P[p]-Q[q,z])]*</span><br><span class="line">    B/(q*A^2+B^2);</span><br><span class="line"></span><br><span class="line">    fc[p_,q_,z_,A_,B_,CC_,DD_]:=G[(P[p]-Q[q,z]).(P[p]-Q[q,z])]*</span><br><span class="line">    (CC*(B^2-q*A^2)-2A*B*DD)/(q*A^2+B^2)^2*</span><br><span class="line">    (P[p].Q[q,z]+2((P[p]-Q[q,z]).Q[q,z])((P[p]-Q[q,z]).P[p])/((P[p]-Q[q,z]).(P[p]-Q[q,z])));</span><br><span class="line"></span><br><span class="line">    fd[p_,q_,z_,A_,B_,CC_,DD_]:=G[(P[p]-Q[q,z]).(P[p]-Q[q,z])]*</span><br><span class="line">    (B^2*DD+A*(2B*CC-A*DD)*q)/(q*A^2+B^2)^2;</span><br><span class="line"></span><br><span class="line">    CloseKernels[];</span><br><span class="line">    LaunchKernels[kn];</span><br><span class="line">    SetSharedVariable[s1,s2,s3,s4];</span><br><span class="line">    ParallelDo[</span><br><span class="line">        (*Because of the symmetry of y, we do not need to calculate y*)</span><br><span class="line">        </span><br><span class="line">        Quiet[</span><br><span class="line">        s1[[i]]=1+Z2^2*4/(3 kp0[[1]][[i]])*(2\[Pi])^(-3)*Sum[</span><br><span class="line">            kp0[[2]][[l]]*kp0[[1]][[l]]*zp0[[2]][[n]]*Sqrt[1-zp0[[1]][[n]]^2]*Log[\[Lambda]]*kp0[[1]][[l]]*</span><br><span class="line">            fa[kp0[[1]][[i]],kp0[[1]][[l]],zp0[[1]][[n]],a0[[l]],b0[[l]]]</span><br><span class="line">            ,&#123;l,1,Length[kp0[[1]]]&#125;,&#123;n,1,Length[zp0[[1]]]&#125;</span><br><span class="line">        ];</span><br><span class="line">        s2[[i]]=Z4*m+Z2^2*4*(2\[Pi])^(-3)*Sum[</span><br><span class="line">            kp0[[2]][[l]]*kp0[[1]][[l]]*zp0[[2]][[n]]*Sqrt[1-zp0[[1]][[n]]^2]*Log[\[Lambda]]*kp0[[1]][[l]]*</span><br><span class="line">            fb[kp0[[1]][[i]],kp0[[1]][[l]],zp0[[1]][[n]],a0[[l]],b0[[l]]]</span><br><span class="line">            ,&#123;l,1,Length[kp0[[1]]]&#125;,&#123;n,1,Length[zp0[[1]]]&#125;</span><br><span class="line">        ];</span><br><span class="line">        s3[[i]]=Z2^2*4/(3 kp0[[1]][[i]])*(2\[Pi])^(-3)*Sum[</span><br><span class="line">            kp0[[2]][[l]]*kp0[[1]][[l]]*zp0[[2]][[n]]*Sqrt[1-zp0[[1]][[n]]^2]*Log[\[Lambda]]*kp0[[1]][[l]]*</span><br><span class="line">            fc[kp0[[1]][[i]],kp0[[1]][[l]],zp0[[1]][[n]],a0[[l]],b0[[l]],c0[[l]],d0[[l]]]</span><br><span class="line">            ,&#123;l,1,Length[kp0[[1]]]&#125;,&#123;n,1,Length[zp0[[1]]]&#125;</span><br><span class="line">        ];</span><br><span class="line">        s4[[i]]=1-Z2^2*4*(2\[Pi])^(-3)*Sum[</span><br><span class="line">            kp0[[2]][[l]]*kp0[[1]][[l]]*zp0[[2]][[n]]*Sqrt[1-zp0[[1]][[n]]^2]*Log[\[Lambda]]*kp0[[1]][[l]]*</span><br><span class="line">            fd[kp0[[1]][[i]],kp0[[1]][[l]],zp0[[1]][[n]],a0[[l]],b0[[l]],c0[[l]],d0[[l]]]</span><br><span class="line">            ,&#123;l,1,Length[kp0[[1]]]&#125;,&#123;n,1,Length[zp0[[1]]]&#125;</span><br><span class="line">        ]</span><br><span class="line">        , &#123;General::munfl&#125;]</span><br><span class="line">        ,&#123;i,1,Length[a0]&#125;</span><br><span class="line">        </span><br><span class="line">    ];</span><br><span class="line">    &#123;s1,s2,s3,s4&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>式(2.18-2.19)代码实现如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">CalAB[a0_, d0_, kp0_]:=Module[</span><br><span class="line">    &#123;</span><br><span class="line">    </span><br><span class="line">    s1,s2,</span><br><span class="line">    (*Z2,Z4 point*)</span><br><span class="line">    r1,r2,</span><br><span class="line">    t1,t2,</span><br><span class="line">    (*Find \[Mu] place*)</span><br><span class="line">    t=0,i=1</span><br><span class="line">    &#125;,</span><br><span class="line">    While[i&lt;Length[kp0[[1]]] &amp;&amp; kp0[[1]][[i]]&lt;=\[Mu]^2,</span><br><span class="line">            t=i;i=i+1</span><br><span class="line">        ];</span><br><span class="line">    r1=(\[Mu]^2-kp0[[1]][[t]])/(kp0[[1]][[t+1]]-kp0[[1]][[t]])*a0[[t+1]]+(kp0[[1]][[t+1]]-\[Mu]^2)/(kp0[[1]][[t+1]]-kp0[[1]][[t]])*a0[[t]];</span><br><span class="line">    r2=(\[Mu]^2-kp0[[1]][[t]])/(kp0[[1]][[t+1]]-kp0[[1]][[t]])*d0[[t+1]]+(kp0[[1]][[t+1]]-\[Mu]^2)/(kp0[[1]][[t+1]]-kp0[[1]][[t]])*d0[[t]];</span><br><span class="line">    s1=Table[1+a0[[j]]-r1,&#123;j,1,Length[a0]&#125;];</span><br><span class="line">    s2=Table[1+d0[[j]]-r2,&#123;j,1,Length[d0]&#125;];</span><br><span class="line">    t1=2-r1;</span><br><span class="line">    t2=2-r2;</span><br><span class="line">    &#123;s1,s2,t1,t2&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>然后在主程序中进行迭代循环:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">While[</span><br><span class="line">    total&gt;erf</span><br><span class="line">    ,</span><br><span class="line">    t=CalAsBs[ A1, B1, C1, D1, kp, zp ,Z2, Z4];</span><br><span class="line">    As=t[[1]];B2=t[[2]];C2=t[[3]];Ds=t[[4]];</span><br><span class="line">    t=CalAB[As,Ds,kp];</span><br><span class="line">    A2=t[[1]];D2=t[[2]];Z2=t[[3]];Z4=t[[4]];</span><br><span class="line">    total=Total[MapThread[Abs[Subtract[#1, #2] ] &amp;, &#123;A2, A1&#125;] ] </span><br><span class="line">        + Total[MapThread[Abs[Subtract[#1, #2] ] &amp;, &#123;D2, D1&#125;] ]</span><br><span class="line">        + Total[MapThread[Abs[Subtract[#1, #2] ] &amp;, &#123;B2, B1&#125;] ]</span><br><span class="line">        + Total[MapThread[Abs[Subtract[#1, #2] ] &amp;, &#123;C2, C1&#125;] ];</span><br><span class="line">    A1=A2;D1=D2;B1=B2;C1=C2;</span><br><span class="line">    Print[total];</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+
+<h3 id="复DSE"><a href="#复DSE" class="headerlink" title="复DSE"></a>复DSE</h3><p>复DSE整体求解过程仍然与之前相同, 只有一个问题: 迭代过程的复DSE动量网格点与三体中三个夸克传播子的动量网格点位置不一致.</p>
+<p>因此这里我们无法像之前, 每次用到数据都重新迭代计算, 直接得到网格点上的数据, 而是采用另一种更好的方法:</p>
+<ol>
+<li>首先使用正常的复DSE迭代过程: 采用内部点-(复DSE)&gt;抛物线轮廓-(围道积分)&gt;内部点…进行迭代, 并存储迭代稳定时抛物线轮廓上的数据;</li>
+<li>计算并存储三体中三个夸克传播子的动量网格点位置;</li>
+<li>调取存储的抛物线轮廓数据以及三个夸克传播子的动量网格点位置, 使用围道积分直接(不用迭代)计算三个夸克传播子的动量网格点位置上的数据.</li>
+</ol>
+
   </div>
   <!-- 许可协议标签，浅绿色背景，文章后另起一行 -->
   <div class="post-copyright" style="background: #e6f9e6; color: #228B22; padding: 18px 28px; border-radius: 20px; margin-top: 32px;">
@@ -228,7 +307,7 @@
     
     
       <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%9A%E8%AE%A1%E7%AE%97%E5%A4%8DDSE%E7%BB%93%E6%9E%9C"><span class="toc-number">1.</span> <span class="toc-text">第二部分：计算复DSE结果</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E6%A2%B3%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">理论梳理</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%9A%E8%AE%A1%E7%AE%97%E5%A4%8DDSE%E7%BB%93%E6%9E%9C"><span class="toc-number">1.</span> <span class="toc-text">第二部分：计算复DSE结果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E9%80%89%E5%8F%96"><span class="toc-number">1.0.1.</span> <span class="toc-text">参数选取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9EDSE"><span class="toc-number">1.0.2.</span> <span class="toc-text">实DSE</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E6%A2%B3%E7%90%86"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">理论梳理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%80%BB%E8%BE%91"><span class="toc-number">1.0.2.2.</span> <span class="toc-text">代码逻辑</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8DDSE"><span class="toc-number">1.0.3.</span> <span class="toc-text">复DSE</span></a></li></ol></li></ol></li></ol>
       </div>
     
 

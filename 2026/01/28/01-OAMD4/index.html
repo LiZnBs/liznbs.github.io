@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="第三部分：Faddeev振幅介绍理论梳理">
+    <meta name="description" content="第三部分：Faddeev振幅介绍理论梳理Faddeev振幅按照Dirac空间, 味空间, 色空间可以分解为:$$\Psi _{ABCD}(p,q,P)&#x3D;(\sum _{n&#x3D;1}^{2}\psi _{\alpha\beta;\gamma\delta}^n(p,q,P)\otimes F _{ab;cd}^n )\otimes \frac{\epsilon _{rst}}{\sqr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="论文记录-三体OAMD-4 Faddeev振幅">
 <meta property="og:url" content="https://blog.liznb.org/2026/01/28/01-OAMD4/index.html">
 <meta property="og:site_name" content="LiZnB&#39;s Blog">
-<meta property="og:description" content="第三部分：Faddeev振幅介绍理论梳理">
+<meta property="og:description" content="第三部分：Faddeev振幅介绍理论梳理Faddeev振幅按照Dirac空间, 味空间, 色空间可以分解为:$$\Psi _{ABCD}(p,q,P)&#x3D;(\sum _{n&#x3D;1}^{2}\psi _{\alpha\beta;\gamma\delta}^n(p,q,P)\otimes F _{ab;cd}^n )\otimes \frac{\epsilon _{rst}}{\sqr">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-01-28T11:20:00.000Z">
-<meta property="article:modified_time" content="2026-01-28T11:21:50.186Z">
+<meta property="article:modified_time" content="2026-02-05T06:39:34.097Z">
 <meta property="article:author" content="LiZnB">
 <meta name="twitter:card" content="summary">
     
@@ -144,7 +144,7 @@
     
     
       <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86%EF%BC%9AFaddeev%E6%8C%AF%E5%B9%85%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">第三部分：Faddeev振幅介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E6%A2%B3%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">理论梳理</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86%EF%BC%9AFaddeev%E6%8C%AF%E5%B9%85%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">第三部分：Faddeev振幅介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E6%A2%B3%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">理论梳理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%B3%E7%A9%BA%E9%97%B4%E5%BC%A0%E9%87%8F"><span class="toc-number">1.1.1.</span> <span class="toc-text">味空间张量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">性质</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%89%B2%E7%A9%BA%E9%97%B4%E5%BC%A0%E9%87%8F"><span class="toc-number">1.1.2.</span> <span class="toc-text">色空间张量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dirac%E7%A9%BA%E9%97%B4%E5%BC%A0%E9%87%8F"><span class="toc-number">1.1.3.</span> <span class="toc-text">Dirac空间张量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%92%E5%90%91%E4%BE%9D%E8%B5%96"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">角向依赖</span></a></li></ol></li></ol></li></ol></li></ol>
       </div>
     
   </span>
@@ -192,7 +192,24 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="第三部分：Faddeev振幅介绍"><a href="#第三部分：Faddeev振幅介绍" class="headerlink" title="第三部分：Faddeev振幅介绍"></a>第三部分：Faddeev振幅介绍</h1><h2 id="理论梳理"><a href="#理论梳理" class="headerlink" title="理论梳理"></a>理论梳理</h2>
+    <h1 id="第三部分：Faddeev振幅介绍"><a href="#第三部分：Faddeev振幅介绍" class="headerlink" title="第三部分：Faddeev振幅介绍"></a>第三部分：Faddeev振幅介绍</h1><h2 id="理论梳理"><a href="#理论梳理" class="headerlink" title="理论梳理"></a>理论梳理</h2><p>Faddeev振幅按照Dirac空间, 味空间, 色空间可以分解为:<br>$$\Psi _{ABCD}(p,q,P)&#x3D;(\sum _{n&#x3D;1}^{2}\psi _{\alpha\beta;\gamma\delta}^n(p,q,P)\otimes F _{ab;cd}^n )\otimes \frac{\epsilon _{rst}}{\sqrt{6}}$$</p>
+<h3 id="味空间张量"><a href="#味空间张量" class="headerlink" title="味空间张量"></a>味空间张量</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><ul>
+<li>Mixed-antisymmetric (MA): $F^1&#x3D;\frac{1}{\sqrt{2}}i\sigma _2\otimes\unit$</li>
+<li>Mixed-symmetric (MS): $F^2&#x3D;-\frac{1}{\sqrt{6}}\vec{\sigma}i\sigma _2\otimes\vec{\sigma}$</li>
+</ul>
+<h4 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h4><ul>
+<li>正交归一化: $Tr\lbrace F^{n\dagger}F^m\rbrace &#x3D;\delta _{nm}$</li>
+<li>前两个夸克交换: <ul>
+<li>MA: $F_{ba;cd}^1&#x3D;-F_{ab;cd}^1$</li>
+<li>MS: $F_{ba;cd}^2&#x3D;+F_{ab;cd}^2$</li>
+</ul>
+</li>
+</ul>
+<h3 id="色空间张量"><a href="#色空间张量" class="headerlink" title="色空间张量"></a>色空间张量</h3><p>为保证色单态, 色张量取反对称形式:<br>$$\frac{\epsilon _{rst}}{\sqrt{6}}$$</p>
+<h3 id="Dirac空间张量"><a href="#Dirac空间张量" class="headerlink" title="Dirac空间张量"></a>Dirac空间张量</h3><p>按照<a href="/2026/01/01/01-OAMD2/" target="_blank">基底构建笔记</a>, 可以构建64维Dirac空间基底: $X^g$<br>其中$g&#x3D;1,\dots,64$.</p>
+<p>Dirac空间分量可按照Dirac空间基底展开:<br>$$\psi _{\alpha\beta;\gamma\delta}^n(p,q,P)&#x3D;\sum _{g&#x3D;1}^{64}f ^n<br>_g(p^2,q^2,z_1,z_2,z_0)X _{\alpha\beta;\gamma\delta}^{g}(\hat{p_T},\hat{q_t},\hat{P})$$</p>
+<h4 id="角向依赖"><a href="#角向依赖" class="headerlink" title="角向依赖"></a>角向依赖</h4><p>对于系数$f ^n_g(p^2,q^2,z_1,z_2,z_0)$, 其角向依赖可以使用Chebyshev多项式展开:<br>$$f ^n_g(p^2,q^2,z_1,z_2,z_0)&#x3D;\sum_{n_1&#x3D;0}^{N_1-1}\sum_{n_2&#x3D;0}^{N_2-1}\sum_{n_0&#x3D;0}^{N_0-1}T_{n_1}(z_1)T_{n_2}(z_2)T_{n_0}(z_0)Mat^n(g,p^2,q^2,n_1,n_2,n_0)$$<br>其中$T_n(z)$为第n阶Chebyshev多项式.</p>
+
   </div>
   <!-- 许可协议标签，浅绿色背景，文章后另起一行 -->
   <div class="post-copyright" style="background: #e6f9e6; color: #228B22; padding: 18px 28px; border-radius: 20px; margin-top: 32px;">
@@ -226,7 +243,7 @@
     
     
       <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86%EF%BC%9AFaddeev%E6%8C%AF%E5%B9%85%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">第三部分：Faddeev振幅介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E6%A2%B3%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">理论梳理</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86%EF%BC%9AFaddeev%E6%8C%AF%E5%B9%85%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">第三部分：Faddeev振幅介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E6%A2%B3%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">理论梳理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%B3%E7%A9%BA%E9%97%B4%E5%BC%A0%E9%87%8F"><span class="toc-number">1.1.1.</span> <span class="toc-text">味空间张量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">性质</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%89%B2%E7%A9%BA%E9%97%B4%E5%BC%A0%E9%87%8F"><span class="toc-number">1.1.2.</span> <span class="toc-text">色空间张量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dirac%E7%A9%BA%E9%97%B4%E5%BC%A0%E9%87%8F"><span class="toc-number">1.1.3.</span> <span class="toc-text">Dirac空间张量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%92%E5%90%91%E4%BE%9D%E8%B5%96"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">角向依赖</span></a></li></ol></li></ol></li></ol></li></ol>
       </div>
     
 
