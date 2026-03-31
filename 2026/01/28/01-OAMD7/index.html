@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="第五部分：波函数分解–本征值正则归一方法理论梳理本征值正则归一方法的波函数分解对于质子OAMD分解, 按照正则归一化公式, 每一初末波函数分量表达式为 $$P^p_{fi}&#x3D;\overline{\Theta} _f^p G_0^{-1}\Theta _i^p$$ 按照Dirac空间, 味空间(色空间自动归一)进行分解:$$P _{fi}&#x3D;\sum _{n _1&#x3D;1}^">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论文记录-三体OAMD-7 波函数分解">
+<meta property="og:url" content="https://blog.liznb.org/2026/01/28/01-OAMD7/index.html">
+<meta property="og:site_name" content="LiZnB&#39;s Blog">
+<meta property="og:description" content="第五部分：波函数分解–本征值正则归一方法理论梳理本征值正则归一方法的波函数分解对于质子OAMD分解, 按照正则归一化公式, 每一初末波函数分量表达式为 $$P^p_{fi}&#x3D;\overline{\Theta} _f^p G_0^{-1}\Theta _i^p$$ 按照Dirac空间, 味空间(色空间自动归一)进行分解:$$P _{fi}&#x3D;\sum _{n _1&#x3D;1}^">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-01-28T11:20:00.000Z">
+<meta property="article:modified_time" content="2026-03-31T05:40:12.896Z">
+<meta property="article:author" content="LiZnB">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>论文记录-三体OAMD-7 波函数分解</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']],
+			  displayMath: [['$$','$$']]
+			},
+      TeX: {
+      Macros: {
+        slashed: ["{\\not\\!#1}", 1],
+        unit: "\\mathbb{I}"
+      }
+    }
+		  });
+		</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
+	
+  <!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//blog.liznb.org/matomo/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Categories</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2026/01/28/01-OAMD6/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2026/01/12/01-OAMD3/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.liznb.org/2026/01/28/01-OAMD7/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.liznb.org/2026/01/28/01-OAMD7/&text=论文记录-三体OAMD-7 波函数分解"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.liznb.org/2026/01/28/01-OAMD7/&title=论文记录-三体OAMD-7 波函数分解"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.liznb.org/2026/01/28/01-OAMD7/&is_video=false&description=论文记录-三体OAMD-7 波函数分解"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=论文记录-三体OAMD-7 波函数分解&body=Check out this article: https://blog.liznb.org/2026/01/28/01-OAMD7/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.liznb.org/2026/01/28/01-OAMD7/&title=论文记录-三体OAMD-7 波函数分解"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.liznb.org/2026/01/28/01-OAMD7/&title=论文记录-三体OAMD-7 波函数分解"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.liznb.org/2026/01/28/01-OAMD7/&title=论文记录-三体OAMD-7 波函数分解"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.liznb.org/2026/01/28/01-OAMD7/&title=论文记录-三体OAMD-7 波函数分解"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.liznb.org/2026/01/28/01-OAMD7/&name=论文记录-三体OAMD-7 波函数分解&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.liznb.org/2026/01/28/01-OAMD7/&t=论文记录-三体OAMD-7 波函数分解"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86%EF%BC%9A%E6%B3%A2%E5%87%BD%E6%95%B0%E5%88%86%E8%A7%A3%E2%80%93%E6%9C%AC%E5%BE%81%E5%80%BC%E6%AD%A3%E5%88%99%E5%BD%92%E4%B8%80%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">第五部分：波函数分解–本征值正则归一方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E6%A2%B3%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">理论梳理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%BE%81%E5%80%BC%E6%AD%A3%E5%88%99%E5%BD%92%E4%B8%80%E6%96%B9%E6%B3%95%E7%9A%84%E6%B3%A2%E5%87%BD%E6%95%B0%E5%88%86%E8%A7%A3"><span class="toc-number">1.1.1.</span> <span class="toc-text">本征值正则归一方法的波函数分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%B3%E7%A9%BA%E9%97%B4%E5%9B%A0%E5%AD%90"><span class="toc-number">1.1.2.</span> <span class="toc-text">味空间因子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dirac%E7%A9%BA%E9%97%B4%E6%B3%A2%E5%87%BD%E6%95%B0%E5%88%86%E8%A7%A3"><span class="toc-number">1.1.3.</span> <span class="toc-text">Dirac空间波函数分解</span></a></li></ol></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        论文记录-三体OAMD-7 波函数分解
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">LiZnB</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2026-01-28T11:20:00.000Z" class="dt-published" itemprop="datePublished">2026-01-28</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        
+            <a href="/categories/01-Physics-Code-Record/04-OAMD-Baryon/index.html">01-Physics-Code-Record/04-OAMD-Baryon</a>
+            
+        
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="第五部分：波函数分解–本征值正则归一方法"><a href="#第五部分：波函数分解–本征值正则归一方法" class="headerlink" title="第五部分：波函数分解–本征值正则归一方法"></a>第五部分：波函数分解–本征值正则归一方法</h1><h2 id="理论梳理"><a href="#理论梳理" class="headerlink" title="理论梳理"></a>理论梳理</h2><h3 id="本征值正则归一方法的波函数分解"><a href="#本征值正则归一方法的波函数分解" class="headerlink" title="本征值正则归一方法的波函数分解"></a>本征值正则归一方法的波函数分解</h3><p>对于质子OAMD分解, 按照正则归一化公式, 每一初末波函数分量表达式为</p>
+<p>$$P^p_{fi}&#x3D;\overline{\Theta} _f^p G_0^{-1}\Theta _i^p$$</p>
+<p>按照Dirac空间, 味空间(色空间自动归一)进行分解:<br>$$P _{fi}&#x3D;\sum _{n _1&#x3D;1}^{2} \sum _{n _2&#x3D;1}^{2} \int\frac{d^4p}{(2\pi)^4}\frac{d^4q}{(2\pi)^4}Tr[\overline{\theta} _{f}^{n _1}(p,q,P)G _0^{-1}\theta _{i}^{n _2}(p,q,P)]\otimes e _{1d’} ^\dagger F _{ba;d’c}^{\dagger n _1}  F _{ab;cd}^{n _2} e _{1d}$$</p>
+<h3 id="味空间因子"><a href="#味空间因子" class="headerlink" title="味空间因子"></a>味空间因子</h3><p>$$F^1&#x3D;\frac{1}{\sqrt{2}}i\sigma _2\otimes\unit&#x3D;\frac{1}{\sqrt{2}}\begin{pmatrix}<br>  0&amp;0&amp;1&amp;0\newline<br>  0&amp;0&amp;0&amp;1\newline<br>  -1&amp;0&amp;0&amp;0\newline<br>    0&amp;-1&amp;0&amp;0\newline<br>\end{pmatrix}$$</p>
+<p>$$F^2&#x3D;-\frac{1}{\sqrt{6}}\vec{\sigma}i\sigma _2\otimes\vec{\sigma}&#x3D;\frac{1}{\sqrt{6}}\begin{pmatrix}<br>  0&amp;0&amp;-1&amp;0\newline<br>  2&amp;0&amp;0&amp;1\newline<br>  -1&amp;0&amp;0&amp;-2\newline<br>    0&amp;1&amp;0&amp;0\newline<br>\end{pmatrix}$$</p>
+<p>$$e_1&#x3D;\unit\otimes\begin{pmatrix}<br>  1\newline<br>  0\newline<br>\end{pmatrix}&#x3D;\begin{pmatrix}<br>  1&amp;0\newline<br>  0&amp;0\newline<br>  0&amp;1\newline<br>  0&amp;0\newline<br>\end{pmatrix}$$</p>
+<p>$$e_2&#x3D;\unit\otimes\begin{pmatrix}<br>  0\newline<br>  1\newline<br>\end{pmatrix}&#x3D;\begin{pmatrix}<br>  0&amp;0\newline<br>  1&amp;0\newline<br>  0&amp;0\newline<br>  0&amp;1\newline<br>\end{pmatrix}$$</p>
+<p>向质子态投影:<br>$$F^1e _{1}&#x3D;\frac{1}{\sqrt{2}}\begin{pmatrix}<br>  0&amp;0&amp;1&amp;0\newline<br>  0&amp;0&amp;0&amp;1\newline<br>  -1&amp;0&amp;0&amp;0\newline<br>    0&amp;-1&amp;0&amp;0\newline<br>\end{pmatrix}\begin{pmatrix}<br>  1&amp;0\newline<br>  0&amp;0\newline<br>  0&amp;1\newline<br>  0&amp;0\newline<br>\end{pmatrix}&#x3D;\frac{1}{\sqrt{2}}\begin{pmatrix}<br>  0&amp;1\newline<br>  0&amp;0\newline<br>  -1&amp;0\newline<br>  0&amp;0\newline<br>\end{pmatrix}$$</p>
+<p>$$F^2e _{1}&#x3D;\frac{1}{\sqrt{6}}\begin{pmatrix}<br>  0&amp;0&amp;-1&amp;0\newline<br>  2&amp;0&amp;0&amp;1\newline<br>  -1&amp;0&amp;0&amp;-2\newline<br>    0&amp;1&amp;0&amp;0\newline<br>\end{pmatrix}\begin{pmatrix}<br>  1&amp;0\newline<br>  0&amp;0\newline<br>  0&amp;1\newline<br>  0&amp;0\newline<br>\end{pmatrix}&#x3D;\frac{1}{\sqrt{6}}\begin{pmatrix}<br>  0&amp;-1\newline<br>  2&amp;0\newline<br>  -1&amp;0\newline<br>  0&amp;0\newline<br>\end{pmatrix}$$</p>
+<p>向中子态投影:<br>$$F^1e _{2}&#x3D;\frac{1}{\sqrt{2}}\begin{pmatrix}<br>  0&amp;0&amp;1&amp;0\newline<br>  0&amp;0&amp;0&amp;1\newline<br>  -1&amp;0&amp;0&amp;0\newline<br>    0&amp;-1&amp;0&amp;0\newline<br>\end{pmatrix}\begin{pmatrix}<br>   0&amp;0\newline<br>  1&amp;0\newline<br>  0&amp;0\newline<br>  0&amp;1\newline<br>\end{pmatrix}&#x3D;\frac{1}{\sqrt{2}}\begin{pmatrix}<br>  0&amp;0\newline<br>  0&amp;1\newline<br>  0&amp;0\newline<br>  -1&amp;0\newline<br>\end{pmatrix}$$</p>
+<p>$$F^2e _{2}&#x3D;\frac{1}{\sqrt{6}}\begin{pmatrix}<br>  0&amp;0&amp;-1&amp;0\newline<br>  2&amp;0&amp;0&amp;1\newline<br>  -1&amp;0&amp;0&amp;-2\newline<br>    0&amp;1&amp;0&amp;0\newline<br>\end{pmatrix}\begin{pmatrix}<br>   0&amp;0\newline<br>  1&amp;0\newline<br>  0&amp;0\newline<br>  0&amp;1\newline<br>\end{pmatrix}&#x3D;\frac{1}{\sqrt{6}}\begin{pmatrix}<br>  0&amp;0\newline<br>  0&amp;1\newline<br>  0&amp;-2\newline<br>  1&amp;0\newline<br>\end{pmatrix}$$</p>
+<p>质子态的味空间分量为:<br>$$F^p_{11}&#x3D;Tr[\frac{1}{2}\begin{pmatrix}<br>0&amp;0&amp;-1&amp;0\newline<br>1&amp;0&amp;0&amp;0\newline<br>\end{pmatrix}\begin{pmatrix}<br>  0&amp;1\newline<br>  0&amp;0\newline<br>  -1&amp;0\newline<br>  0&amp;0\newline\end{pmatrix}]&#x3D;Tr[\frac{1}{2}\begin{pmatrix}<br>1&amp;0\newline<br>0&amp;1\newline<br>\end{pmatrix}]&#x3D;1$$</p>
+<p>$$F^p_{12}&#x3D;Tr[\frac{1}{\sqrt{12}}\begin{pmatrix}<br>0&amp;0&amp;-1&amp;0\newline<br>1&amp;0&amp;0&amp;0\newline<br>\end{pmatrix}\begin{pmatrix}<br>  0&amp;-1\newline<br>  2&amp;0\newline<br>  -1&amp;0\newline<br>  0&amp;0\newline\end{pmatrix}]&#x3D;Tr[\frac{1}{\sqrt{12}}\begin{pmatrix}<br>1&amp;0\newline<br>0&amp;-1\newline<br>\end{pmatrix}]&#x3D;0$$</p>
+<p>$$F^p_{21}&#x3D;Tr[\frac{1}{\sqrt{12}}\begin{pmatrix}<br>0&amp;2&amp;-1&amp;0\newline<br>-1&amp;0&amp;0&amp;0\newline<br>\end{pmatrix}\begin{pmatrix}<br>  0&amp;1\newline<br>  0&amp;0\newline<br>  -1&amp;0\newline<br>  0&amp;0\newline\end{pmatrix}]&#x3D;Tr[\frac{1}{\sqrt{12}}\begin{pmatrix}<br>1&amp;0\newline<br>0&amp;-1\newline<br>\end{pmatrix}]&#x3D;0$$</p>
+<p>$$F^p_{22}&#x3D;Tr[\frac{1}{6}\begin{pmatrix}<br>0&amp;2&amp;-1&amp;0\newline<br>-1&amp;0&amp;0&amp;0\newline<br>\end{pmatrix}\begin{pmatrix}<br>  0&amp;-1\newline<br>  2&amp;0\newline<br>  -1&amp;0\newline<br>  0&amp;0\newline\end{pmatrix}]&#x3D;Tr[\frac{1}{6}\begin{pmatrix}<br>5&amp;0\newline<br>0&amp;1\newline<br>\end{pmatrix}]&#x3D;1$$</p>
+<p>中子态的味空间分量为:<br>$$F^n_{11}&#x3D;Tr[\frac{1}{2}\begin{pmatrix}<br>0&amp;0&amp;0&amp;-1\newline<br>0&amp;1&amp;0&amp;0\newline<br>\end{pmatrix}\begin{pmatrix}<br>  0&amp;0\newline<br>  0&amp;1\newline<br>  0&amp;0\newline<br>  -1&amp;0\newline\end{pmatrix}]&#x3D;Tr[\frac{1}{2}\begin{pmatrix}<br>1&amp;0\newline<br>0&amp;1\newline<br>\end{pmatrix}]&#x3D;1$$</p>
+<p>$$F^n_{12}&#x3D;Tr[\frac{1}{\sqrt{12}}\begin{pmatrix}<br>0&amp;0&amp;0&amp;-1\newline<br>0&amp;1&amp;0&amp;0\newline<br>\end{pmatrix}\begin{pmatrix}  0&amp;0\newline<br>  0&amp;1\newline<br>  0&amp;-2\newline<br>  1&amp;0\newline\end{pmatrix}]&#x3D;Tr[\frac{1}{\sqrt{12}}\begin{pmatrix}<br>-1&amp;0\newline<br>0&amp;1\newline<br>\end{pmatrix}]&#x3D;0$$</p>
+<p>$$F^n_{21}&#x3D;Tr[\frac{1}{\sqrt{12}}\begin{pmatrix}<br>0&amp;0&amp;0&amp;1\newline<br>0&amp;1&amp;-2&amp;0\newline<br>\end{pmatrix}\begin{pmatrix}<br>0&amp;0\newline<br>  0&amp;1\newline<br>  0&amp;0\newline<br>  -1&amp;0\newline\end{pmatrix}]&#x3D;Tr[\frac{1}{\sqrt{12}}\begin{pmatrix}<br>-1&amp;0\newline<br>0&amp;1\newline<br>\end{pmatrix}]&#x3D;0$$</p>
+<p>$$F^n_{22}&#x3D;Tr[\frac{1}{6}\begin{pmatrix}0&amp;0&amp;0&amp;1\newline<br>0&amp;1&amp;-2&amp;0\newline<br>\end{pmatrix}\begin{pmatrix}  0&amp;0\newline<br>  0&amp;1\newline<br>  0&amp;-2\newline<br>  1&amp;0\newline\end{pmatrix}]&#x3D;Tr[\frac{1}{6}\begin{pmatrix}<br>1&amp;0\newline<br>0&amp;5\newline<br>\end{pmatrix}]&#x3D;1$$</p>
+<h3 id="Dirac空间波函数分解"><a href="#Dirac空间波函数分解" class="headerlink" title="Dirac空间波函数分解"></a>Dirac空间波函数分解</h3><p>于是质子(中子也完全相同)Dirac空间分解表达式为:<br>$$\begin{align}<br>    P _{fi}&#x3D;&amp;\sum _{n&#x3D;1}^{2}  \int\frac{d^4p}{(2\pi)^4}\frac{d^4q}{(2\pi)^4}Tr[\overline{\theta} _{f}^{n}(p,q,P)G _0^{-1}\theta _{i}^{n}(p,q,P)]\newline<br>    &#x3D;&amp;\sum _{n&#x3D;1}^{2}  \int\frac{d^4p}{(2\pi)^4}\frac{d^4q}{(2\pi)^4}[F^{n*} _fF^n _i](p^2,q^2,z _1,z _2,z _0)Tr[\overline{X}^{f}(\hat{p _T},\hat{q _t},\hat{P})G _0^{-1}X^{i}(\hat{p _T},\hat{q _t},\hat{P})]\newline<br>    &#x3D;&amp;\sum _{n&#x3D;1}^{2}  \int\frac{d^4p}{(2\pi)^4}\frac{d^4q}{(2\pi)^4}[F^{n*} _fF^n _i](p^2,q^2,z _1,z _2,z _0)\newline<br>    &amp;Tr[\overline{X}^{f}(\hat{p _T},\hat{q _t},\hat{P})(S^{-1}(p_1)\otimes S^{-1}(p_3))X^{i}(\hat{p _T},\hat{q _t},\hat{P})(S^{-1T}(p_2)\otimes \unit)]\newline<br>\end{align}$$</p>
+
+  </div>
+  <!-- 许可协议标签，浅绿色背景，文章后另起一行 -->
+  <div class="post-copyright" style="background: #e6f9e6; color: #228B22; padding: 18px 28px; border-radius: 20px; margin-top: 32px;">
+    <p style="margin:0;">本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" style="color:#228B22;text-decoration:underline;">CC BY-NC-SA 4.0</a> 许可协议发布.<br>
+    作者: LiZnB, 文章链接: <a href="https://blog.liznb.org/2026/01/28/01-OAMD7/" style="color:#228B22;text-decoration:underline;">
+      https://blog.liznb.org/2026/01/28/01-OAMD7/
+    </a></p>
+    <p style="margin:0;">如果本文给你带来了帮助或让你觉得有趣, 可以考虑<a href="https://blog.liznb.org/about/#donate" target="_blank" style="color:#228B22;text-decoration:underline;">赞助我</a>¬_¬</p>
+  </div>
+</article>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a href="/categories/">Categories</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86%EF%BC%9A%E6%B3%A2%E5%87%BD%E6%95%B0%E5%88%86%E8%A7%A3%E2%80%93%E6%9C%AC%E5%BE%81%E5%80%BC%E6%AD%A3%E5%88%99%E5%BD%92%E4%B8%80%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">第五部分：波函数分解–本征值正则归一方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E6%A2%B3%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">理论梳理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%BE%81%E5%80%BC%E6%AD%A3%E5%88%99%E5%BD%92%E4%B8%80%E6%96%B9%E6%B3%95%E7%9A%84%E6%B3%A2%E5%87%BD%E6%95%B0%E5%88%86%E8%A7%A3"><span class="toc-number">1.1.1.</span> <span class="toc-text">本征值正则归一方法的波函数分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%B3%E7%A9%BA%E9%97%B4%E5%9B%A0%E5%AD%90"><span class="toc-number">1.1.2.</span> <span class="toc-text">味空间因子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dirac%E7%A9%BA%E9%97%B4%E6%B3%A2%E5%87%BD%E6%95%B0%E5%88%86%E8%A7%A3"><span class="toc-number">1.1.3.</span> <span class="toc-text">Dirac空间波函数分解</span></a></li></ol></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.liznb.org/2026/01/28/01-OAMD7/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://blog.liznb.org/2026/01/28/01-OAMD7/&text=论文记录-三体OAMD-7 波函数分解"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://blog.liznb.org/2026/01/28/01-OAMD7/&title=论文记录-三体OAMD-7 波函数分解"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://blog.liznb.org/2026/01/28/01-OAMD7/&is_video=false&description=论文记录-三体OAMD-7 波函数分解"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=论文记录-三体OAMD-7 波函数分解&body=Check out this article: https://blog.liznb.org/2026/01/28/01-OAMD7/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://blog.liznb.org/2026/01/28/01-OAMD7/&title=论文记录-三体OAMD-7 波函数分解"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://blog.liznb.org/2026/01/28/01-OAMD7/&title=论文记录-三体OAMD-7 波函数分解"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://blog.liznb.org/2026/01/28/01-OAMD7/&title=论文记录-三体OAMD-7 波函数分解"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://blog.liznb.org/2026/01/28/01-OAMD7/&title=论文记录-三体OAMD-7 波函数分解"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://blog.liznb.org/2026/01/28/01-OAMD7/&name=论文记录-三体OAMD-7 波函数分解&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://blog.liznb.org/2026/01/28/01-OAMD7/&t=论文记录-三体OAMD-7 波函数分解"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2025-2026
+    LiZnB
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Categories</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
